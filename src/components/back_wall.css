@@ -1,0 +1,89 @@
+.backWallContainer{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap:0.5vh;
+    width: 16vh;
+    height: 16vh;
+    background-color: black
+}
+
+.backWallContainer__leftUpCorner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5vh;
+    height: 5vh;
+    background-color: skyblue
+}
+.backWallContainer__middleUp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5vh;
+    height: 5vh;
+    background-color: cyan;
+}
+.backWallContainer__rightUpCorner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5vh;
+    height: 5vh;
+    background-color: blue;
+}
+
+
+
+.backWallContainer__leftCenterCorner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5vh;
+    height: 5vh;
+    background-color: blueviolet;
+}
+.backWallContainer__middleCenterUp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5vh;
+    height: 5vh;
+    background-color: white;
+}
+.backWallContainer__rightCenterorner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5vh;
+    height: 5vh;
+    background-color: blueviolet;
+}
+
+
+
+.backWallContainer__leftDownCorner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5vh;
+    height: 5vh;
+    background-color: yellow;
+}
+.backWallContainer__middleDown{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5vh;
+    height: 5vh;
+    background-color: orange;
+}
+.backWallContainer__rightDownCorner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5vh;
+    height: 5vh;
+    background-color: red;
+}

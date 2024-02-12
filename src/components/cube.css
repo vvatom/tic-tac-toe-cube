@@ -1,0 +1,14 @@
+.cubeContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    width:95vw;
+    height: 95vh;
+    background-color: gray;
+}
+
+.cubeContainer__cross{
+    display:flex;
+    flex-direction:row;
+}
