@@ -3,12 +3,15 @@
     align-items: center;
     justify-content: center;
     flex-direction:column;
+    gap:0.5vh;
     width:95vw;
     height: 95vh;
     background-color: gray;
+    font-size: 3vh;
 }
 
 .cubeContainer__cross{
     display:flex;
+    gap:0.5vh;
     flex-direction:row;
 }

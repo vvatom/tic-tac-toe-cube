@@ -1,42 +1,134 @@
-import './right_wall.css'
+import classNames from "classnames";
+import "./right_wall.css";
 
 // 15 18 21
 // 16 19 22
 // 17 20 23
 
-export default function RightWall(){
-    return(
-        <div className='rightWallContainer'>
+export default function RightWall(props) {
+  const { mainTab, clickBox, userSign } = props;
 
-            <div className='rightWallContainer__leftUpCorner'>
-                <p>15</p>
-            </div>
-            <div className='rightWallContainer__middleUp'>
-                <p>18</p>
-            </div>
-            <div className='rightWallContainer__rightUpCorner'>
-                <p>21</p>
-            </div>
+  return (
+    <div className="rightWallContainer">
+      <div
+        className={classNames("rightWallContainer__leftUpCorner", {
+          blueHover: userSign === 0 && mainTab[15].sign === "",
+          blue_X: mainTab[15].sign === "X",
+          redHover: userSign === 1 && mainTab[15].sign === "",
+          red_O: mainTab[15].sign === "O",
+        })}
+        onClick={() => {
+          clickBox(15);
+        }}
+      >
+        <p>{mainTab[15].sign}</p>
+      </div>
+      <div
+        className={classNames("rightWallContainer__middleUp", {
+          blueHover: userSign === 0 && mainTab[18].sign === "",
+          blue_X: mainTab[18].sign === "X",
+          redHover: userSign === 1 && mainTab[18].sign === "",
+          red_O: mainTab[18].sign === "O",
+        })}
+        onClick={() => {
+          clickBox(18);
+        }}
+      >
+        <p>{mainTab[18].sign}</p>
+      </div>
+      <div
+        className={classNames("rightWallContainer__rightUpCorner", {
+          blueHover: userSign === 0 && mainTab[21].sign === "",
+          blue_X: mainTab[21].sign === "X",
+          redHover: userSign === 1 && mainTab[21].sign === "",
+          red_O: mainTab[21].sign === "O",
+        })}
+        onClick={() => {
+          clickBox(21);
+        }}
+      >
+        <p>{mainTab[21].sign}</p>
+      </div>
 
-            <div className='rightWallContainer__leftCenterCorner'>
-                <p>16</p>
-            </div>
-            <div className='rightWallContainer__middleCenterUp'>
-                <p>19</p>
-            </div>
-            <div className='rightWallContainer__rightCenterorner'>
-                <p>22</p>
-            </div>
+      <div
+        className={classNames("rightWallContainer__leftCenterCorner", {
+          blueHover: userSign === 0 && mainTab[16].sign === "",
+          blue_X: mainTab[16].sign === "X",
+          redHover: userSign === 1 && mainTab[16].sign === "",
+          red_O: mainTab[16].sign === "O",
+        })}
+        onClick={() => {
+          clickBox(16);
+        }}
+      >
+        <p>{mainTab[16].sign}</p>
+      </div>
+      <div
+        className={classNames("rightWallContainer__middleCenterUp", {
+          blueHover: userSign === 0 && mainTab[19].sign === "",
+          blue_X: mainTab[19].sign === "X",
+          redHover: userSign === 1 && mainTab[19].sign === "",
+          red_O: mainTab[19].sign === "O",
+        })}
+        onClick={() => {
+          clickBox(19);
+        }}
+      >
+        <p>{mainTab[19].sign}</p>
+      </div>
+      <div
+        className={classNames("rightWallContainer__rightCenterorner", {
+          blueHover: userSign === 0 && mainTab[22].sign === "",
+          blue_X: mainTab[22].sign === "X",
+          redHover: userSign === 1 && mainTab[22].sign === "",
+          red_O: mainTab[22].sign === "O",
+        })}
+        onClick={() => {
+          clickBox(22);
+        }}
+      >
+        <p>{mainTab[22].sign}</p>
+      </div>
 
-            <div className='rightWallContainer__leftDownCorner'>
-                <p>17</p>
-            </div>
-            <div className='rightWallContainer__middleDown'>
-                <p>20</p>
-            </div>
-            <div className='rightWallContainer__rightDownCorner'>
-                <p>23</p>
-            </div>
-        </div>
-    )
+      <div
+        className={classNames("rightWallContainer__leftDownCorner", {
+          blueHover: userSign === 0 && mainTab[17].sign === "",
+          blue_X: mainTab[17].sign === "X",
+          redHover: userSign === 1 && mainTab[17].sign === "",
+          red_O: mainTab[17].sign === "O",
+        })}
+        onClick={() => {
+          clickBox(17);
+        }}
+      >
+        <p>{mainTab[17].sign}</p>
+      </div>
+      <div
+        className={classNames("rightWallContainer__middleDown", {
+          blueHover: userSign === 0 && mainTab[20].sign === "",
+          blue_X: mainTab[20].sign === "X",
+          redHover: userSign === 1 && mainTab[20].sign === "",
+          red_O: mainTab[20].sign === "O",
+        })}
+        onClick={() => {
+          clickBox(20);
+        }}
+      >
+        <p>{mainTab[20].sign}</p>
+      </div>
+      <div
+        className={classNames("rightWallContainer__rightDownCorner", {
+          blueHover: userSign === 0 && mainTab[23].sign === "",
+          blue_X: mainTab[23].sign === "X",
+          redHover: userSign === 1 && mainTab[23].sign === "",
+          red_O: mainTab[23].sign === "O",
+        })}
+        onClick={() => {
+          clickBox(23);
+        }}
+      >
+        <p>{mainTab[23].sign}</p>
+      </div>
+    </div>
+  );
 }

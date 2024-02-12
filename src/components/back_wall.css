@@ -15,7 +15,7 @@
     justify-content: center;
     width: 5vh;
     height: 5vh;
-    background-color: skyblue
+    background-color: rgb(36, 36, 36);
 }
 .backWallContainer__middleUp{
     display: flex;
@@ -23,7 +23,7 @@
     justify-content: center;
     width: 5vh;
     height: 5vh;
-    background-color: cyan;
+    background-color: rgb(36, 36, 36);
 }
 .backWallContainer__rightUpCorner{
     display: flex;
@@ -31,7 +31,7 @@
     justify-content: center;
     width: 5vh;
     height: 5vh;
-    background-color: blue;
+    background-color: rgb(36, 36, 36);
 }
 
 
@@ -42,7 +42,7 @@
     justify-content: center;
     width: 5vh;
     height: 5vh;
-    background-color: blueviolet;
+    background-color: rgb(36, 36, 36);
 }
 .backWallContainer__middleCenterUp{
     display: flex;
@@ -50,7 +50,7 @@
     justify-content: center;
     width: 5vh;
     height: 5vh;
-    background-color: white;
+    background-color: rgb(36, 36, 36);
 }
 .backWallContainer__rightCenterorner{
     display: flex;
@@ -58,7 +58,7 @@
     justify-content: center;
     width: 5vh;
     height: 5vh;
-    background-color: blueviolet;
+    background-color: rgb(36, 36, 36);
 }
 
 
@@ -69,7 +69,7 @@
     justify-content: center;
     width: 5vh;
     height: 5vh;
-    background-color: yellow;
+    background-color: rgb(36, 36, 36);
 }
 .backWallContainer__middleDown{
     display: flex;
@@ -77,7 +77,7 @@
     justify-content: center;
     width: 5vh;
     height: 5vh;
-    background-color: orange;
+    background-color: rgb(36, 36, 36);
 }
 .backWallContainer__rightDownCorner{
     display: flex;
@@ -85,5 +85,27 @@
     justify-content: center;
     width: 5vh;
     height: 5vh;
+    background-color: rgb(36, 36, 36);
+}
+
+.red_O{
     background-color: red;
 }
+.redHover:hover{
+    background-color: red;
+    transition: 0.2s ease-in-out;
+}.redHover:not(:hover){
+    transition: 1s ease-in-out;
+}
+
+.blue_X{
+    background-color: blue;
+}
+.blueHover:hover{
+    background-color: blue;
+    transition: 0.2s ease-in;
+}
+.blueHover:not(:hover){
+    transition: 1s ease-in-out;
+}
+
