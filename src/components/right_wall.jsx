@@ -1,12 +1,42 @@
 import classNames from "classnames";
 import "./right_wall.css";
+import { useEffect, useState } from "react";
 
 // 15 18 21
 // 16 19 22
 // 17 20 23
 
+const winningCombinations = [
+  [15, 16, 17],
+  [18, 19, 20],
+  [21, 22, 23],
+  [15, 18, 21],
+  [16, 19, 22],
+  [17, 20, 23],
+  [15, 19, 23],
+  [17, 19, 21],
+];
+
 export default function RightWall(props) {
-  const { mainTab, clickBox, userSign } = props;
+  const { mainTab, clickBox, userSign, validateWall, setXCount, setOCount } =
+    props;
+
+  const [isWin, setIsWin] = useState(true);
+
+  useEffect(() => {
+    if (isWin) {
+      const winningResultX = validateWall("X", mainTab, winningCombinations);
+      if (winningResultX) {
+        setXCount((prevCount) => prevCount + 1);
+        setIsWin(false);
+      }
+      const winningResultO = validateWall("O", mainTab, winningCombinations);
+      if (winningResultO) {
+        setOCount((prevCount) => prevCount + 1);
+        setIsWin(false);
+      }
+    }
+  }, [mainTab]);
 
   return (
     <div className="rightWallContainer">

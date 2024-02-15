@@ -1,13 +1,42 @@
 import classNames from "classnames";
 import "./left_wall.css";
+import { useEffect, useState } from "react";
 
 // 1  2  3
 // 24 25 4
 // 7  6  5
 
-export default function LeftWall(props) {
-  const { mainTab, clickBox, userSign } = props;
+const winningCombinations = [
+  [1, 24, 7],
+  [2, 25, 6],
+  [3, 4, 5],
+  [1, 2, 3],
+  [24, 25, 4],
+  [7, 6, 5],
+  [1, 25, 5],
+  [7, 25, 3],
+];
 
+export default function LeftWall(props) {
+  const { mainTab, clickBox, userSign, validateWall, setXCount, setOCount } =
+    props;
+
+  const [isWin, setIsWin] = useState(true);
+
+  useEffect(() => {
+    if (isWin) {
+      const winningResultX = validateWall("X", mainTab, winningCombinations);
+      if (winningResultX) {
+        setXCount((prevCount) => prevCount + 1);
+        setIsWin(false);
+      }
+      const winningResultO = validateWall("O", mainTab, winningCombinations);
+      if (winningResultO) {
+        setOCount((prevCount) => prevCount + 1);
+        setIsWin(false);
+      }
+    }
+  }, [mainTab]);
   return (
     <div className="leftWallContainer">
       <div

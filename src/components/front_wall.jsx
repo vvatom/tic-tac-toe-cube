@@ -1,12 +1,42 @@
 import classNames from "classnames";
 import "./front_wall.css";
+import { useEffect, useState } from "react";
 
 // 5  12  17
 // 6  13  20
 // 7  14  23
 
+const winningCombinations = [
+  [5, 6, 7],
+  [12, 13, 14],
+  [17, 20, 23],
+  [5, 12, 17],
+  [6, 13, 20],
+  [7, 14, 23],
+  [5, 13, 23],
+  [7, 13, 17],
+];
+
 export default function FrontWall(props) {
-  const { mainTab, clickBox, userSign } = props;
+  const { mainTab, clickBox, userSign, validateWall, setXCount, setOCount } =
+    props;
+
+  const [isWin, setIsWin] = useState(true);
+
+  useEffect(() => {
+    if (isWin) {
+      const winningResultX = validateWall("X", mainTab, winningCombinations);
+      if (winningResultX) {
+        setXCount((prevCount) => prevCount + 1);
+        setIsWin(false);
+      }
+      const winningResultO = validateWall("O", mainTab, winningCombinations);
+      if (winningResultO) {
+        setOCount((prevCount) => prevCount + 1);
+        setIsWin(false);
+      }
+    }
+  }, [mainTab]);
   return (
     <div className="frontWallContainer">
       <div

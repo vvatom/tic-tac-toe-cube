@@ -1,13 +1,42 @@
 import classNames from "classnames";
 import "./back_wall.css";
+import { useEffect, useState } from "react";
 
 // 1  8  21
 // 2  9  18
 // 3  10 15
 
-export default function BackWall(props) {
-  const { mainTab, clickBox, userSign } = props;
+const winningCombinations = [
+  [1, 2, 3],
+  [8, 9, 10],
+  [21, 18, 15],
+  [1, 8, 21],
+  [2, 9, 18],
+  [3, 10, 15],
+  [1, 9, 15],
+  [3, 9, 21],
+];
 
+export default function BackWall(props) {
+  const { mainTab, clickBox, userSign, validateWall, setXCount, setOCount } =
+    props;
+
+  const [isWin, setIsWin] = useState(true);
+
+  useEffect(() => {
+    if (isWin) {
+      const winningResultX = validateWall("X", mainTab, winningCombinations);
+      if (winningResultX) {
+        setXCount((prevCount) => prevCount + 1);
+        setIsWin(false);
+      }
+      const winningResultO = validateWall("O", mainTab, winningCombinations);
+      if (winningResultO) {
+        setOCount((prevCount) => prevCount + 1);
+        setIsWin(false);
+      }
+    }
+  }, [mainTab]);
   return (
     <div className="backWallContainer">
       <div

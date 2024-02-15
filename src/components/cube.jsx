@@ -38,6 +38,16 @@ export default function Cube() {
   ]);
 
   const [userSign, setUserSign] = useState(0);
+  const [xCount, setXCount] = useState(0);
+  const [oCount, setOCount] = useState(0);
+
+  function validateWall(sign, mainTab, combinations) {
+    return combinations.some((item) => {
+      return item.every((itemIndex) => {
+        return mainTab[itemIndex].sign === sign;
+      });
+    });
+  }
 
   function clickBox(id) {
     if (userSign === 0) {
@@ -63,18 +73,62 @@ export default function Cube() {
     }
   }
 
-  useEffect(() => {}, []);
-
   return (
     <div className="cubeContainer">
-      <BackWall mainTab={mainTab} clickBox={clickBox} userSign={userSign} />
+      <BackWall
+        mainTab={mainTab}
+        clickBox={clickBox}
+        userSign={userSign}
+        validateWall={validateWall}
+        setXCount={setXCount}
+        setOCount={setOCount}
+      />
       <div className="cubeContainer__cross">
-        <LeftWall mainTab={mainTab} clickBox={clickBox} userSign={userSign} />
-        <UpperWall mainTab={mainTab} clickBox={clickBox} userSign={userSign} />
-        <RightWall mainTab={mainTab} clickBox={clickBox} userSign={userSign} />
+        <LeftWall
+          mainTab={mainTab}
+          clickBox={clickBox}
+          userSign={userSign}
+          validateWall={validateWall}
+          setXCount={setXCount}
+          setOCount={setOCount}
+        />
+        <UpperWall
+          mainTab={mainTab}
+          clickBox={clickBox}
+          userSign={userSign}
+          validateWall={validateWall}
+          setXCount={setXCount}
+          setOCount={setOCount}
+        />
+        <RightWall
+          mainTab={mainTab}
+          clickBox={clickBox}
+          userSign={userSign}
+          validateWall={validateWall}
+          setXCount={setXCount}
+          setOCount={setOCount}
+        />
       </div>
-      <FrontWall mainTab={mainTab} clickBox={clickBox} userSign={userSign} />
-      <BottomWall mainTab={mainTab} clickBox={clickBox} userSign={userSign} />
+      <FrontWall
+        mainTab={mainTab}
+        clickBox={clickBox}
+        userSign={userSign}
+        validateWall={validateWall}
+        setXCount={setXCount}
+        setOCount={setOCount}
+      />
+      <BottomWall
+        mainTab={mainTab}
+        clickBox={clickBox}
+        userSign={userSign}
+        validateWall={validateWall}
+        setXCount={setXCount}
+        setOCount={setOCount}
+      />
+      <div className="counterContainer">
+        <p>X count: {xCount}</p>
+        <p>O count: {oCount}</p>
+      </div>
     </div>
   );
 }

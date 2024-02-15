@@ -1,13 +1,42 @@
 import classNames from "classnames";
 import "./bottom_wall.css";
+import { useEffect, useState } from "react";
 
 // 7  14 23
 // 24 0  22
 // 1  8  21
 
-export default function BottomWall(props) {
-  const { mainTab, clickBox, userSign } = props;
+const winningCombinations = [
+  [7, 24, 1],
+  [14, 0, 8],
+  [23, 22, 21],
+  [7, 14, 23],
+  [24, 0, 22],
+  [1, 8, 21],
+  [7, 0, 21],
+  [1, 0, 23],
+];
 
+export default function BottomWall(props) {
+  const { mainTab, clickBox, userSign, validateWall, setXCount, setOCount } =
+    props;
+
+  const [isWin, setIsWin] = useState(true);
+
+  useEffect(() => {
+    if (isWin) {
+      const winningResultX = validateWall("X", mainTab, winningCombinations);
+      if (winningResultX) {
+        setXCount((prevCount) => prevCount + 1);
+        setIsWin(false);
+      }
+      const winningResultO = validateWall("O", mainTab, winningCombinations);
+      if (winningResultO) {
+        setOCount((prevCount) => prevCount + 1);
+        setIsWin(false);
+      }
+    }
+  }, [mainTab]);
   return (
     <div className="bottomWallContainer">
       <div

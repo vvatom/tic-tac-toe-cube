@@ -1,12 +1,42 @@
 import classNames from "classnames";
 import "./upper_wall.css";
+import { useEffect, useState } from "react";
 
 // 3  10 15
 // 4  11 16
 // 5  12 17
 
+const winningCombinations = [
+  [3, 4, 5],
+  [10, 11, 12],
+  [15, 16, 17],
+  [3, 10, 15],
+  [4, 11, 16],
+  [5, 12, 17],
+  [3, 11, 17],
+  [5, 11, 15],
+];
+
 export default function UpperWall(props) {
-  const { mainTab, clickBox, userSign } = props;
+  const { mainTab, clickBox, userSign, validateWall, setXCount, setOCount } =
+    props;
+
+  const [isWin, setIsWin] = useState(true);
+
+  useEffect(() => {
+    if (isWin) {
+      const winningResultX = validateWall("X", mainTab, winningCombinations);
+      if (winningResultX) {
+        setXCount((prevCount) => prevCount + 1);
+        setIsWin(false);
+      }
+      const winningResultO = validateWall("O", mainTab, winningCombinations);
+      if (winningResultO) {
+        setOCount((prevCount) => prevCount + 1);
+        setIsWin(false);
+      }
+    }
+  }, [mainTab]);
 
   return (
     <div className="upperWallContainer">

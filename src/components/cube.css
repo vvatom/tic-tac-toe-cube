@@ -15,3 +15,9 @@
     gap:0.5vh;
     flex-direction:row;
 }
+
+.counterContainer{
+    display:flex;
+    flex-direction:row;
+    gap:21vh;
+}
