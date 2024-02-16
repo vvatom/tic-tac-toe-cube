@@ -23,6 +23,8 @@ export default function UpperWall(props) {
 
   const [isWin, setIsWin] = useState(true);
 
+  useState();
+
   useEffect(() => {
     if (isWin) {
       const winningResultX = validateWall("X", mainTab, winningCombinations);
@@ -36,7 +38,7 @@ export default function UpperWall(props) {
         setIsWin(false);
       }
     }
-  }, [mainTab]);
+  }, [mainTab, isWin, setOCount, setXCount, validateWall]);
 
   return (
     <div className="upperWallContainer">
@@ -46,6 +48,7 @@ export default function UpperWall(props) {
           blue_X: mainTab[3].sign === "X",
           redHover: userSign === 1 && mainTab[3].sign === "",
           red_O: mainTab[3].sign === "O",
+          clickNone: mainTab[3].sign !== "",
         })}
         onClick={() => {
           clickBox(3);
@@ -59,6 +62,7 @@ export default function UpperWall(props) {
           blue_X: mainTab[10].sign === "X",
           redHover: userSign === 1 && mainTab[10].sign === "",
           red_O: mainTab[10].sign === "O",
+          clickNone: mainTab[10].sign !== "",
         })}
         onClick={() => {
           clickBox(10);
@@ -72,6 +76,7 @@ export default function UpperWall(props) {
           blue_X: mainTab[15].sign === "X",
           redHover: userSign === 1 && mainTab[15].sign === "",
           red_O: mainTab[15].sign === "O",
+          clickNone: mainTab[15].sign !== "",
         })}
         onClick={() => {
           clickBox(15);
@@ -86,6 +91,7 @@ export default function UpperWall(props) {
           blue_X: mainTab[4].sign === "X",
           redHover: userSign === 1 && mainTab[4].sign === "",
           red_O: mainTab[4].sign === "O",
+          clickNone: mainTab[4].sign !== "",
         })}
         onClick={() => {
           clickBox(4);
@@ -99,6 +105,7 @@ export default function UpperWall(props) {
           blue_X: mainTab[11].sign === "X",
           redHover: userSign === 1 && mainTab[11].sign === "",
           red_O: mainTab[11].sign === "O",
+          clickNone: mainTab[11].sign !== "",
         })}
         onClick={() => {
           clickBox(11);
@@ -112,6 +119,7 @@ export default function UpperWall(props) {
           blue_X: mainTab[16].sign === "X",
           redHover: userSign === 1 && mainTab[16].sign === "",
           red_O: mainTab[16].sign === "O",
+          clickNone: mainTab[16].sign !== "",
         })}
         onClick={() => {
           clickBox(16);
@@ -126,6 +134,7 @@ export default function UpperWall(props) {
           blue_X: mainTab[5].sign === "X",
           redHover: userSign === 1 && mainTab[5].sign === "",
           red_O: mainTab[5].sign === "O",
+          clickNone: mainTab[5].sign !== "",
         })}
         onClick={() => {
           clickBox(5);
@@ -139,6 +148,7 @@ export default function UpperWall(props) {
           blue_X: mainTab[12].sign === "X",
           redHover: userSign === 1 && mainTab[12].sign === "",
           red_O: mainTab[12].sign === "O",
+          clickNone: mainTab[12].sign !== "",
         })}
         onClick={() => {
           clickBox(12);
@@ -152,6 +162,7 @@ export default function UpperWall(props) {
           blue_X: mainTab[17].sign === "X",
           redHover: userSign === 1 && mainTab[17].sign === "",
           red_O: mainTab[17].sign === "O",
+          clickNone: mainTab[17].sign !== "",
         })}
         onClick={() => {
           clickBox(17);

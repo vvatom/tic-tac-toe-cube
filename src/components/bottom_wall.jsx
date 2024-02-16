@@ -36,7 +36,7 @@ export default function BottomWall(props) {
         setIsWin(false);
       }
     }
-  }, [mainTab]);
+  }, [mainTab, isWin, setOCount, setXCount, validateWall]);
   return (
     <div className="bottomWallContainer">
       <div
@@ -45,6 +45,7 @@ export default function BottomWall(props) {
           blue_X: mainTab[7].sign === "X",
           redHover: userSign === 1 && mainTab[7].sign === "",
           red_O: mainTab[7].sign === "O",
+          clickNone: mainTab[7].sign !== "",
         })}
         onClick={() => {
           clickBox(7);
@@ -58,6 +59,7 @@ export default function BottomWall(props) {
           blue_X: mainTab[14].sign === "X",
           redHover: userSign === 1 && mainTab[14].sign === "",
           red_O: mainTab[14].sign === "O",
+          clickNone: mainTab[14].sign !== "",
         })}
         onClick={() => {
           clickBox(14);
@@ -71,6 +73,7 @@ export default function BottomWall(props) {
           blue_X: mainTab[23].sign === "X",
           redHover: userSign === 1 && mainTab[23].sign === "",
           red_O: mainTab[23].sign === "O",
+          clickNone: mainTab[23].sign !== "",
         })}
         onClick={() => {
           clickBox(23);
@@ -85,6 +88,7 @@ export default function BottomWall(props) {
           blue_X: mainTab[24].sign === "X",
           redHover: userSign === 1 && mainTab[24].sign === "",
           red_O: mainTab[24].sign === "O",
+          clickNone: mainTab[24].sign !== "",
         })}
         onClick={() => {
           clickBox(24);
@@ -98,6 +102,7 @@ export default function BottomWall(props) {
           blue_X: mainTab[0].sign === "X",
           redHover: userSign === 1 && mainTab[0].sign === "",
           red_O: mainTab[0].sign === "O",
+          clickNone: mainTab[0].sign !== "",
         })}
         onClick={() => {
           clickBox(0);
@@ -111,6 +116,7 @@ export default function BottomWall(props) {
           blue_X: mainTab[22].sign === "X",
           redHover: userSign === 1 && mainTab[22].sign === "",
           red_O: mainTab[22].sign === "O",
+          clickNone: mainTab[22].sign !== "",
         })}
         onClick={() => {
           clickBox(22);
@@ -125,6 +131,7 @@ export default function BottomWall(props) {
           blue_X: mainTab[1].sign === "X",
           redHover: userSign === 1 && mainTab[1].sign === "",
           red_O: mainTab[1].sign === "O",
+          clickNone: mainTab[1].sign !== "",
         })}
         onClick={() => {
           clickBox(1);
@@ -138,6 +145,7 @@ export default function BottomWall(props) {
           blue_X: mainTab[8].sign === "X",
           redHover: userSign === 1 && mainTab[8].sign === "",
           red_O: mainTab[8].sign === "O",
+          clickNone: mainTab[8].sign !== "",
         })}
         onClick={() => {
           clickBox(8);
@@ -151,6 +159,7 @@ export default function BottomWall(props) {
           blue_X: mainTab[21].sign === "X",
           redHover: userSign === 1 && mainTab[21].sign === "",
           red_O: mainTab[21].sign === "O",
+          clickNone: mainTab[21].sign !== "",
         })}
         onClick={() => {
           clickBox(21);

@@ -36,7 +36,7 @@ export default function RightWall(props) {
         setIsWin(false);
       }
     }
-  }, [mainTab]);
+  }, [mainTab, isWin, setOCount, setXCount, validateWall]);
 
   return (
     <div className="rightWallContainer">
@@ -46,6 +46,7 @@ export default function RightWall(props) {
           blue_X: mainTab[15].sign === "X",
           redHover: userSign === 1 && mainTab[15].sign === "",
           red_O: mainTab[15].sign === "O",
+          clickNone: mainTab[15].sign !== "",
         })}
         onClick={() => {
           clickBox(15);
@@ -59,6 +60,7 @@ export default function RightWall(props) {
           blue_X: mainTab[18].sign === "X",
           redHover: userSign === 1 && mainTab[18].sign === "",
           red_O: mainTab[18].sign === "O",
+          clickNone: mainTab[18].sign !== "",
         })}
         onClick={() => {
           clickBox(18);
@@ -72,6 +74,7 @@ export default function RightWall(props) {
           blue_X: mainTab[21].sign === "X",
           redHover: userSign === 1 && mainTab[21].sign === "",
           red_O: mainTab[21].sign === "O",
+          clickNone: mainTab[21].sign !== "",
         })}
         onClick={() => {
           clickBox(21);
@@ -86,6 +89,7 @@ export default function RightWall(props) {
           blue_X: mainTab[16].sign === "X",
           redHover: userSign === 1 && mainTab[16].sign === "",
           red_O: mainTab[16].sign === "O",
+          clickNone: mainTab[16].sign !== "",
         })}
         onClick={() => {
           clickBox(16);
@@ -99,6 +103,7 @@ export default function RightWall(props) {
           blue_X: mainTab[19].sign === "X",
           redHover: userSign === 1 && mainTab[19].sign === "",
           red_O: mainTab[19].sign === "O",
+          clickNone: mainTab[19].sign !== "",
         })}
         onClick={() => {
           clickBox(19);
@@ -112,6 +117,7 @@ export default function RightWall(props) {
           blue_X: mainTab[22].sign === "X",
           redHover: userSign === 1 && mainTab[22].sign === "",
           red_O: mainTab[22].sign === "O",
+          clickNone: mainTab[22].sign !== "",
         })}
         onClick={() => {
           clickBox(22);
@@ -126,6 +132,7 @@ export default function RightWall(props) {
           blue_X: mainTab[17].sign === "X",
           redHover: userSign === 1 && mainTab[17].sign === "",
           red_O: mainTab[17].sign === "O",
+          clickNone: mainTab[17].sign !== "",
         })}
         onClick={() => {
           clickBox(17);
@@ -139,6 +146,7 @@ export default function RightWall(props) {
           blue_X: mainTab[20].sign === "X",
           redHover: userSign === 1 && mainTab[20].sign === "",
           red_O: mainTab[20].sign === "O",
+          clickNone: mainTab[20].sign !== "",
         })}
         onClick={() => {
           clickBox(20);
@@ -152,6 +160,7 @@ export default function RightWall(props) {
           blue_X: mainTab[23].sign === "X",
           redHover: userSign === 1 && mainTab[23].sign === "",
           red_O: mainTab[23].sign === "O",
+          clickNone: mainTab[23].sign !== "",
         })}
         onClick={() => {
           clickBox(23);

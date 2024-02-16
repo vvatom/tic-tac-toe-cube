@@ -1,36 +1,40 @@
 .leftWallContainer{
+    /* green */
     display:flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap:0.5vh;
-    width: 16vh;
-    height: 16vh;
-    background-color: black
+    gap:5%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
 }
 
 .leftWallContainer__leftUpCorner{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 5vh;
-    height: 5vh;
+    width: 30%;
+    height: 30%;
+    border-radius: 0% 0% 30% 0%;
     background-color: rgb(36, 36, 36);
 }
 .leftWallContainer__middleUp{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 5vh;
-    height: 5vh;
+    width: 30%;
+    height: 30%;
+    border-radius: 0% 0% 30% 30%;
     background-color: rgb(36, 36, 36);
 }
 .leftWallContainer__rightUpCorner{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 5vh;
-    height: 5vh;
+    width: 30%;
+    height: 30%;
+    border-radius: 0% 0% 0% 30%;
     background-color: rgb(36, 36, 36);
 }
 
@@ -40,24 +44,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 5vh;
-    height: 5vh;
+    width: 30%;
+    height: 30%;
+    border-radius: 0% 30% 30% 0%;
     background-color: rgb(36, 36, 36);
 }
 .leftWallContainer__middleCenterUp{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 5vh;
-    height: 5vh;
+    width: 30%;
+    height: 30%;
+    border-radius: 30% 30% 30% 30%;
     background-color: rgb(36, 36, 36);
 }
 .leftWallContainer__rightCenterorner{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 5vh;
-    height: 5vh;
+    width: 30%;
+    height: 30%;
+    border-radius: 30% 0% 0% 30%;
     background-color: rgb(36, 36, 36);
 }
 
@@ -67,24 +74,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 5vh;
-    height: 5vh;
+    width: 30%;
+    height: 30%;
+    border-radius: 0% 30% 0% 0%;
     background-color: rgb(36, 36, 36);
 }
 .leftWallContainer__middleDown{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 5vh;
-    height: 5vh;
+    width: 30%;
+    height: 30%;
+    border-radius: 30% 30% 0% 0%;
     background-color: rgb(36, 36, 36);
 }
 .leftWallContainer__rightDownCorner{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 5vh;
-    height: 5vh;
+    width: 30%;
+    height: 30%;
+    border-radius: 30% 0% 0% 0%;
     background-color: rgb(36, 36, 36);
 }
 

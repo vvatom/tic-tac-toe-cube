@@ -18,8 +18,15 @@ const winningCombinations = [
 ];
 
 export default function BackWall(props) {
-  const { mainTab, clickBox, userSign, validateWall, setXCount, setOCount } =
-    props;
+  const {
+    mainTab,
+    clickBox,
+    userSign,
+    validateWall,
+    setXCount,
+    setOCount,
+    rostateState,
+  } = props;
 
   const [isWin, setIsWin] = useState(true);
 
@@ -36,7 +43,7 @@ export default function BackWall(props) {
         setIsWin(false);
       }
     }
-  }, [mainTab]);
+  }, [mainTab, isWin, setOCount, setXCount, validateWall]);
   return (
     <div className="backWallContainer">
       <div
@@ -45,6 +52,7 @@ export default function BackWall(props) {
           blue_X: mainTab[1].sign === "X",
           redHover: userSign === 1 && mainTab[1].sign === "",
           red_O: mainTab[1].sign === "O",
+          clickNone: mainTab[1].sign !== "",
         })}
         onClick={() => {
           clickBox(1);
@@ -58,6 +66,7 @@ export default function BackWall(props) {
           blue_X: mainTab[8].sign === "X",
           redHover: userSign === 1 && mainTab[8].sign === "",
           red_O: mainTab[8].sign === "O",
+          clickNone: mainTab[8].sign !== "",
         })}
         onClick={() => {
           clickBox(8);
@@ -71,6 +80,7 @@ export default function BackWall(props) {
           blue_X: mainTab[21].sign === "X",
           redHover: userSign === 1 && mainTab[21].sign === "",
           red_O: mainTab[21].sign === "O",
+          clickNone: mainTab[21].sign !== "",
         })}
         onClick={() => {
           clickBox(21);
@@ -85,6 +95,7 @@ export default function BackWall(props) {
           blue_X: mainTab[2].sign === "X",
           redHover: userSign === 1 && mainTab[2].sign === "",
           red_O: mainTab[2].sign === "O",
+          clickNone: mainTab[2].sign !== "",
         })}
         onClick={() => {
           clickBox(2);
@@ -98,6 +109,7 @@ export default function BackWall(props) {
           blue_X: mainTab[9].sign === "X",
           redHover: userSign === 1 && mainTab[9].sign === "",
           red_O: mainTab[9].sign === "O",
+          clickNone: mainTab[9].sign !== "",
         })}
         onClick={() => {
           clickBox(9);
@@ -111,6 +123,7 @@ export default function BackWall(props) {
           blue_X: mainTab[18].sign === "X",
           redHover: userSign === 1 && mainTab[18].sign === "",
           red_O: mainTab[18].sign === "O",
+          clickNone: mainTab[18].sign !== "",
         })}
         onClick={() => {
           clickBox(18);
@@ -125,6 +138,7 @@ export default function BackWall(props) {
           blue_X: mainTab[3].sign === "X",
           redHover: userSign === 1 && mainTab[3].sign === "",
           red_O: mainTab[3].sign === "O",
+          clickNone: mainTab[3].sign !== "",
         })}
         onClick={() => {
           clickBox(3);
@@ -138,6 +152,7 @@ export default function BackWall(props) {
           blue_X: mainTab[10].sign === "X",
           redHover: userSign === 1 && mainTab[10].sign === "",
           red_O: mainTab[10].sign === "O",
+          clickNone: mainTab[10].sign !== "",
         })}
         onClick={() => {
           clickBox(10);
@@ -151,6 +166,7 @@ export default function BackWall(props) {
           blue_X: mainTab[15].sign === "X",
           redHover: userSign === 1 && mainTab[15].sign === "",
           red_O: mainTab[15].sign === "O",
+          clickNone: mainTab[15].sign !== "",
         })}
         onClick={() => {
           clickBox(15);

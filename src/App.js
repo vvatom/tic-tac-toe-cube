@@ -1,10 +1,10 @@
 import './App.css';
-import Cube from './components/cube';
+import MainCube from './components/mainCube';
 
 function App() {
   return (
     <div className="App">
-      <Cube></Cube>
+      <MainCube></MainCube>
     </div>
   );
 }

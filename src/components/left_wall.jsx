@@ -18,8 +18,15 @@ const winningCombinations = [
 ];
 
 export default function LeftWall(props) {
-  const { mainTab, clickBox, userSign, validateWall, setXCount, setOCount } =
-    props;
+  const {
+    mainTab,
+    clickBox,
+    userSign,
+    validateWall,
+    setXCount,
+    setOCount,
+    rostateState,
+  } = props;
 
   const [isWin, setIsWin] = useState(true);
 
@@ -36,7 +43,7 @@ export default function LeftWall(props) {
         setIsWin(false);
       }
     }
-  }, [mainTab]);
+  }, [mainTab, isWin, setOCount, setXCount, validateWall]);
   return (
     <div className="leftWallContainer">
       <div
@@ -45,6 +52,7 @@ export default function LeftWall(props) {
           blue_X: mainTab[1].sign === "X",
           redHover: userSign === 1 && mainTab[1].sign === "",
           red_O: mainTab[1].sign === "O",
+          clickNone: mainTab[1].sign !== "",
         })}
         onClick={() => {
           clickBox(1);
@@ -58,6 +66,7 @@ export default function LeftWall(props) {
           blue_X: mainTab[2].sign === "X",
           redHover: userSign === 1 && mainTab[2].sign === "",
           red_O: mainTab[2].sign === "O",
+          clickNone: mainTab[2].sign !== "",
         })}
         onClick={() => {
           clickBox(2);
@@ -71,6 +80,7 @@ export default function LeftWall(props) {
           blue_X: mainTab[3].sign === "X",
           redHover: userSign === 1 && mainTab[3].sign === "",
           red_O: mainTab[3].sign === "O",
+          clickNone: mainTab[3].sign !== "",
         })}
         onClick={() => {
           clickBox(3);
@@ -85,6 +95,7 @@ export default function LeftWall(props) {
           blue_X: mainTab[24].sign === "X",
           redHover: userSign === 1 && mainTab[24].sign === "",
           red_O: mainTab[24].sign === "O",
+          clickNone: mainTab[24].sign !== "",
         })}
         onClick={() => {
           clickBox(24);
@@ -98,6 +109,7 @@ export default function LeftWall(props) {
           blue_X: mainTab[25].sign === "X",
           redHover: userSign === 1 && mainTab[25].sign === "",
           red_O: mainTab[25].sign === "O",
+          clickNone: mainTab[25].sign !== "",
         })}
         onClick={() => {
           clickBox(25);
@@ -111,6 +123,7 @@ export default function LeftWall(props) {
           blue_X: mainTab[4].sign === "X",
           redHover: userSign === 1 && mainTab[4].sign === "",
           red_O: mainTab[4].sign === "O",
+          clickNone: mainTab[4].sign !== "",
         })}
         onClick={() => {
           clickBox(4);
@@ -125,6 +138,7 @@ export default function LeftWall(props) {
           blue_X: mainTab[7].sign === "X",
           redHover: userSign === 1 && mainTab[7].sign === "",
           red_O: mainTab[7].sign === "O",
+          clickNone: mainTab[7].sign !== "",
         })}
         onClick={() => {
           clickBox(7);
@@ -138,6 +152,7 @@ export default function LeftWall(props) {
           blue_X: mainTab[6].sign === "X",
           redHover: userSign === 1 && mainTab[6].sign === "",
           red_O: mainTab[6].sign === "O",
+          clickNone: mainTab[6].sign !== "",
         })}
         onClick={() => {
           clickBox(6);
@@ -151,6 +166,7 @@ export default function LeftWall(props) {
           blue_X: mainTab[5].sign === "X",
           redHover: userSign === 1 && mainTab[5].sign === "",
           red_O: mainTab[5].sign === "O",
+          clickNone: mainTab[5].sign !== "",
         })}
         onClick={() => {
           clickBox(5);

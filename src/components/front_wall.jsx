@@ -36,7 +36,7 @@ export default function FrontWall(props) {
         setIsWin(false);
       }
     }
-  }, [mainTab]);
+  }, [mainTab, isWin, setOCount, setXCount, validateWall]);
   return (
     <div className="frontWallContainer">
       <div
@@ -45,6 +45,7 @@ export default function FrontWall(props) {
           blue_X: mainTab[5].sign === "X",
           redHover: userSign === 1 && mainTab[5].sign === "",
           red_O: mainTab[5].sign === "O",
+          clickNone: mainTab[5].sign !== "",
         })}
         onClick={() => {
           clickBox(5);
@@ -58,6 +59,7 @@ export default function FrontWall(props) {
           blue_X: mainTab[12].sign === "X",
           redHover: userSign === 1 && mainTab[12].sign === "",
           red_O: mainTab[12].sign === "O",
+          clickNone: mainTab[12].sign !== "",
         })}
         onClick={() => {
           clickBox(12);
@@ -71,6 +73,7 @@ export default function FrontWall(props) {
           blue_X: mainTab[17].sign === "X",
           redHover: userSign === 1 && mainTab[17].sign === "",
           red_O: mainTab[17].sign === "O",
+          clickNone: mainTab[17].sign !== "",
         })}
         onClick={() => {
           clickBox(17);
@@ -85,6 +88,7 @@ export default function FrontWall(props) {
           blue_X: mainTab[6].sign === "X",
           redHover: userSign === 1 && mainTab[6].sign === "",
           red_O: mainTab[6].sign === "O",
+          clickNone: mainTab[6].sign !== "",
         })}
         onClick={() => {
           clickBox(6);
@@ -93,11 +97,12 @@ export default function FrontWall(props) {
         <p>{mainTab[6].sign}</p>
       </div>
       <div
-        className={classNames("frontWallContainer__leftCenterCorner", {
+        className={classNames("frontWallContainer__middleCenterUp", {
           blueHover: userSign === 0 && mainTab[13].sign === "",
           blue_X: mainTab[13].sign === "X",
           redHover: userSign === 1 && mainTab[13].sign === "",
           red_O: mainTab[13].sign === "O",
+          clickNone: mainTab[13].sign !== "",
         })}
         onClick={() => {
           clickBox(13);
@@ -111,6 +116,7 @@ export default function FrontWall(props) {
           blue_X: mainTab[20].sign === "X",
           redHover: userSign === 1 && mainTab[20].sign === "",
           red_O: mainTab[20].sign === "O",
+          clickNone: mainTab[20].sign !== "",
         })}
         onClick={() => {
           clickBox(20);
@@ -125,6 +131,7 @@ export default function FrontWall(props) {
           blue_X: mainTab[7].sign === "X",
           redHover: userSign === 1 && mainTab[7].sign === "",
           red_O: mainTab[7].sign === "O",
+          clickNone: mainTab[7].sign !== "",
         })}
         onClick={() => {
           clickBox(7);
@@ -138,6 +145,7 @@ export default function FrontWall(props) {
           blue_X: mainTab[14].sign === "X",
           redHover: userSign === 1 && mainTab[14].sign === "",
           red_O: mainTab[14].sign === "O",
+          clickNone: mainTab[14].sign !== "",
         })}
         onClick={() => {
           clickBox(14);
@@ -151,6 +159,7 @@ export default function FrontWall(props) {
           blue_X: mainTab[23].sign === "X",
           redHover: userSign === 1 && mainTab[23].sign === "",
           red_O: mainTab[23].sign === "O",
+          clickNone: mainTab[23].sign !== "",
         })}
         onClick={() => {
           clickBox(23);

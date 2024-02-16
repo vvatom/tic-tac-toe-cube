@@ -1,0 +1,91 @@
+.cubeContainer{
+    position:relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    width:90vw;
+    height: 90vh;
+    background-color: rgb(13, 13, 13);
+}
+
+.counterContainer{
+  position:absolute;
+  bottom:0;
+  color:white;
+  font-size: 3rem;
+    display:flex;
+    flex-direction:row;
+    gap:15vh;
+}
+
+.cube{
+  font-size: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+  width:42vh;
+  height: 42vh;
+  transform-style: preserve-3d;
+  transform:rotate3d(0, 0, 0, 0deg);
+}
+
+.cube_front{
+  /* purple */
+  transform: translateZ(20vh);
+  position:absolute;
+  width:40.1vh;
+  height: 40.1vh;
+  opacity:1;
+}
+
+.cube_right{
+  /* yellow */
+  transform-origin: center center;
+  transform: rotateY(90deg) rotateZ(90deg) translateZ(20vh);;
+  position:absolute;
+  width:40.1vh;
+  height: 40.1vh;
+  opacity:1;
+}
+
+.cube_back{
+  /* lime */
+  transform-origin: center center;
+  transform: rotateX(180deg) translateZ(20vh);
+  position:absolute;
+  width:40.1vh;
+  height: 40.1vh;
+  opacity:1;
+}
+
+.cube_left{
+  /* green */
+  transform-origin: center center;
+  transform: rotateY(-90deg) rotateZ(-90deg) translateZ(20vh);;
+  position:absolute;
+  width:40.1vh;
+  height: 40.1vh;
+  opacity:1;
+}
+
+.cube_upper{
+  /* skyblue */
+  transform-origin: center center;
+  transform: rotateX(90deg) translateZ(20vh);;
+  position:absolute;
+  width:40.1vh;
+  height: 40.1vh;
+  opacity:1;
+}
+
+.cube_bottom{
+  /* pink */
+  transform-origin: center center;
+  transform: rotateX(-90deg) translateZ(20vh);
+  position:absolute;
+  width:40.1vh;
+  height: 40.1vh;
+  opacity:1;
+}
