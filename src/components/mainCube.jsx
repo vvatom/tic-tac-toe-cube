@@ -197,8 +197,8 @@ export default function MainCube() {
         </div>
       </div>
       <div className="counterContainer">
-        <p>X : {xCount}</p>
-        <p>O : {oCount}</p>
+        <p>X : {xCount}/6</p>
+        <p>O : {oCount}/6</p>
       </div>
     </div>
   );

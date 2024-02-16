@@ -8,19 +8,31 @@
     height: 90vh;
     background-color: rgb(13, 13, 13);
 }
-
+@media only screen and (min-aspect-ratio: 1/1) {
 .counterContainer{
   position:absolute;
   bottom:0;
   color:white;
-  font-size: 3rem;
+  font-size: 5vh;
     display:flex;
     flex-direction:row;
     gap:15vh;
-}
+}}
 
+@media only screen and (max-aspect-ratio: 1/1) {
+  .counterContainer{
+    position:absolute;
+    bottom:0;
+    color:white;
+    font-size: 5vw;
+      display:flex;
+      flex-direction:row;
+      gap:15vw;
+  }}
+
+@media only screen and (min-aspect-ratio: 1/1) {
 .cube{
-  font-size: 6rem;
+  font-size: 8vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,8 +41,22 @@
   height: 42vh;
   transform-style: preserve-3d;
   transform:rotate3d(0, 0, 0, 0deg);
-}
+}}
+@media only screen and (max-aspect-ratio: 1/1) {
+  .cube{
+    font-size: 8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    width:42vw;
+    height: 42vw;
+    transform-style: preserve-3d;
+    transform:rotate3d(0, 0, 0, 0deg);
+  }}
+  
 
+@media only screen and (min-aspect-ratio: 1/1) {
 .cube_front{
   /* purple */
   transform: translateZ(20vh);
@@ -38,8 +64,18 @@
   width:40.1vh;
   height: 40.1vh;
   opacity:1;
-}
+}}
+@media only screen and (max-aspect-ratio: 1/1) {
+  .cube_front{
+    /* purple */
+    transform: translateZ(20vw);
+    position:absolute;
+    width:40.1vw;
+    height: 40.1vw;
+    opacity:1;
+  }}
 
+  @media only screen and (min-aspect-ratio: 1/1) {
 .cube_right{
   /* yellow */
   transform-origin: center center;
@@ -48,8 +84,19 @@
   width:40.1vh;
   height: 40.1vh;
   opacity:1;
-}
+}}
+@media only screen and (max-aspect-ratio: 1/1) {
+  .cube_right{
+    /* yellow */
+    transform-origin: center center;
+    transform: rotateY(90deg) rotateZ(90deg) translateZ(20vw);;
+    position:absolute;
+    width:40.1vw;
+    height: 40.1vw;
+    opacity:1;
+  }}
 
+  @media only screen and (min-aspect-ratio: 1/1) {
 .cube_back{
   /* lime */
   transform-origin: center center;
@@ -58,8 +105,19 @@
   width:40.1vh;
   height: 40.1vh;
   opacity:1;
-}
+}}
+@media only screen and (max-aspect-ratio: 1/1) {
+  .cube_back{
+    /* lime */
+    transform-origin: center center;
+    transform: rotateX(180deg) translateZ(20vw);
+    position:absolute;
+    width:40.1vw;
+    height: 40.1vw;
+    opacity:1;
+  }}
 
+  @media only screen and (min-aspect-ratio: 1/1) {
 .cube_left{
   /* green */
   transform-origin: center center;
@@ -68,8 +126,19 @@
   width:40.1vh;
   height: 40.1vh;
   opacity:1;
-}
+}}
+@media only screen and (max-aspect-ratio: 1/1) {
+  .cube_left{
+    /* green */
+    transform-origin: center center;
+    transform: rotateY(-90deg) rotateZ(-90deg) translateZ(20vw);;
+    position:absolute;
+    width:40.1vw;
+    height: 40.1vw;
+    opacity:1;
+  }}
 
+  @media only screen and (min-aspect-ratio: 1/1) {
 .cube_upper{
   /* skyblue */
   transform-origin: center center;
@@ -78,8 +147,19 @@
   width:40.1vh;
   height: 40.1vh;
   opacity:1;
-}
+}}
+@media only screen and (max-aspect-ratio: 1/1) {
+  .cube_upper{
+    /* skyblue */
+    transform-origin: center center;
+    transform: rotateX(90deg) translateZ(20vw);;
+    position:absolute;
+    width:40.1vw;
+    height: 40.1vw;
+    opacity:1;
+  }}
 
+  @media only screen and (min-aspect-ratio: 1/1) {
 .cube_bottom{
   /* pink */
   transform-origin: center center;
@@ -88,4 +168,14 @@
   width:40.1vh;
   height: 40.1vh;
   opacity:1;
-}
+}}
+@media only screen and (max-aspect-ratio: 1/1) {
+  .cube_bottom{
+    /* pink */
+    transform-origin: center center;
+    transform: rotateX(-90deg) translateZ(20vw);
+    position:absolute;
+    width:40.1vw;
+    height: 40.1vw;
+    opacity:1;
+  }}
