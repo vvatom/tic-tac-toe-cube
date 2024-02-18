@@ -1,0 +1,46 @@
+.counterTimer{
+    background-color: rgb(36, 36, 36);;
+    border-radius: 30px;
+  }
+  
+  .counterX{
+    background-color: rgb(36, 36, 36);;
+    border-radius: 30px;
+    transition: 0.3s ease-in-out
+  }.counterXselect{
+    background-color: blue;
+    box-shadow: 0 0 2vh blue;
+    text-shadow: 0 0 1vh white;
+  }
+  
+  .counterO{
+    background-color: rgb(36, 36, 36);;
+    border-radius: 30px;
+    transition: 0.3s ease-in-out
+  }.counterOselect{
+    background-color: red;
+    box-shadow: 0 0 2vh red;
+    text-shadow: 0 0 1vh white;
+  }
+  
+  @media only screen and (min-aspect-ratio: 1/1) {
+  .counterContainer{
+    position:absolute;
+    bottom:-3vh;
+    color:white;
+    font-size: 5vh;
+      display:flex;
+      flex-direction:row;
+      gap:5vh;
+  }}
+  
+  @media only screen and (max-aspect-ratio: 1/1) {
+    .counterContainer{
+      position:absolute;
+      bottom:-3vw;
+      color:white;
+      font-size: 5vw;
+        display:flex;
+        flex-direction:row;
+        gap:5vw;
+    }}

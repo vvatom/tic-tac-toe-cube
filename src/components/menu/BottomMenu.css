@@ -1,0 +1,216 @@
+.bottomMenuContainer{
+    top:0;
+    left:0;
+    position:absolute;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap:5%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+.bottomMenuContainer__leftUpCorner{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 0% 0% 30% 0%;
+}
+
+.bottomMenuContainer__middleUp{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 0% 0% 30% 30%;
+}
+
+.bottomMenuContainer__righttUpCorner{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 0% 0% 0% 30%;
+}
+
+
+.bottomMenuContainer__leftCenter{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 0% 30% 30% 0%;
+    background-color:rgb(30, 30, 30);
+}
+
+.bottomMenuContainer__middleCenter{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 3.5vh;
+    color:white;
+    border-radius: 30% 30% 30% 30%;
+    background-color:rgb(30, 30, 30);
+}
+
+.bottomMenuContainer__rightCenter{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 30% 0% 0% 30%;
+}
+
+
+.bottomMenuContainer__leftdownCorner{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 0% 30% 0% 0%;
+    background-color:rgb(30, 30, 30);
+}
+
+.bottomMenuContainer__centerDownCorner{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 30% 30% 0% 0%;
+    background-color:rgb(30, 30, 30);
+}
+
+.bottomMenuContainer__rightDownCorner{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 30% 0% 0% 0%;
+}
+
+.bottomMenuContainer__RedHover{
+    background-color: red;
+    box-shadow: 0px 0px 5vh red;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+    transition: 0.2s ease-in-out;
+}.bottomMenuContainer__RedNotHover{
+    background-color:rgb(30, 30, 30);
+    color:black;
+    transition: 0.4s ease-in-out;
+}.bottomMenuContainer__RedGameMode{
+    background-color: red;
+    box-shadow: 0px 0px 5vh red;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+}
+
+.bottomMenuContainer__BlueHover{
+    background-color: blue;
+    box-shadow: 0px 0px 5vh blue;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+    transition: 0.2s ease-in-out;
+}.bottomMenuContainer__BlueNotHover{
+    background-color:rgb(30, 30, 30);
+    color:black;
+    transition: 0.4s ease-in-out;
+}.bottomMenuContainer__BlueGameMode{
+    background-color: blue;
+    box-shadow: 0px 0px 5vh blue;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+}
+
+.bottomMenuContainer__FirebrickHover{
+    background-color: Firebrick;
+    box-shadow: 0px 0px 5vh Firebrick;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+    transition: 0.2s ease-in-out;
+}.bottomMenuContainer__FirebrickNotHover{
+    background-color:rgb(30, 30, 30);
+    color:black;
+    transition: 0.4s ease-in-out;
+}.bottomMenuContainer__FirebrickGameMode{
+    background-color: Firebrick;
+    box-shadow: 0px 0px 5vh Firebrick;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+}
+
+.bottomMenuContainer__OrangeHover{
+    background-color: Orange;
+    box-shadow: 0px 0px 5vh Orange;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+    transition: 0.2s ease-in-out;
+}.bottomMenuContainer__OrangeNotHover{
+    background-color:rgb(30, 30, 30);
+    color:black;
+    transition: 0.4s ease-in-out;
+}.bottomMenuContainer__OrangeGameMode{
+    background-color: Orange;
+    box-shadow: 0px 0px 5vh Orange;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+}
+
+.bottomMenuContainer__GreenHover{
+    background-color: Green;
+    box-shadow: 0px 0px 5vh Green;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+    transition: 0.2s ease-in-out;
+}.bottomMenuContainer__GreenNotHover{
+    background-color:rgb(30, 30, 30);
+    color:black;
+    transition: 0.4s ease-in-out;
+}.bottomMenuContainer__GreenGameMode{
+    background-color: Green;
+    box-shadow: 0px 0px 5vh Green;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+}
+
+.bottomMenu_pointerEventsNone{
+    pointer-events: none;
+}

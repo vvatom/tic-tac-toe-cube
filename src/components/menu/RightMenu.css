@@ -1,0 +1,221 @@
+.secondMenuContainer{
+    top:0;
+    left:0;
+    position:absolute;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap:5%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+img{
+    width: 50%;
+    height: 50%;
+}
+
+.secondMenuContainer__leftUpCorner{
+    transform: rotate(-90deg);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:black;
+    border-radius: 0% 0% 0% 30%;
+}
+
+.secondMenuContainer__middleUp{
+    transform: rotate(-90deg);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:black;
+    border-radius: 30% 0% 0% 30%;
+}
+
+.secondMenuContainer__righttUpCorner{
+    transform: rotate(-90deg);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:black;
+    border-radius: 30% 0% 0% 00%;
+}
+
+.secondMenuContainer__leftCenter{
+    transform: rotate(-90deg);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 0% 0% 30% 30%;
+}
+
+.secondMenuContainer__middleCenter{
+    transform: rotate(-90deg);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 3.5vh;
+    color:white;
+    border-radius: 30% 30% 30% 30%;
+}
+
+.secondMenuContainer__rightCenter{
+    transform: rotate(-90deg);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 30% 30% 0% 0%;
+}
+
+.secondMenuContainer__leftdownCorner{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 0% 30% 0% 0%;
+}
+
+.secondMenuContainer__centerDownCorner{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 30% 30% 0% 0%;
+}
+
+.secondMenuContainer__rightDownCorner{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 30% 0% 0% 0%;
+}
+
+.secondMenuContainer__RedHover{
+    background-color: red;
+    box-shadow: 0px 0px 5vh red;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+    transition: 0.2s ease-in-out;
+}.secondMenuContainer__RedNotHover{
+    background-color:rgb(33, 33, 33);;
+    color:black;
+    transition: 0.4s ease-in-out;
+}.secondMenuContainer__RedGameMode{
+    background-color: red;
+    box-shadow: 0px 0px 5vh red;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+}
+
+.secondMenuContainer__BlueHover{
+    background-color: blue;
+    box-shadow: 0px 0px 5vh blue;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+    transition: 0.2s ease-in-out;
+}.secondMenuContainer__BlueNotHover{
+    background-color:rgb(33, 33, 33);;
+    color:black;
+    transition: 0.4s ease-in-out;
+}.secondMenuContainer__BlueGameMode{
+    background-color: blue;
+    box-shadow: 0px 0px 5vh blue;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+}
+
+.secondMenuContainer__RoyalblueHover{
+    background-color: Royalblue;
+    box-shadow: 0px 0px 5vh Royalblue;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+    transition: 0.2s ease-in-out;
+}.secondMenuContainer__RoyalblueNotHover{
+    background-color:rgb(33, 33, 33);;
+    color:black;
+    transition: 0.4s ease-in-out;
+}.secondMenuContainer__RoyalblueGameMode{
+    background-color: Royalblue;
+    box-shadow: 0px 0px 5vh Royalblue;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+}
+
+.secondMenuContainer__MidnightblueHover{
+    background-color: Midnightblue;
+    box-shadow: 0px 0px 5vh Midnightblue;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+    transition: 0.2s ease-in-out;
+}.secondMenuContainer__MidnightblueNotHover{
+    background-color:rgb(33, 33, 33);;
+    color:black;
+    transition: 0.4s ease-in-out;
+}.secondMenuContainer__MidnightblueGameMode{
+    background-color: Midnightblue;
+    box-shadow: 0px 0px 5vh Midnightblue;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+}
+
+.secondMenuContainer__FirebrickHover{
+    background-color: Firebrick;
+    box-shadow: 0px 0px 5vh Firebrick;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+    transition: 0.2s ease-in-out;
+}.secondMenuContainer__FirebrickNotHover{
+    background-color:rgb(33, 33, 33);;
+    color:black;
+    transition: 0.4s ease-in-out;
+}.secondMenuContainer__FirebrickGameMode{
+    background-color: Firebrick;
+    box-shadow: 0px 0px 5vh Firebrick;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+}
+
+.secondPointerEventsNone{
+    pointer-events: none;
+}

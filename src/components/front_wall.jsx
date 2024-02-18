@@ -18,8 +18,15 @@ const winningCombinations = [
 ];
 
 export default function FrontWall(props) {
-  const { mainTab, clickBox, userSign, validateWall, setXCount, setOCount } =
-    props;
+  const {
+    mainTab,
+    clickBox,
+    userSign,
+    validateWall,
+    setXCount,
+    setOCount,
+    hoverBox,
+  } = props;
 
   const [isWin, setIsWin] = useState(true);
 
@@ -41,12 +48,20 @@ export default function FrontWall(props) {
     <div className="frontWallContainer">
       <div
         className={classNames("frontWallContainer__leftUpCorner", {
-          blueHover: userSign === 0 && mainTab[5].sign === "",
-          blue_X: mainTab[5].sign === "X",
-          redHover: userSign === 1 && mainTab[5].sign === "",
-          red_O: mainTab[5].sign === "O",
-          clickNone: mainTab[5].sign !== "",
+          blueHover_front:
+            userSign === 0 && mainTab[5].sign === "" && mainTab[5].hovered,
+          blueNotHover_front:
+            userSign === 0 && mainTab[5].sign === "" && !mainTab[5].hovered,
+          blue_X_front: mainTab[5].sign === "X",
+          redHover_front:
+            userSign === 1 && mainTab[5].sign === "" && mainTab[5].hovered,
+          redNotHover_front:
+            userSign === 1 && mainTab[5].sign === "" && !mainTab[5].hovered,
+          red_O_front: mainTab[5].sign === "O",
+          clickNone_front: mainTab[5].sign !== "",
         })}
+        onMouseEnter={() => hoverBox(5, true)}
+        onMouseLeave={() => hoverBox(5, false)}
         onClick={() => {
           clickBox(5);
         }}
@@ -55,12 +70,20 @@ export default function FrontWall(props) {
       </div>
       <div
         className={classNames("frontWallContainer__middleUp", {
-          blueHover: userSign === 0 && mainTab[12].sign === "",
-          blue_X: mainTab[12].sign === "X",
-          redHover: userSign === 1 && mainTab[12].sign === "",
-          red_O: mainTab[12].sign === "O",
-          clickNone: mainTab[12].sign !== "",
+          blueHover_front:
+            userSign === 0 && mainTab[12].sign === "" && mainTab[12].hovered,
+          blueNotHover_front:
+            userSign === 0 && mainTab[12].sign === "" && !mainTab[12].hovered,
+          blue_X_front: mainTab[12].sign === "X",
+          redHover_front:
+            userSign === 1 && mainTab[12].sign === "" && mainTab[12].hovered,
+          redNotHover_front:
+            userSign === 1 && mainTab[12].sign === "" && !mainTab[12].hovered,
+          red_O_front: mainTab[12].sign === "O",
+          clickNone_front: mainTab[12].sign !== "",
         })}
+        onMouseEnter={() => hoverBox(12, true)}
+        onMouseLeave={() => hoverBox(12, false)}
         onClick={() => {
           clickBox(12);
         }}
@@ -69,12 +92,20 @@ export default function FrontWall(props) {
       </div>
       <div
         className={classNames("frontWallContainer__rightUpCorner", {
-          blueHover: userSign === 0 && mainTab[17].sign === "",
-          blue_X: mainTab[17].sign === "X",
-          redHover: userSign === 1 && mainTab[17].sign === "",
-          red_O: mainTab[17].sign === "O",
-          clickNone: mainTab[17].sign !== "",
+          blueHover_front:
+            userSign === 0 && mainTab[17].sign === "" && mainTab[17].hovered,
+          blueNotHover_front:
+            userSign === 0 && mainTab[17].sign === "" && !mainTab[17].hovered,
+          blue_X_front: mainTab[17].sign === "X",
+          redHover_front:
+            userSign === 1 && mainTab[17].sign === "" && mainTab[17].hovered,
+          redNotHover_front:
+            userSign === 1 && mainTab[17].sign === "" && !mainTab[17].hovered,
+          red_O_front: mainTab[17].sign === "O",
+          clickNone_front: mainTab[17].sign !== "",
         })}
+        onMouseEnter={() => hoverBox(17, true)}
+        onMouseLeave={() => hoverBox(17, false)}
         onClick={() => {
           clickBox(17);
         }}
@@ -84,12 +115,20 @@ export default function FrontWall(props) {
 
       <div
         className={classNames("frontWallContainer__leftCenterCorner", {
-          blueHover: userSign === 0 && mainTab[6].sign === "",
-          blue_X: mainTab[6].sign === "X",
-          redHover: userSign === 1 && mainTab[6].sign === "",
-          red_O: mainTab[6].sign === "O",
-          clickNone: mainTab[6].sign !== "",
+          blueHover_front:
+            userSign === 0 && mainTab[6].sign === "" && mainTab[6].hovered,
+          blueNotHover_front:
+            userSign === 0 && mainTab[6].sign === "" && !mainTab[6].hovered,
+          blue_X_front: mainTab[6].sign === "X",
+          redHover_front:
+            userSign === 1 && mainTab[6].sign === "" && mainTab[6].hovered,
+          redNotHover_front:
+            userSign === 1 && mainTab[6].sign === "" && !mainTab[6].hovered,
+          red_O_front: mainTab[6].sign === "O",
+          clickNone_front: mainTab[6].sign !== "",
         })}
+        onMouseEnter={() => hoverBox(6, true)}
+        onMouseLeave={() => hoverBox(6, false)}
         onClick={() => {
           clickBox(6);
         }}
@@ -98,12 +137,20 @@ export default function FrontWall(props) {
       </div>
       <div
         className={classNames("frontWallContainer__middleCenterUp", {
-          blueHover: userSign === 0 && mainTab[13].sign === "",
-          blue_X: mainTab[13].sign === "X",
-          redHover: userSign === 1 && mainTab[13].sign === "",
-          red_O: mainTab[13].sign === "O",
-          clickNone: mainTab[13].sign !== "",
+          blueHover_front:
+            userSign === 0 && mainTab[13].sign === "" && mainTab[13].hovered,
+          blueNotHover_front:
+            userSign === 0 && mainTab[13].sign === "" && !mainTab[13].hovered,
+          blue_X_front: mainTab[13].sign === "X",
+          redHover_front:
+            userSign === 1 && mainTab[13].sign === "" && mainTab[13].hovered,
+          redNotHover_front:
+            userSign === 1 && mainTab[13].sign === "" && !mainTab[13].hovered,
+          red_O_front: mainTab[13].sign === "O",
+          clickNone_front: mainTab[13].sign !== "",
         })}
+        onMouseEnter={() => hoverBox(13, true)}
+        onMouseLeave={() => hoverBox(13, false)}
         onClick={() => {
           clickBox(13);
         }}
@@ -112,12 +159,20 @@ export default function FrontWall(props) {
       </div>
       <div
         className={classNames("frontWallContainer__rightCenterorner", {
-          blueHover: userSign === 0 && mainTab[20].sign === "",
-          blue_X: mainTab[20].sign === "X",
-          redHover: userSign === 1 && mainTab[20].sign === "",
-          red_O: mainTab[20].sign === "O",
-          clickNone: mainTab[20].sign !== "",
+          blueHover_front:
+            userSign === 0 && mainTab[20].sign === "" && mainTab[20].hovered,
+          blueNotHover_front:
+            userSign === 0 && mainTab[20].sign === "" && !mainTab[20].hovered,
+          blue_X_front: mainTab[20].sign === "X",
+          redHover_front:
+            userSign === 1 && mainTab[20].sign === "" && mainTab[20].hovered,
+          redNotHover_front:
+            userSign === 1 && mainTab[20].sign === "" && !mainTab[20].hovered,
+          red_O_front: mainTab[20].sign === "O",
+          clickNone_front: mainTab[20].sign !== "",
         })}
+        onMouseEnter={() => hoverBox(20, true)}
+        onMouseLeave={() => hoverBox(20, false)}
         onClick={() => {
           clickBox(20);
         }}
@@ -127,12 +182,20 @@ export default function FrontWall(props) {
 
       <div
         className={classNames("frontWallContainer__leftDownCorner", {
-          blueHover: userSign === 0 && mainTab[7].sign === "",
-          blue_X: mainTab[7].sign === "X",
-          redHover: userSign === 1 && mainTab[7].sign === "",
-          red_O: mainTab[7].sign === "O",
-          clickNone: mainTab[7].sign !== "",
+          blueHover_front:
+            userSign === 0 && mainTab[7].sign === "" && mainTab[7].hovered,
+          blueNotHover_front:
+            userSign === 0 && mainTab[7].sign === "" && !mainTab[7].hovered,
+          blue_X_front: mainTab[7].sign === "X",
+          redHover_front:
+            userSign === 1 && mainTab[7].sign === "" && mainTab[7].hovered,
+          redNotHover_front:
+            userSign === 1 && mainTab[7].sign === "" && !mainTab[7].hovered,
+          red_O_front: mainTab[7].sign === "O",
+          clickNone_front: mainTab[7].sign !== "",
         })}
+        onMouseEnter={() => hoverBox(7, true)}
+        onMouseLeave={() => hoverBox(7, false)}
         onClick={() => {
           clickBox(7);
         }}
@@ -141,12 +204,20 @@ export default function FrontWall(props) {
       </div>
       <div
         className={classNames("frontWallContainer__middleDown", {
-          blueHover: userSign === 0 && mainTab[14].sign === "",
-          blue_X: mainTab[14].sign === "X",
-          redHover: userSign === 1 && mainTab[14].sign === "",
-          red_O: mainTab[14].sign === "O",
-          clickNone: mainTab[14].sign !== "",
+          blueHover_front:
+            userSign === 0 && mainTab[14].sign === "" && mainTab[14].hovered,
+          blueNotHover_front:
+            userSign === 0 && mainTab[14].sign === "" && !mainTab[14].hovered,
+          blue_X_front: mainTab[14].sign === "X",
+          redHover_front:
+            userSign === 1 && mainTab[14].sign === "" && mainTab[14].hovered,
+          redNotHover_front:
+            userSign === 1 && mainTab[14].sign === "" && !mainTab[14].hovered,
+          red_O_front: mainTab[14].sign === "O",
+          clickNone_front: mainTab[14].sign !== "",
         })}
+        onMouseEnter={() => hoverBox(14, true)}
+        onMouseLeave={() => hoverBox(14, false)}
         onClick={() => {
           clickBox(14);
         }}
@@ -155,12 +226,20 @@ export default function FrontWall(props) {
       </div>
       <div
         className={classNames("frontWallContainer__rightDownCorner", {
-          blueHover: userSign === 0 && mainTab[23].sign === "",
-          blue_X: mainTab[23].sign === "X",
-          redHover: userSign === 1 && mainTab[23].sign === "",
-          red_O: mainTab[23].sign === "O",
-          clickNone: mainTab[23].sign !== "",
+          blueHover_front:
+            userSign === 0 && mainTab[23].sign === "" && mainTab[23].hovered,
+          blueNotHover_front:
+            userSign === 0 && mainTab[23].sign === "" && !mainTab[23].hovered,
+          blue_X_front: mainTab[23].sign === "X",
+          redHover_front:
+            userSign === 1 && mainTab[23].sign === "" && mainTab[23].hovered,
+          redNotHover_front:
+            userSign === 1 && mainTab[23].sign === "" && !mainTab[23].hovered,
+          red_O_front: mainTab[23].sign === "O",
+          clickNone_front: mainTab[23].sign !== "",
         })}
+        onMouseEnter={() => hoverBox(23, true)}
+        onMouseLeave={() => hoverBox(23, false)}
         onClick={() => {
           clickBox(23);
         }}

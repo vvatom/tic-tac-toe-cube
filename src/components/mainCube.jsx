@@ -1,47 +1,61 @@
+import { useState, useEffect, useRef, useContext } from "react";
+import { Context } from "../App";
 import "./mainCube.css";
+
 import BackWall from "./back_wall";
 import BottomWall from "./bottom_wall";
 import FrontWall from "./front_wall";
 import LeftWall from "./left_wall";
 import RightWall from "./right_wall";
 import UpperWall from "./upper_wall";
-import { useState, useEffect, useRef } from "react";
+
+import Counter from "./counter";
+
+import FrontMenu from "./menu/FrontMenu";
+import BottomMenu from "./menu/BottomMenu";
+import RightMenu from "./menu/RightMenu";
+import LeftMenu from "./menu/LeftMenu";
+import BackMenu from "./menu/BackMenu";
+import UpperMenu from "./menu/UpperMenu";
+
+const MAIN_ARRAY = [
+  { id: 0, sign: "", hovered: false },
+  { id: 1, sign: "", hovered: false },
+  { id: 2, sign: "", hovered: false },
+  { id: 3, sign: "", hovered: false },
+  { id: 4, sign: "", hovered: false },
+  { id: 5, sign: "", hovered: false },
+  { id: 6, sign: "", hovered: false },
+  { id: 7, sign: "", hovered: false },
+  { id: 8, sign: "", hovered: false },
+  { id: 9, sign: "", hovered: false },
+  { id: 10, sign: "", hovered: false },
+  { id: 11, sign: "", hovered: false },
+  { id: 12, sign: "", hovered: false },
+  { id: 13, sign: "", hovered: false },
+  { id: 14, sign: "", hovered: false },
+  { id: 15, sign: "", hovered: false },
+  { id: 16, sign: "", hovered: false },
+  { id: 17, sign: "", hovered: false },
+  { id: 18, sign: "", hovered: false },
+  { id: 19, sign: "", hovered: false },
+  { id: 20, sign: "", hovered: false },
+  { id: 21, sign: "", hovered: false },
+  { id: 22, sign: "", hovered: false },
+  { id: 23, sign: "", hovered: false },
+  { id: 24, sign: "", hovered: false },
+  { id: 25, sign: "", hovered: false },
+];
 
 export default function MainCube() {
-  const [mainTab, setMainTab] = useState([
-    { id: 0, sign: "", color: "" },
-    { id: 1, sign: "", color: "" },
-    { id: 2, sign: "", color: "" },
-    { id: 3, sign: "", color: "" },
-    { id: 4, sign: "", color: "" },
-    { id: 5, sign: "", color: "" },
-    { id: 6, sign: "", color: "" },
-    { id: 7, sign: "", color: "" },
-    { id: 8, sign: "", color: "" },
-    { id: 9, sign: "", color: "" },
-    { id: 10, sign: "", color: "" },
-    { id: 11, sign: "", color: "" },
-    { id: 12, sign: "", color: "" },
-    { id: 13, sign: "", color: "" },
-    { id: 14, sign: "", color: "" },
-    { id: 15, sign: "", color: "" },
-    { id: 16, sign: "", color: "" },
-    { id: 17, sign: "", color: "" },
-    { id: 18, sign: "", color: "" },
-    { id: 19, sign: "", color: "" },
-    { id: 20, sign: "", color: "" },
-    { id: 21, sign: "", color: "" },
-    { id: 22, sign: "", color: "" },
-    { id: 23, sign: "", color: "" },
-    { id: 24, sign: "", color: "" },
-    { id: 25, sign: "", color: "" },
-  ]);
+  const [mainTab, setMainTab] = useState(MAIN_ARRAY);
 
+  const [gameRules, setGameRules] = useContext(Context);
   const [userSign, setUserSign] = useState(0);
   const [xCount, setXCount] = useState(0);
   const [oCount, setOCount] = useState(0);
   const [position, setPosition] = useState({
-    transform: `rotateX(45deg) rotateY(-45deg)`,
+    transform: `rotateX(15deg) rotateY(-45deg)`,
   });
 
   const divCube = useRef(null);
@@ -113,93 +127,135 @@ export default function MainCube() {
       setUserSign(userSign + 1);
       setMainTab(
         mainTab.map((x) => {
-          if (x.id === id) {
-            x.sign = "X";
-          }
-          return x;
+          return { ...x, sign: x.id === id ? "X" : x.sign };
         })
       );
     } else {
       setUserSign(userSign - 1);
       setMainTab(
         mainTab.map((x) => {
-          if (x.id === id) {
-            x.sign = "O";
-          }
-          return x;
+          return { ...x, sign: x.id === id ? "O" : x.sign };
         })
       );
     }
   }
 
+  function hoverBox(id, shouldHover) {
+    setMainTab((prevMainTab) =>
+      mainTab.map((x) => {
+        return { ...x, hovered: x.id === id ? shouldHover : false };
+      })
+    );
+  }
+
   return (
     <div className="cubeContainer">
+      <div
+        className="returnButton"
+        onClick={() => {
+          setMainTab(MAIN_ARRAY);
+          setGameRules((prev) => {
+            return { ...prev, Play: false };
+          });
+        }}
+      ></div>
       <div ref={divCube} className="cube" style={position}>
         <div className="cube_front">
-          <FrontWall
-            mainTab={mainTab}
-            clickBox={clickBox}
-            userSign={userSign}
-            validateWall={validateWall}
-            setXCount={setXCount}
-            setOCount={setOCount}
-          />
+          {gameRules.Play ? (
+            <FrontWall
+              hoverBox={hoverBox}
+              mainTab={mainTab}
+              clickBox={clickBox}
+              userSign={userSign}
+              validateWall={validateWall}
+              setXCount={setXCount}
+              setOCount={setOCount}
+            />
+          ) : (
+            <FrontMenu hoverBox={hoverBox} mainTab={mainTab} />
+          )}
         </div>
         <div className="cube_right">
-          <RightWall
-            mainTab={mainTab}
-            clickBox={clickBox}
-            userSign={userSign}
-            validateWall={validateWall}
-            setXCount={setXCount}
-            setOCount={setOCount}
-          />
+          {gameRules.Play ? (
+            <RightWall
+              hoverBox={hoverBox}
+              mainTab={mainTab}
+              clickBox={clickBox}
+              userSign={userSign}
+              validateWall={validateWall}
+              setXCount={setXCount}
+              setOCount={setOCount}
+            />
+          ) : (
+            <RightMenu hoverBox={hoverBox} mainTab={mainTab} />
+          )}
         </div>
         <div className="cube_back">
-          <BackWall
-            mainTab={mainTab}
-            clickBox={clickBox}
-            userSign={userSign}
-            validateWall={validateWall}
-            setXCount={setXCount}
-            setOCount={setOCount}
-          />
+          {gameRules.Play ? (
+            <BackWall
+              hoverBox={hoverBox}
+              mainTab={mainTab}
+              clickBox={clickBox}
+              userSign={userSign}
+              validateWall={validateWall}
+              setXCount={setXCount}
+              setOCount={setOCount}
+            />
+          ) : (
+            <BackMenu hoverBox={hoverBox} mainTab={mainTab} />
+          )}
         </div>
         <div className="cube_left">
-          <LeftWall
-            mainTab={mainTab}
-            clickBox={clickBox}
-            userSign={userSign}
-            validateWall={validateWall}
-            setXCount={setXCount}
-            setOCount={setOCount}
-          />
+          {gameRules.Play ? (
+            <LeftWall
+              hoverBox={hoverBox}
+              mainTab={mainTab}
+              clickBox={clickBox}
+              userSign={userSign}
+              validateWall={validateWall}
+              setXCount={setXCount}
+              setOCount={setOCount}
+            />
+          ) : (
+            <LeftMenu hoverBox={hoverBox} mainTab={mainTab} />
+          )}
         </div>
         <div className="cube_upper">
-          <UpperWall
-            mainTab={mainTab}
-            clickBox={clickBox}
-            userSign={userSign}
-            validateWall={validateWall}
-            setXCount={setXCount}
-            setOCount={setOCount}
-          />
+          {gameRules.Play ? (
+            <UpperWall
+              hoverBox={hoverBox}
+              mainTab={mainTab}
+              clickBox={clickBox}
+              userSign={userSign}
+              validateWall={validateWall}
+              setXCount={setXCount}
+              setOCount={setOCount}
+            />
+          ) : (
+            <UpperMenu hoverBox={hoverBox} mainTab={mainTab} />
+          )}
         </div>
         <div className="cube_bottom">
-          <BottomWall
-            mainTab={mainTab}
-            clickBox={clickBox}
-            userSign={userSign}
-            validateWall={validateWall}
-            setXCount={setXCount}
-            setOCount={setOCount}
-          />
+          {gameRules.Play ? (
+            <BottomWall
+              hoverBox={hoverBox}
+              mainTab={mainTab}
+              clickBox={clickBox}
+              userSign={userSign}
+              validateWall={validateWall}
+              setXCount={setXCount}
+              setOCount={setOCount}
+            />
+          ) : (
+            <BottomMenu hoverBox={hoverBox} mainTab={mainTab} />
+          )}
         </div>
       </div>
-      <div className="counterContainer">
-        <p>X : {xCount}/6</p>
-        <p>O : {oCount}/6</p>
-      </div>
+      {gameRules.Play ? (
+        <Counter userSign={userSign} xCount={xCount} oCount={oCount} />
+      ) : (
+        ""
+      )}
     </div>
   );
 }

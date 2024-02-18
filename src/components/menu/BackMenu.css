@@ -1,0 +1,155 @@
+.backMenuContainer{
+    transform: rotate(180deg);
+    top:0;
+    left:0;
+    position:absolute;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap:5%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+.backMenuContainer__leftUpCorner{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 0% 0% 30% 0%;
+    color:black;
+}
+
+.backMenuContainer__middleUp{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 0% 0% 30% 30%;
+    background-color: rgb(36, 36, 36);
+    color:black;
+}
+
+.backMenuContainer__righttUpCorner{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 0% 0% 0% 30%;
+    background-color: rgb(36, 36, 36);
+    color:black;
+}
+
+.backMenuContainer__leftCenter{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 0% 30% 30% 0%;
+    color:black;
+}
+
+.backMenuContainer__middleCenter{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 3.5vh;
+    color:white;
+    border-radius: 30% 30% 30% 30%;
+    background-color: rgb(36, 36, 36);
+    color:black;
+}
+
+.backMenuContainer__rightCenter{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 30% 0% 0% 30%;
+    background-color: rgb(36, 36, 36);
+    color:black;
+}
+
+
+.backMenuContainer__leftdownCorner{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 0% 30% 0% 0%;
+    color:black;
+}
+
+.backMenuContainer__centerDownCorner{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 30% 30% 0% 0%;
+    background-color: rgb(36, 36, 36);
+    color:black;
+}
+
+.backMenuContainer__rightDownCorner{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    font-size: 2vh;
+    color:white;
+    border-radius: 30% 0% 0% 0%;
+    background-color: rgb(36, 36, 36);
+    color:black;
+}
+
+.backMenuContainer__BlueHover{
+    background-color: blue;
+    box-shadow: 0px 0px 5vh blue;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+    transition: 0.2s ease-in-out;
+}.backMenuContainer__BlueNotHover{
+    background-color:rgb(33, 33, 33);;
+    color:black;
+    transition: 0.4s ease-in-out;
+}.backMenuContainer__BlueGameMode{
+    background-color: blue;
+    box-shadow: 0px 0px 5vh blue;
+    color:white;
+    text-shadow: 0px 0px 1vh white;
+}
