@@ -16,6 +16,7 @@ export default function UpperMenu(props) {
           upperMenuContainer__BlueGameMode: gameRules.Board === "ScoreBoard",
           upperMenuContainer__BlueHover: mainTab[15].hovered,
           upperMenuContainer__BlueNotHover: !mainTab[15].hovered,
+          whiteLoad_UpperMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(15, true)}
         onMouseLeave={() => hoverBox(15, false)}
@@ -31,6 +32,7 @@ export default function UpperMenu(props) {
         className={classNames("upperMenuContainer__rightCenter", {
           upperMenuContainer__RoyalblueHover: mainTab[16].hovered,
           upperMenuContainer__RoyalblueNotHover: !mainTab[16].hovered,
+          whiteLoad_UpperMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(16, true)}
         onMouseLeave={() => hoverBox(16, false)}
@@ -41,6 +43,7 @@ export default function UpperMenu(props) {
           upperMenuContainer__RedGameMode: gameRules.GameMode === "FreeForAll",
           upperMenuContainer__RedHover: mainTab[5].hovered,
           upperMenuContainer__RedNotHover: !mainTab[5].hovered,
+          whiteLoad_UpperMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(5, true)}
         onMouseLeave={() => hoverBox(5, false)}
@@ -56,6 +59,7 @@ export default function UpperMenu(props) {
             gameRules.GameMode === "CubeTicTacToe",
           upperMenuContainer__RedHover: mainTab[12].hovered,
           upperMenuContainer__RedNotHover: !mainTab[12].hovered,
+          whiteLoad_UpperMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(12, true)}
         onMouseLeave={() => hoverBox(12, false)}
@@ -71,6 +75,7 @@ export default function UpperMenu(props) {
             gameRules.GameMode === "MegaTicTacToe",
           upperMenuContainer__RedHover: mainTab[17].hovered,
           upperMenuContainer__RedNotHover: !mainTab[17].hovered,
+          whiteLoad_UpperMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(17, true)}
         onMouseLeave={() => hoverBox(17, false)}

@@ -191,3 +191,22 @@ img{
 .leftMenu_pointerEventsNone{
     pointer-events: none;
 }
+
+.whiteLoad_LeftMenu{
+    animation-name: whiteLoadLeftAnim;
+    animation-duration: 0.9s;
+    animation-iteration-count: 1;
+}
+
+@keyframes whiteLoadLeftAnim {
+    0% {
+
+    }
+
+    90%,100% {
+        background-color:rgb(33, 33, 33);
+        box-shadow: 0px 0px 0px;
+        color:rgb(33, 33, 33);
+        text-shadow: 0px 0px 0px;
+      }
+  }

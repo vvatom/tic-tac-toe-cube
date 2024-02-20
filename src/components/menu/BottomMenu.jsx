@@ -16,6 +16,7 @@ export default function BottomMenu(props) {
             gameRules.Player === "PlayerVsPC" && gameRules.Level === "Easy",
           bottomMenuContainer__GreenHover: mainTab[7].hovered,
           bottomMenuContainer__GreenNotHover: !mainTab[7].hovered,
+          whiteLoad_BottomMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(7, true)}
         onMouseLeave={() => hoverBox(7, false)}
@@ -32,6 +33,7 @@ export default function BottomMenu(props) {
             gameRules.Player === "PlayerVsPC" && gameRules.Level === "Medium",
           bottomMenuContainer__OrangeHover: mainTab[14].hovered,
           bottomMenuContainer__OrangeNotHover: !mainTab[14].hovered,
+          whiteLoad_BottomMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(14, true)}
         onMouseLeave={() => hoverBox(14, false)}
@@ -48,6 +50,7 @@ export default function BottomMenu(props) {
             gameRules.Player === "PlayerVsPC" && gameRules.Level === "Hard",
           bottomMenuContainer__RedHover: mainTab[23].hovered,
           bottomMenuContainer__RedNotHover: !mainTab[23].hovered,
+          whiteLoad_BottomMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(23, true)}
         onMouseLeave={() => hoverBox(23, false)}
@@ -63,6 +66,7 @@ export default function BottomMenu(props) {
         className={classNames("bottomMenuContainer__rightCenter", {
           bottomMenuContainer__FirebrickHover: mainTab[22].hovered,
           bottomMenuContainer__FirebrickNotHover: !mainTab[22].hovered,
+          whiteLoad_BottomMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(22, true)}
         onMouseLeave={() => hoverBox(22, false)}
@@ -75,6 +79,7 @@ export default function BottomMenu(props) {
           bottomMenuContainer__BlueGameMode: gameRules.Board === "About",
           bottomMenuContainer__BlueHover: mainTab[21].hovered,
           bottomMenuContainer__BlueNotHover: !mainTab[21].hovered,
+          whiteLoad_BottomMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(21, true)}
         onMouseLeave={() => hoverBox(21, false)}

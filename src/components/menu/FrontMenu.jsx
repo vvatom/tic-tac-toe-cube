@@ -14,6 +14,7 @@ export default function FrontMenu(props) {
           mainMenuContainer__RedGameMode: gameRules.GameMode === "FreeForAll",
           mainMenuContainer__RedHover: mainTab[5].hovered,
           mainMenuContainer__RedNotHover: !mainTab[5].hovered,
+          whiteLoad_FrontMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(5, true)}
         onMouseLeave={() => hoverBox(5, false)}
@@ -31,6 +32,7 @@ export default function FrontMenu(props) {
             gameRules.GameMode === "CubeTicTacToe",
           mainMenuContainer__RedHover: mainTab[12].hovered,
           mainMenuContainer__RedNotHover: !mainTab[12].hovered,
+          whiteLoad_FrontMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(12, true)}
         onMouseLeave={() => hoverBox(12, false)}
@@ -48,6 +50,7 @@ export default function FrontMenu(props) {
             gameRules.GameMode === "MegaTicTacToe",
           mainMenuContainer__RedHover: mainTab[17].hovered,
           mainMenuContainer__RedNotHover: !mainTab[17].hovered,
+          whiteLoad_FrontMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(17, true)}
         onMouseLeave={() => hoverBox(17, false)}
@@ -67,6 +70,7 @@ export default function FrontMenu(props) {
             gameRules.Player === "PlayerVsPlayer",
           mainMenuContainer__BlueHover: mainTab[6].hovered,
           mainMenuContainer__BlueNotHover: !mainTab[6].hovered,
+          whiteLoad_FrontMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(6, true)}
         onMouseLeave={() => hoverBox(6, false)}
@@ -88,14 +92,26 @@ export default function FrontMenu(props) {
           mainMenuContainer__MagentaGameMode: gameRules.Play === true,
           mainMenuContainer__MagentaHover: mainTab[13].hovered,
           mainMenuContainer__MagentaNotHover: !mainTab[13].hovered,
+          whiteLoad_FrontMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(13, true)}
         onMouseLeave={() => hoverBox(13, false)}
-        onClick={() =>
+        onClick={() => {
           setGameRules((prev) => {
-            return { ...prev, Play: true };
-          })
-        }
+            return { ...prev, Camera: `rotateX(-45deg) rotateY(-1125deg)` };
+          });
+          setGameRules((prev) => {
+            return { ...prev, Load: true };
+          });
+          setTimeout(() => {
+            setGameRules((prev) => {
+              return { ...prev, Play: true };
+            });
+            setGameRules((prev) => {
+              return { ...prev, Load: false };
+            });
+          }, 800);
+        }}
       >
         PLAY
       </div>
@@ -105,6 +121,7 @@ export default function FrontMenu(props) {
           mainMenuContainer__BlueGameMode: gameRules.Player === "PlayerVsPC",
           mainMenuContainer__BlueHover: mainTab[20].hovered,
           mainMenuContainer__BlueNotHover: !mainTab[20].hovered,
+          whiteLoad_FrontMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(20, true)}
         onMouseLeave={() => hoverBox(20, false)}
@@ -127,6 +144,7 @@ export default function FrontMenu(props) {
             gameRules.Player === "PlayerVsPC" && gameRules.Level === "Easy",
           mainMenuContainer__GreenHover: mainTab[7].hovered,
           mainMenuContainer__GreenNotHover: !mainTab[7].hovered,
+          whiteLoad_FrontMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(7, true)}
         onMouseLeave={() => hoverBox(7, false)}
@@ -145,6 +163,7 @@ export default function FrontMenu(props) {
             gameRules.Player === "PlayerVsPC" && gameRules.Level === "Medium",
           mainMenuContainer__OrangeHover: mainTab[14].hovered,
           mainMenuContainer__OrangeNotHover: !mainTab[14].hovered,
+          whiteLoad_FrontMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(14, true)}
         onMouseLeave={() => hoverBox(14, false)}
@@ -163,6 +182,7 @@ export default function FrontMenu(props) {
             gameRules.Player === "PlayerVsPC" && gameRules.Level === "Hard",
           mainMenuContainer__RedHover: mainTab[23].hovered,
           mainMenuContainer__RedNotHover: !mainTab[23].hovered,
+          whiteLoad_FrontMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(23, true)}
         onMouseLeave={() => hoverBox(23, false)}

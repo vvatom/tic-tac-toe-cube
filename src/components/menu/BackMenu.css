@@ -153,3 +153,22 @@
     color:white;
     text-shadow: 0px 0px 1vh white;
 }
+
+.whiteLoad_BackMenu{
+    animation-name: whiteLoadBackAnim;
+    animation-duration: 0.9s;
+    animation-iteration-count: 1;
+}
+
+@keyframes whiteLoadBackAnim {
+    0% {
+
+    }
+
+    90%,100% {
+        background-color:rgb(33, 33, 33);
+        box-shadow: 0px 0px 0px;
+    background-color:rgb(33, 33, 33);
+        text-shadow: 0px 0px 0px;
+      }
+  }

@@ -21,6 +21,7 @@ export default function LeftMenu(props) {
             gameRules.Player === "PlayerVsPC" && gameRules.Level === "Easy",
           leftMenuContainer__GreenHover: mainTab[7].hovered,
           leftMenuContainer__GreenNotHover: !mainTab[7].hovered,
+          whiteLoad_LeftMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(7, true)}
         onMouseLeave={() => hoverBox(7, false)}
@@ -36,6 +37,7 @@ export default function LeftMenu(props) {
             gameRules.Player === "PlayerVsPlayer",
           mainMenuContainer__BlueHover: mainTab[6].hovered,
           mainMenuContainer__BlueNotHover: !mainTab[6].hovered,
+          whiteLoad_LeftMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(6, true)}
         onMouseLeave={() => hoverBox(6, false)}
@@ -50,6 +52,7 @@ export default function LeftMenu(props) {
           leftMenuContainer__RedGameMode: gameRules.GameMode === "FreeForAll",
           leftMenuContainer__RedHover: mainTab[5].hovered,
           leftMenuContainer__RedNotHover: !mainTab[5].hovered,
+          whiteLoad_LeftMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(5, true)}
         onMouseLeave={() => hoverBox(5, false)}

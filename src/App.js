@@ -12,6 +12,9 @@ function App() {
     Level: "Easy",
     Play: false,
     Board:"",
+    Camera:`rotateX(15deg) rotateY(-45deg)`,
+    Load:false
+
   });
 
   return (

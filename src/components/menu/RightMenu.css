@@ -12,7 +12,7 @@
     background-color: black;
 }
 
-img{
+.imgMenu{
     width: 50%;
     height: 50%;
 }
@@ -206,7 +206,7 @@ img{
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.secondMenuContainer__FirebrickNotHover{
-    background-color:rgb(33, 33, 33);;
+    background-color:rgb(33, 33, 33);
     color:black;
     transition: 0.4s ease-in-out;
 }.secondMenuContainer__FirebrickGameMode{
@@ -219,3 +219,39 @@ img{
 .secondPointerEventsNone{
     pointer-events: none;
 }
+
+.whiteLoad_RightMenu{
+    animation-name: whiteLoadRightAnim;
+    animation-duration: 0.9s;
+    animation-iteration-count: 1;
+}
+
+@keyframes whiteLoadRightAnim {
+    0% {
+
+    }
+
+    90%,100% {
+        
+        background-color:rgb(33, 33, 33);
+        box-shadow: 0px 0px 0px;
+        color:rgb(33, 33, 33);
+        text-shadow: 0px 0px 0px;
+      }
+  }
+
+  .whiteLoad_img{
+    animation-name: imgOpacity;
+    animation-duration: 0.9s;
+    animation-iteration-count: 1;
+}
+
+  @keyframes imgOpacity {
+    0% {
+        opacity:1;
+    }
+
+    90%,100% {
+        opacity:0;
+      }
+  }

@@ -17,10 +17,14 @@ export default function RightMenu(props) {
           secondMenuContainer__BlueGameMode: gameRules.Board === "ScoreBoard",
           secondMenuContainer__BlueHover: mainTab[15].hovered,
           secondMenuContainer__BlueNotHover: !mainTab[15].hovered,
+          whiteLoad_RightMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(15, true)}
         onMouseLeave={() => hoverBox(15, false)}
         onClick={() => {
+          setGameRules((prev) => {
+            return { ...prev, Camera: `rotateX(365deg) rotateY(-195deg)` };
+          });
           setGameRules((prev) => {
             return { ...prev, Board: "ScoreBoard" };
           });
@@ -32,6 +36,7 @@ export default function RightMenu(props) {
         className={classNames("secondMenuContainer__middleUp", {
           secondMenuContainer__BlueHover: mainTab[18].hovered,
           secondMenuContainer__BlueNotHover: !mainTab[18].hovered,
+          whiteLoad_RightMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(18, true)}
         onMouseLeave={() => hoverBox(18, false)}
@@ -50,10 +55,14 @@ export default function RightMenu(props) {
           secondMenuContainer__BlueGameMode: gameRules.Board === "About",
           secondMenuContainer__BlueHover: mainTab[21].hovered,
           secondMenuContainer__BlueNotHover: !mainTab[21].hovered,
+          whiteLoad_RightMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(21, true)}
         onMouseLeave={() => hoverBox(21, false)}
         onClick={() => {
+          setGameRules((prev) => {
+            return { ...prev, Camera: `rotateX(-5deg) rotateY(-555deg)` };
+          });
           setGameRules((prev) => {
             return { ...prev, Board: "About" };
           });
@@ -65,6 +74,7 @@ export default function RightMenu(props) {
         className={classNames("secondMenuContainer__leftCenter", {
           secondMenuContainer__RoyalblueHover: mainTab[16].hovered,
           secondMenuContainer__RoyalblueNotHover: !mainTab[16].hovered,
+          whiteLoad_RightMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(16, true)}
         onMouseLeave={() => hoverBox(16, false)}
@@ -75,13 +85,18 @@ export default function RightMenu(props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={linkedinLogo} alt="Linkedin_logo" />
+          <img
+            className={classNames("imgMenu", { whiteLoad_img: gameRules.Load })}
+            src={linkedinLogo}
+            alt="Linkedin_logo"
+          />
         </a>
       </div>
       <div
         className={classNames("secondMenuContainer__middleCenter", {
           secondMenuContainer__MidnightblueHover: mainTab[19].hovered,
           secondMenuContainer__MidnightblueNotHover: !mainTab[19].hovered,
+          whiteLoad_RightMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(19, true)}
         onMouseLeave={() => hoverBox(19, false)}
@@ -92,20 +107,29 @@ export default function RightMenu(props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={gitHubLogo} alt="GitHub_logo" />
+          <img
+            className={classNames("imgMenu", { whiteLoad_img: gameRules.Load })}
+            src={gitHubLogo}
+            alt="GitHub_logo"
+          />
         </a>
       </div>
       <div
         className={classNames("secondMenuContainer__rightCenter", {
           secondMenuContainer__FirebrickHover: mainTab[22].hovered,
           secondMenuContainer__FirebrickNotHover: !mainTab[22].hovered,
+          whiteLoad_RightMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(22, true)}
         onMouseLeave={() => hoverBox(22, false)}
         onClick={() => {}}
       >
         <a href="mailto:drzewiecki.damian96@gmail.com">
-          <img src={mailLogo} alt="Mail_logo" />
+          <img
+            className={classNames("imgMenu", { whiteLoad_img: gameRules.Load })}
+            src={mailLogo}
+            alt="Mail_logo"
+          />
         </a>
       </div>
       <div
@@ -114,6 +138,7 @@ export default function RightMenu(props) {
             gameRules.GameMode === "MegaTicTacToe",
           secondMenuContainer__RedHover: mainTab[17].hovered,
           secondMenuContainer__RedNotHover: !mainTab[17].hovered,
+          whiteLoad_RightMenu: gameRules.Load,
         })}
         onClick={() =>
           setGameRules((prev) => {
@@ -129,6 +154,7 @@ export default function RightMenu(props) {
           secondMenuContainer__BlueGameMode: gameRules.Player === "PlayerVsPC",
           secondMenuContainer__BlueHover: mainTab[20].hovered,
           secondMenuContainer__BlueNotHover: !mainTab[20].hovered,
+          whiteLoad_RightMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(20, true)}
         onMouseLeave={() => hoverBox(20, false)}
@@ -145,6 +171,7 @@ export default function RightMenu(props) {
             gameRules.Player === "PlayerVsPC" && gameRules.Level === "Hard",
           secondMenuContainer__RedHover: mainTab[23].hovered,
           secondMenuContainer__RedNotHover: !mainTab[23].hovered,
+          whiteLoad_RightMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(23, true)}
         onMouseLeave={() => hoverBox(23, false)}
