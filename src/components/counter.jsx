@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { Context } from "../App";
 
 export default function Counter(props) {
-  const { userSign, xCount, oCount, minutes, seconds } = props;
+  const { userSign, xCount, oCount, minutes, seconds, endGame } = props;
   const [gameRules, setGameRules] = useContext(Context);
 
   return (
@@ -13,11 +13,19 @@ export default function Counter(props) {
         counterOpacity: gameRules.Play,
       })}
     >
-      <p className={classNames("counterX", { counterXselect: userSign === 0 })}>
+      <p
+        className={classNames("counterX", {
+          counterXselect: userSign === 0 && !endGame,
+        })}
+      >
           X : {xCount}/6  
       </p>
       <p className="counterTimer">  00:00:00  </p>
-      <p className={classNames("counterO", { counterOselect: userSign === 1 })}>
+      <p
+        className={classNames("counterO", {
+          counterOselect: userSign === 1 && !endGame,
+        })}
+      >
           O : {oCount}/6  
       </p>
     </div>

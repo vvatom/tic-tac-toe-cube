@@ -6,7 +6,7 @@ import "./BackMenu.css";
 export default function BackMenu(props) {
   const { hoverBox, mainTab } = props;
   const [gameRules, setGameRules] = useContext(Context);
-  console.log(gameRules.Board);
+
   return (
     <div className="backMenuContainer">
       <div
@@ -34,7 +34,7 @@ export default function BackMenu(props) {
           });
         }}
       >
-        {gameRules.Board === "ScoreBoard" ? "◄" : "SCORE BOARD"}
+        {gameRules.Board === "ScoreBoard" ? "<" : "SCORE BOARD"}
       </div>
       <div className="backMenuContainer__middleUp"></div>
       <div className="backMenuContainer__righttUpCorner"></div>
@@ -76,7 +76,7 @@ export default function BackMenu(props) {
           });
         }}
       >
-        {gameRules.Board === "About" ? "◄" : "ABOUT"}
+        {gameRules.Board === "About" ? "<" : "ABOUT"}
       </div>
       <div className="backMenuContainer__centerDownCorner"></div>
       <div className="backMenuContainer__rightDownCorner"></div>

@@ -48,13 +48,26 @@ const MAIN_ARRAY = [
   { id: 25, sign: "", hovered: false },
 ];
 
+const WALLS_GAME_STATE = [
+  { name: "UpperWall", end: false, megaCam: "" },
+  { name: "RightWall", end: false, megaCam: "" },
+  { name: "LeftWall", end: false, megaCam: "" },
+  { name: "FrontWall", end: false, megaCam: "" },
+  { name: "BackWall", end: false, megaCam: "" },
+  { name: "BottomWall", end: false, megaCam: "" },
+];
+
 export default function MainCube() {
   const [mainTab, setMainTab] = useState(MAIN_ARRAY);
   const [gameRules, setGameRules] = useContext(Context);
+
   const [userSign, setUserSign] = useState(0);
   const [xCount, setXCount] = useState(0);
   const [oCount, setOCount] = useState(0);
+  const [endGame, setEndGame] = useState(false);
 
+  const [camIteration, setCamIteration] = useState(0);
+  const [wallEndGame, setWallEndGame] = useState(WALLS_GAME_STATE);
   const [idSetTimeout, setIdSetTimeout] = useState(false);
   const [globalDrag, setGlobalDrag] = useState(false);
   const [position, setPosition] = useState(gameRules.Camera);
@@ -108,15 +121,23 @@ export default function MainCube() {
         setGlobalDrag(false);
       }
     }
-    if (gameRules.GameMode === "FreeForAll" && gameRules.Play === false) {
-      if (!drag) {
-        clearTimeout(idSetTimeout);
-        const id = setTimeout(() => {
-          setPosition(gameRules.Camera);
-        }, 750);
-        setIdSetTimeout(id);
+    if (!endGame) {
+      if (
+        gameRules.Play === false ||
+        (gameRules.GameMode === "FreeForAll" && gameRules.Play === false) ||
+        (gameRules.GameMode === "CubeTicTacToe" && gameRules.Play === true) ||
+        (gameRules.GameMode === "MegaTicTacToe" && gameRules.Play === true)
+      ) {
+        if (!drag) {
+          clearTimeout(idSetTimeout);
+          const id = setTimeout(() => {
+            setPosition(gameRules.Camera);
+          }, 750);
+          setIdSetTimeout(id);
+        }
       }
     }
+
     document.addEventListener("mousedown", lock, false);
     document.addEventListener("touchstart", lock, false);
 
@@ -125,7 +146,96 @@ export default function MainCube() {
 
     document.addEventListener("mouseup", rel, false);
     document.addEventListener("touchend", rel, false);
-  }, [position, gameRules.Camera, setGlobalDrag]);
+  }, [position, gameRules.Camera, setGlobalDrag, endGame]);
+
+  //CHECK END GAME
+  useEffect(() => {
+    setEndGame(
+      wallEndGame.every((item) => {
+        return item.end === true;
+      })
+    );
+  }, [wallEndGame]);
+
+  //MEGA TIC TAC TOE
+  useEffect(() => {
+    if (gameRules.GameMode === "MegaTicTacToe" && gameRules.Play === true) {
+      if (camIteration === 0) {
+        setGameRules((prev) => {
+          return { ...prev, Camera: `rotateX(-90deg) rotateY(0deg)` };
+        });
+      }
+      if (camIteration === 1) {
+        setGameRules((prev) => {
+          return { ...prev, Camera: `rotateX(-180deg) rotateY(0deg)` };
+        });
+      }
+      if (camIteration === 2) {
+        setGameRules((prev) => {
+          return { ...prev, Camera: `rotateX(-270deg) rotateY(0deg)` };
+        });
+      }
+      if (camIteration === 3) {
+        setGameRules((prev) => {
+          return { ...prev, Camera: `rotateX(-360deg) rotateY(0deg)` };
+        });
+      }
+      if (camIteration === 4) {
+        setGameRules((prev) => {
+          return { ...prev, Camera: `rotateX(0deg) rotateY(90deg)` };
+        });
+      }
+      if (camIteration === 5) {
+        setGameRules((prev) => {
+          return { ...prev, Camera: `rotateX(0deg) rotateY(270deg)` };
+        });
+      }
+      if (camIteration === 6) {
+        setCamIteration(0);
+      }
+    }
+  }, [camIteration, gameRules.GameMode, gameRules.Play, setGameRules]);
+
+  //CUBE TIC TAC TOE
+  useEffect(() => {
+    if (gameRules.GameMode === "CubeTicTacToe" && gameRules.Play === true) {
+      if (!wallEndGame[0].end) {
+        setGameRules((prev) => {
+          return { ...prev, Camera: `rotateX(-65deg) rotateY(-80deg)` };
+        });
+      }
+
+      if (wallEndGame[0].end && !wallEndGame[1].end) {
+        setGameRules((prev) => {
+          return { ...prev, Camera: `rotateX(-25deg) rotateY(-70deg)` };
+        });
+      }
+
+      if (wallEndGame[1].end && !wallEndGame[3].end) {
+        setGameRules((prev) => {
+          return { ...prev, Camera: `rotateX(-25deg) rotateY(20deg)` };
+        });
+      }
+
+      if (wallEndGame[3].end && !wallEndGame[2].end) {
+        setGameRules((prev) => {
+          return { ...prev, Camera: `rotateX(15deg) rotateY(110deg)` };
+        });
+      }
+
+      if (wallEndGame[2].end && !wallEndGame[4].end) {
+        setGameRules((prev) => {
+          return { ...prev, Camera: `rotateX(20deg) rotateY(170deg)` };
+        });
+      }
+
+      if (wallEndGame[4].end && !wallEndGame[5].end) {
+        setGameRules((prev) => {
+          return { ...prev, Camera: `rotateX(90deg) rotateY(180deg)` };
+        });
+      }
+    }
+  }, [gameRules.GameMode, gameRules.Play, wallEndGame, setGameRules]);
 
   //FUNCTION CHECK WINNING COMBINATIONS
   function validateWall(sign, mainTab, combinations) {
@@ -136,9 +246,18 @@ export default function MainCube() {
     });
   }
 
+  //FUNCTION CHECK FULL WALL SIGNED
+  function fullWall(signO, signX, mainTab, combinations) {
+    return combinations.every((item) => {
+      return mainTab[item].sign === signX || mainTab[item].sign === signO;
+    });
+  }
+
   //FUNCTION PLAYER X OR O
   function clickBox(id) {
-    // setIsRunning(true);
+    setCamIteration((prev) => {
+      return prev + 1;
+    });
     if (userSign === 0) {
       setUserSign(userSign + 1);
       setMainTab(
@@ -156,6 +275,7 @@ export default function MainCube() {
     }
   }
 
+  //FUNCTION HOVER BOX
   function hoverBox(id, shouldHover) {
     setMainTab((prevMainTab) =>
       mainTab.map((x) => {
@@ -164,13 +284,17 @@ export default function MainCube() {
     );
   }
 
+  //RETURN MAIN OBJECTS
   return (
     <div className="mainAppContainer">
       <div className="roateContainer"></div>
       {gameRules.Play ? (
         <div
-          className="returnButton"
+          className={classNames("returnButton", {
+            returnButtonOpacity: gameRules.Play,
+          })}
           onClick={() => {
+            setCamIteration(0);
             setXCount(0);
             setOCount(0);
             setUserSign(0);
@@ -181,15 +305,19 @@ export default function MainCube() {
               return { ...prev, Play: false };
             });
             setMainTab(MAIN_ARRAY);
+            setWallEndGame(WALLS_GAME_STATE);
           }}
         >
-          ◄
+          {"<"}
         </div>
       ) : (
         ""
       )}
       <div className="cubeContainer">
-        {gameRules.GameMode === "FreeForAll" && gameRules.Play === false ? (
+        {!endGame &&
+        (gameRules.Play === false ||
+          gameRules.GameMode === "CubeTicTacToe" ||
+          gameRules.GameMode === "MegaTicTacToe") ? (
           <style>
             {`
           .cubeBackAnim{
@@ -207,6 +335,7 @@ export default function MainCube() {
         ) : (
           ""
         )}
+
         <div
           ref={divCube}
           className={classNames("cube", { cubeBackAnim: !globalDrag })}
@@ -215,6 +344,9 @@ export default function MainCube() {
           <div className="cube_front">
             {gameRules.Play ? (
               <FrontWall
+                fullWall={fullWall}
+                wallEndGame={wallEndGame}
+                setWallEndGame={setWallEndGame}
                 hoverBox={hoverBox}
                 mainTab={mainTab}
                 clickBox={clickBox}
@@ -230,6 +362,9 @@ export default function MainCube() {
           <div className="cube_right">
             {gameRules.Play ? (
               <RightWall
+                fullWall={fullWall}
+                wallEndGame={wallEndGame}
+                setWallEndGame={setWallEndGame}
                 hoverBox={hoverBox}
                 mainTab={mainTab}
                 clickBox={clickBox}
@@ -245,6 +380,9 @@ export default function MainCube() {
           <div className="cube_back">
             {gameRules.Play ? (
               <BackWall
+                fullWall={fullWall}
+                wallEndGame={wallEndGame}
+                setWallEndGame={setWallEndGame}
                 hoverBox={hoverBox}
                 mainTab={mainTab}
                 clickBox={clickBox}
@@ -260,6 +398,9 @@ export default function MainCube() {
           <div className="cube_left">
             {gameRules.Play ? (
               <LeftWall
+                fullWall={fullWall}
+                wallEndGame={wallEndGame}
+                setWallEndGame={setWallEndGame}
                 hoverBox={hoverBox}
                 mainTab={mainTab}
                 clickBox={clickBox}
@@ -275,6 +416,9 @@ export default function MainCube() {
           <div className="cube_upper">
             {gameRules.Play ? (
               <UpperWall
+                fullWall={fullWall}
+                wallEndGame={wallEndGame}
+                setWallEndGame={setWallEndGame}
                 hoverBox={hoverBox}
                 mainTab={mainTab}
                 clickBox={clickBox}
@@ -290,6 +434,9 @@ export default function MainCube() {
           <div className="cube_bottom">
             {gameRules.Play ? (
               <BottomWall
+                fullWall={fullWall}
+                wallEndGame={wallEndGame}
+                setWallEndGame={setWallEndGame}
                 hoverBox={hoverBox}
                 mainTab={mainTab}
                 clickBox={clickBox}
@@ -305,7 +452,12 @@ export default function MainCube() {
         </div>
       </div>
       {gameRules.Play ? (
-        <Counter userSign={userSign} xCount={xCount} oCount={oCount} />
+        <Counter
+          endGame={endGame}
+          userSign={userSign}
+          xCount={xCount}
+          oCount={oCount}
+        />
       ) : (
         ""
       )}

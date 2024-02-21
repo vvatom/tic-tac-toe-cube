@@ -17,6 +17,8 @@ const winningCombinations = [
   [7, 25, 3],
 ];
 
+const wall = [1, 24, 7, 2, 25, 6, 3, 4, 5];
+
 export default function LeftWall(props) {
   const {
     mainTab,
@@ -26,24 +28,58 @@ export default function LeftWall(props) {
     setXCount,
     setOCount,
     hoverBox,
+    setWallEndGame,
+    wallEndGame,
+    fullWall,
   } = props;
 
-  const [isWin, setIsWin] = useState(true);
-
   useEffect(() => {
-    if (isWin) {
+    if (!wallEndGame[2].end) {
       const winningResultX = validateWall("X", mainTab, winningCombinations);
       if (winningResultX) {
         setXCount((prevCount) => prevCount + 1);
-        setIsWin(false);
+        setWallEndGame((prev) => {
+          return prev.map((item) => {
+            if (item.name === "LeftWall") {
+              return { ...item, end: true };
+            }
+            return item;
+          });
+        });
       }
       const winningResultO = validateWall("O", mainTab, winningCombinations);
       if (winningResultO) {
         setOCount((prevCount) => prevCount + 1);
-        setIsWin(false);
+        setWallEndGame((prev) => {
+          return prev.map((item) => {
+            if (item.name === "LeftWall") {
+              return { ...item, end: true };
+            }
+            return item;
+          });
+        });
+      }
+      if (fullWall("O", "X", mainTab, wall)) {
+        setWallEndGame((prev) => {
+          return prev.map((item) => {
+            if (item.name === "LeftWall") {
+              return { ...item, end: true };
+            }
+            return item;
+          });
+        });
       }
     }
-  }, [mainTab, isWin, setOCount, setXCount, validateWall]);
+  }, [
+    wallEndGame,
+    mainTab,
+    wallEndGame.LeftWall,
+    setOCount,
+    setXCount,
+    validateWall,
+    setWallEndGame,
+    fullWall,
+  ]);
   return (
     <div className="leftWallContainer">
       <div
@@ -58,7 +94,7 @@ export default function LeftWall(props) {
           redNotHover_left:
             userSign === 1 && mainTab[1].sign === "" && !mainTab[1].hovered,
           red_O_left: mainTab[1].sign === "O",
-          clickNone_left: mainTab[1].sign !== "",
+          clickNone_left: mainTab[1].sign !== "" || wallEndGame[2].end,
         })}
         onMouseEnter={() => hoverBox(1, true)}
         onMouseLeave={() => hoverBox(1, false)}
@@ -80,7 +116,7 @@ export default function LeftWall(props) {
           redNotHover_left:
             userSign === 1 && mainTab[2].sign === "" && !mainTab[2].hovered,
           red_O_left: mainTab[2].sign === "O",
-          clickNone_left: mainTab[2].sign !== "",
+          clickNone_left: mainTab[2].sign !== "" || wallEndGame[2].end,
         })}
         onMouseEnter={() => hoverBox(2, true)}
         onMouseLeave={() => hoverBox(2, false)}
@@ -102,7 +138,7 @@ export default function LeftWall(props) {
           redNotHover_left:
             userSign === 1 && mainTab[3].sign === "" && !mainTab[3].hovered,
           red_O_left: mainTab[3].sign === "O",
-          clickNone_left: mainTab[3].sign !== "",
+          clickNone_left: mainTab[3].sign !== "" || wallEndGame[2].end,
         })}
         onMouseEnter={() => hoverBox(3, true)}
         onMouseLeave={() => hoverBox(3, false)}
@@ -125,7 +161,7 @@ export default function LeftWall(props) {
           redNotHover_left:
             userSign === 1 && mainTab[24].sign === "" && !mainTab[24].hovered,
           red_O_left: mainTab[24].sign === "O",
-          clickNone_left: mainTab[24].sign !== "",
+          clickNone_left: mainTab[24].sign !== "" || wallEndGame[2].end,
         })}
         onMouseEnter={() => hoverBox(24, true)}
         onMouseLeave={() => hoverBox(24, false)}
@@ -147,7 +183,7 @@ export default function LeftWall(props) {
           redNotHover_left:
             userSign === 1 && mainTab[25].sign === "" && !mainTab[25].hovered,
           red_O_left: mainTab[25].sign === "O",
-          clickNone_left: mainTab[25].sign !== "",
+          clickNone_left: mainTab[25].sign !== "" || wallEndGame[2].end,
         })}
         onMouseEnter={() => hoverBox(25, true)}
         onMouseLeave={() => hoverBox(25, false)}
@@ -169,7 +205,7 @@ export default function LeftWall(props) {
           redNotHover_left:
             userSign === 1 && mainTab[4].sign === "" && !mainTab[4].hovered,
           red_O_left: mainTab[4].sign === "O",
-          clickNone_left: mainTab[4].sign !== "",
+          clickNone_left: mainTab[4].sign !== "" || wallEndGame[2].end,
         })}
         onMouseEnter={() => hoverBox(4, true)}
         onMouseLeave={() => hoverBox(4, false)}
@@ -192,7 +228,7 @@ export default function LeftWall(props) {
           redNotHover_left:
             userSign === 1 && mainTab[7].sign === "" && !mainTab[7].hovered,
           red_O_left: mainTab[7].sign === "O",
-          clickNone_left: mainTab[7].sign !== "",
+          clickNone_left: mainTab[7].sign !== "" || wallEndGame[2].end,
         })}
         onMouseEnter={() => hoverBox(7, true)}
         onMouseLeave={() => hoverBox(7, false)}
@@ -214,7 +250,7 @@ export default function LeftWall(props) {
           redNotHover_left:
             userSign === 1 && mainTab[6].sign === "" && !mainTab[6].hovered,
           red_O_left: mainTab[6].sign === "O",
-          clickNone_left: mainTab[6].sign !== "",
+          clickNone_left: mainTab[6].sign !== "" || wallEndGame[2].end,
         })}
         onMouseEnter={() => hoverBox(6, true)}
         onMouseLeave={() => hoverBox(6, false)}
@@ -236,7 +272,7 @@ export default function LeftWall(props) {
           redNotHover_left:
             userSign === 1 && mainTab[5].sign === "" && !mainTab[5].hovered,
           red_O_left: mainTab[5].sign === "O",
-          clickNone_left: mainTab[5].sign !== "",
+          clickNone_left: mainTab[5].sign !== "" || wallEndGame[2].end,
         })}
         onMouseEnter={() => hoverBox(5, true)}
         onMouseLeave={() => hoverBox(5, false)}

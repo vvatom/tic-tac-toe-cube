@@ -17,6 +17,8 @@ const winningCombinations = [
   [3, 9, 21],
 ];
 
+const wall = [1, 2, 3, 8, 9, 10, 21, 18, 15];
+
 export default function BackWall(props) {
   const {
     mainTab,
@@ -26,24 +28,59 @@ export default function BackWall(props) {
     setXCount,
     setOCount,
     hoverBox,
+    setWallEndGame,
+    wallEndGame,
+    fullWall,
   } = props;
 
-  const [isWin, setIsWin] = useState(true);
-
   useEffect(() => {
-    if (isWin) {
+    if (!wallEndGame[4].end) {
       const winningResultX = validateWall("X", mainTab, winningCombinations);
       if (winningResultX) {
         setXCount((prevCount) => prevCount + 1);
-        setIsWin(false);
+        setWallEndGame((prev) => {
+          return prev.map((item) => {
+            if (item.name === "BackWall") {
+              return { ...item, end: true };
+            }
+            return item;
+          });
+        });
       }
       const winningResultO = validateWall("O", mainTab, winningCombinations);
       if (winningResultO) {
         setOCount((prevCount) => prevCount + 1);
-        setIsWin(false);
+        setWallEndGame((prev) => {
+          return prev.map((item) => {
+            if (item.name === "BackWall") {
+              return { ...item, end: true };
+            }
+            return item;
+          });
+        });
+      }
+      if (fullWall("O", "X", mainTab, wall)) {
+        setWallEndGame((prev) => {
+          return prev.map((item) => {
+            if (item.name === "BackWall") {
+              return { ...item, end: true };
+            }
+            return item;
+          });
+        });
       }
     }
-  }, [mainTab, isWin, setOCount, setXCount, validateWall]);
+  }, [
+    wallEndGame,
+    mainTab,
+    wallEndGame.BackWall,
+    setOCount,
+    setXCount,
+    validateWall,
+    setWallEndGame,
+    fullWall,
+  ]);
+
   return (
     <div className="backWallContainer">
       <div
@@ -58,7 +95,7 @@ export default function BackWall(props) {
           redNotHover_back:
             userSign === 1 && mainTab[1].sign === "" && !mainTab[1].hovered,
           red_O_back: mainTab[1].sign === "O",
-          clickNone_back: mainTab[1].sign !== "",
+          clickNone_back: mainTab[1].sign !== "" || wallEndGame[4].end,
         })}
         onMouseEnter={() => hoverBox(1, true)}
         onMouseLeave={() => hoverBox(1, false)}
@@ -80,7 +117,7 @@ export default function BackWall(props) {
           redNotHover_back:
             userSign === 1 && mainTab[8].sign === "" && !mainTab[8].hovered,
           red_O_back: mainTab[8].sign === "O",
-          clickNone_back: mainTab[8].sign !== "",
+          clickNone_back: mainTab[8].sign !== "" || wallEndGame[4].end,
         })}
         onMouseEnter={() => hoverBox(8, true)}
         onMouseLeave={() => hoverBox(8, false)}
@@ -102,7 +139,7 @@ export default function BackWall(props) {
           redNotHover_back:
             userSign === 1 && mainTab[21].sign === "" && !mainTab[21].hovered,
           red_O_back: mainTab[21].sign === "O",
-          clickNone_back: mainTab[21].sign !== "",
+          clickNone_back: mainTab[21].sign !== "" || wallEndGame[4].end,
         })}
         onMouseEnter={() => hoverBox(21, true)}
         onMouseLeave={() => hoverBox(21, false)}
@@ -125,7 +162,7 @@ export default function BackWall(props) {
           redNotHover_back:
             userSign === 1 && mainTab[2].sign === "" && !mainTab[2].hovered,
           red_O_back: mainTab[2].sign === "O",
-          clickNone_back: mainTab[2].sign !== "",
+          clickNone_back: mainTab[2].sign !== "" || wallEndGame[4].end,
         })}
         onMouseEnter={() => hoverBox(2, true)}
         onMouseLeave={() => hoverBox(2, false)}
@@ -147,7 +184,7 @@ export default function BackWall(props) {
           redNotHover_back:
             userSign === 1 && mainTab[9].sign === "" && !mainTab[9].hovered,
           red_O_back: mainTab[9].sign === "O",
-          clickNone_back: mainTab[9].sign !== "",
+          clickNone_back: mainTab[9].sign !== "" || wallEndGame[4].end,
         })}
         onMouseEnter={() => hoverBox(9, true)}
         onMouseLeave={() => hoverBox(9, false)}
@@ -169,7 +206,7 @@ export default function BackWall(props) {
           redNotHover_back:
             userSign === 1 && mainTab[18].sign === "" && !mainTab[18].hovered,
           red_O_back: mainTab[18].sign === "O",
-          clickNone_back: mainTab[18].sign !== "",
+          clickNone_back: mainTab[18].sign !== "" || wallEndGame[4].end,
         })}
         onMouseEnter={() => hoverBox(18, true)}
         onMouseLeave={() => hoverBox(18, false)}
@@ -192,7 +229,7 @@ export default function BackWall(props) {
           redNotHover_back:
             userSign === 1 && mainTab[3].sign === "" && !mainTab[3].hovered,
           red_O_back: mainTab[3].sign === "O",
-          clickNone_back: mainTab[3].sign !== "",
+          clickNone_back: mainTab[3].sign !== "" || wallEndGame[4].end,
         })}
         onMouseEnter={() => hoverBox(3, true)}
         onMouseLeave={() => hoverBox(3, false)}
@@ -214,7 +251,7 @@ export default function BackWall(props) {
           redNotHover_back:
             userSign === 1 && mainTab[10].sign === "" && !mainTab[10].hovered,
           red_O_back: mainTab[10].sign === "O",
-          clickNone_back: mainTab[10].sign !== "",
+          clickNone_back: mainTab[10].sign !== "" || wallEndGame[4].end,
         })}
         onMouseEnter={() => hoverBox(10, true)}
         onMouseLeave={() => hoverBox(10, false)}
@@ -236,7 +273,7 @@ export default function BackWall(props) {
           redNotHover_back:
             userSign === 1 && mainTab[15].sign === "" && !mainTab[15].hovered,
           red_O_back: mainTab[15].sign === "O",
-          clickNone_back: mainTab[15].sign !== "",
+          clickNone_back: mainTab[15].sign !== "" || wallEndGame[4].end,
         })}
         onMouseEnter={() => hoverBox(15, true)}
         onMouseLeave={() => hoverBox(15, false)}

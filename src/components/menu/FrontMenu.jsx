@@ -97,13 +97,40 @@ export default function FrontMenu(props) {
         onMouseEnter={() => hoverBox(13, true)}
         onMouseLeave={() => hoverBox(13, false)}
         onClick={() => {
-          setGameRules((prev) => {
-            return { ...prev, Camera: `rotateX(-45deg) rotateY(-1125deg)` };
-          });
+          if (gameRules.GameMode === "FreeForAll") {
+            setGameRules((prev) => {
+              return { ...prev, Camera: `rotateX(-45deg) rotateY(-1125deg)` };
+            });
+          }
+
+          if (gameRules.GameMode === "CubeTicTacToe") {
+            setGameRules((prev) => {
+              return { ...prev, Camera: `rotateX(-65deg) rotateY(-1160deg)` };
+            });
+          }
+
+          if (gameRules.GameMode === "MegaTicTacToe") {
+            setGameRules((prev) => {
+              return { ...prev, Camera: `rotateX(-90deg) rotateY(1080deg)` };
+            });
+          }
+
           setGameRules((prev) => {
             return { ...prev, Load: true };
           });
+          //TIMEOUT
           setTimeout(() => {
+            if (gameRules.GameMode === "MegaTicTacToe") {
+              setGameRules((prev) => {
+                return { ...prev, Camera: `rotateX(-90deg) rotateY(0deg)` };
+              });
+            }
+            if (gameRules.GameMode === "CubeTicTacToe") {
+              setGameRules((prev) => {
+                return { ...prev, Camera: `rotateX(-65deg) rotateY(-80deg)` };
+              });
+            }
+
             setGameRules((prev) => {
               return { ...prev, Play: true };
             });

@@ -1,6 +1,7 @@
 import { createContext, useState } from 'react';
 import './App.css';
 import MainCube from './components/mainCube';
+import classNames from 'classnames';
 
 export const Context = createContext()
 
@@ -13,12 +14,12 @@ function App() {
     Play: false,
     Board:"",
     Camera:`rotateX(15deg) rotateY(-45deg)`,
-    Load:false
+    Load: false,
 
   });
 
   return (
-    <div className="App">
+    <div className={classNames("App",{pointerEventsApp:gameRules.Load})}>
       <Context.Provider value={[gameRules, setGameRules]}>
       <MainCube></MainCube>
       </Context.Provider>
