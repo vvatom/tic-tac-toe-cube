@@ -160,82 +160,228 @@ export default function MainCube() {
   //MEGA TIC TAC TOE
   useEffect(() => {
     if (gameRules.GameMode === "MegaTicTacToe" && gameRules.Play === true) {
-      if (camIteration === 0) {
-        setGameRules((prev) => {
-          return { ...prev, Camera: `rotateX(-90deg) rotateY(0deg)` };
-        });
-      }
-      if (camIteration === 1) {
-        setGameRules((prev) => {
-          return { ...prev, Camera: `rotateX(-180deg) rotateY(0deg)` };
-        });
-      }
-      if (camIteration === 2) {
-        setGameRules((prev) => {
-          return { ...prev, Camera: `rotateX(-270deg) rotateY(0deg)` };
-        });
-      }
-      if (camIteration === 3) {
-        setGameRules((prev) => {
-          return { ...prev, Camera: `rotateX(-360deg) rotateY(0deg)` };
-        });
-      }
-      if (camIteration === 4) {
-        setGameRules((prev) => {
-          return { ...prev, Camera: `rotateX(0deg) rotateY(90deg)` };
-        });
-      }
-      if (camIteration === 5) {
-        setGameRules((prev) => {
-          return { ...prev, Camera: `rotateX(0deg) rotateY(270deg)` };
-        });
-      }
-      if (camIteration === 6) {
-        setCamIteration(0);
+      switch (camIteration) {
+        case 0:
+        case 11:
+        case 16:
+        case 21:
+        case 26:
+        case 31:
+        case 36:
+        case 47:
+        case 52:
+          if (!wallEndGame[0].end) {
+            setGameRules((prev) => {
+              return { ...prev, Camera: `rotateX(-90deg) rotateY(0deg)` };
+            });
+          } else {
+            setCamIteration((prev) => {
+              return prev + 1;
+            });
+          }
+          break;
+
+        case 1:
+        case 6:
+        case 17:
+        case 22:
+        case 27:
+        case 32:
+        case 37:
+        case 42:
+        case 53:
+          if (!wallEndGame[4].end) {
+            setGameRules((prev) => {
+              return { ...prev, Camera: `rotateX(-180deg) rotateY(0deg)` };
+            });
+          } else {
+            setCamIteration((prev) => {
+              return prev + 1;
+            });
+          }
+          break;
+
+        case 2:
+        case 7:
+        case 12:
+        case 23:
+        case 28:
+        case 33:
+        case 38:
+        case 43:
+        case 48:
+          if (!wallEndGame[5].end) {
+            setGameRules((prev) => {
+              return { ...prev, Camera: `rotateX(-270deg) rotateY(0deg)` };
+            });
+          } else {
+            setCamIteration((prev) => {
+              return prev + 1;
+            });
+          }
+          break;
+
+        case 3:
+        case 8:
+        case 13:
+        case 18:
+        case 29:
+        case 34:
+        case 39:
+        case 44:
+        case 49:
+          if (!wallEndGame[3].end) {
+            setGameRules((prev) => {
+              return { ...prev, Camera: `rotateX(-360deg) rotateY(0deg)` };
+            });
+          } else {
+            setCamIteration((prev) => {
+              return prev + 1;
+            });
+          }
+          break;
+
+        case 4:
+        case 9:
+        case 14:
+        case 19:
+        case 24:
+        case 35:
+        case 40:
+        case 45:
+        case 50:
+          if (!wallEndGame[2].end) {
+            setGameRules((prev) => {
+              return { ...prev, Camera: `rotateX(0deg) rotateY(90deg)` };
+            });
+          } else {
+            setCamIteration((prev) => {
+              return prev + 1;
+            });
+          }
+          break;
+
+        case 5:
+        case 10:
+        case 15:
+        case 20:
+        case 25:
+        case 30:
+        case 41:
+        case 46:
+        case 51:
+          if (!wallEndGame[1].end) {
+            setGameRules((prev) => {
+              return { ...prev, Camera: `rotateX(0deg) rotateY(270deg)` };
+            });
+          } else {
+            setCamIteration((prev) => {
+              return prev + 1;
+            });
+          }
+          break;
+
+        default:
+          break;
       }
     }
-  }, [camIteration, gameRules.GameMode, gameRules.Play, setGameRules]);
+    console.log(wallEndGame);
+  }, [
+    camIteration,
+    gameRules.GameMode,
+    gameRules.Play,
+    setGameRules,
+    wallEndGame,
+  ]);
 
   //CUBE TIC TAC TOE
   useEffect(() => {
     if (gameRules.GameMode === "CubeTicTacToe" && gameRules.Play === true) {
-      if (!wallEndGame[0].end) {
-        setGameRules((prev) => {
-          return { ...prev, Camera: `rotateX(-65deg) rotateY(-80deg)` };
-        });
-      }
+      switch (camIteration) {
+        case 0:
+          if (!wallEndGame[0].end) {
+            setGameRules((prev) => {
+              return { ...prev, Camera: `rotateX(-65deg) rotateY(-80deg)` };
+            });
+          } else {
+            setCamIteration((prev) => {
+              return prev + 1;
+            });
+          }
+          break;
 
-      if (wallEndGame[0].end && !wallEndGame[1].end) {
-        setGameRules((prev) => {
-          return { ...prev, Camera: `rotateX(-25deg) rotateY(-70deg)` };
-        });
-      }
+        case 1:
+          if (!wallEndGame[1].end) {
+            setGameRules((prev) => {
+              return { ...prev, Camera: `rotateX(-25deg) rotateY(-70deg)` };
+            });
+          } else {
+            setCamIteration((prev) => {
+              return prev + 1;
+            });
+          }
+          break;
 
-      if (wallEndGame[1].end && !wallEndGame[3].end) {
-        setGameRules((prev) => {
-          return { ...prev, Camera: `rotateX(-25deg) rotateY(20deg)` };
-        });
-      }
+        case 2:
+          if (!wallEndGame[3].end) {
+            setGameRules((prev) => {
+              return { ...prev, Camera: `rotateX(-25deg) rotateY(20deg)` };
+            });
+          } else {
+            setCamIteration((prev) => {
+              return prev + 1;
+            });
+          }
+          break;
 
-      if (wallEndGame[3].end && !wallEndGame[2].end) {
-        setGameRules((prev) => {
-          return { ...prev, Camera: `rotateX(15deg) rotateY(110deg)` };
-        });
-      }
+        case 3:
+          if (!wallEndGame[2].end) {
+            setGameRules((prev) => {
+              return { ...prev, Camera: `rotateX(15deg) rotateY(110deg)` };
+            });
+          } else {
+            setCamIteration((prev) => {
+              return prev + 1;
+            });
+          }
+          break;
 
-      if (wallEndGame[2].end && !wallEndGame[4].end) {
-        setGameRules((prev) => {
-          return { ...prev, Camera: `rotateX(20deg) rotateY(170deg)` };
-        });
-      }
+        case 4:
+          if (!wallEndGame[4].end) {
+            setGameRules((prev) => {
+              return { ...prev, Camera: `rotateX(20deg) rotateY(170deg)` };
+            });
+          } else {
+            setCamIteration((prev) => {
+              return prev + 1;
+            });
+          }
+          break;
 
-      if (wallEndGame[4].end && !wallEndGame[5].end) {
-        setGameRules((prev) => {
-          return { ...prev, Camera: `rotateX(90deg) rotateY(180deg)` };
-        });
+        case 5:
+          if (!wallEndGame[5].end) {
+            setGameRules((prev) => {
+              return { ...prev, Camera: `rotateX(90deg) rotateY(180deg)` };
+            });
+          } else {
+            setCamIteration((prev) => {
+              return prev + 1;
+            });
+          }
+          break;
+
+        default:
+          break;
       }
+      console.log(camIteration);
     }
-  }, [gameRules.GameMode, gameRules.Play, wallEndGame, setGameRules]);
+  }, [
+    gameRules.GameMode,
+    gameRules.Play,
+    wallEndGame,
+    setGameRules,
+    camIteration,
+  ]);
 
   //FUNCTION CHECK WINNING COMBINATIONS
   function validateWall(sign, mainTab, combinations) {
@@ -255,9 +401,12 @@ export default function MainCube() {
 
   //FUNCTION PLAYER X OR O
   function clickBox(id) {
-    setCamIteration((prev) => {
-      return prev + 1;
-    });
+    if (gameRules.GameMode === "MegaTicTacToe" && gameRules.Play === true) {
+      setCamIteration((prev) => {
+        return prev + 1;
+      });
+    }
+
     if (userSign === 0) {
       setUserSign(userSign + 1);
       setMainTab(

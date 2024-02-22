@@ -17,7 +17,8 @@
     width: 30%;
     height: 30%;
     border-radius: 0% 0% 30% 0%;
-
+    transition: 0.4s;
+    color:transparent;
 }
 .bottomWallContainer__middleUp{
     display: flex;
@@ -26,7 +27,8 @@
     width: 30%;
     height: 30%;
     border-radius: 0% 0% 30% 30%;
-
+    transition: 0.4s;
+    color:transparent;
 }
 .bottomWallContainer__rightUpCorner{
     display: flex;
@@ -35,6 +37,8 @@
     width: 30%;
     height: 30%;
     border-radius: 0% 0% 0% 30%;
+    transition: 0.4s;
+    color:transparent;
 }
 
 
@@ -46,7 +50,8 @@
     width: 30%;
     height: 30%;
     border-radius: 0% 30% 30% 0%;
-
+    transition: 0.4s;
+    color:transparent;
 }
 .bottomWallContainer__middleCenterUp{
     display: flex;
@@ -55,7 +60,8 @@
     width: 30%;
     height: 30%;
     border-radius: 30% 30% 30% 30%;
-
+    transition: 0.4s;
+    color:transparent;
 }
 .bottomWallContainer__rightCenterorner{
     display: flex;
@@ -64,7 +70,8 @@
     width: 30%;
     height: 30%;
     border-radius: 30% 0% 0% 30%;
-
+    transition: 0.4s;
+    color:transparent;
 }
 
 
@@ -76,7 +83,8 @@
     width: 30%;
     height: 30%;
     border-radius: 0% 30% 0% 0%;
-
+    transition: 0.4s;
+    color:transparent;
 }
 .bottomWallContainer__middleDown{
     display: flex;
@@ -85,7 +93,8 @@
     width: 30%;
     height: 30%;
     border-radius: 30% 30% 0% 0%;
-
+    transition: 0.4s;
+    color:transparent;
 }
 .bottomWallContainer__rightDownCorner{
     display: flex;
@@ -94,7 +103,8 @@
     width: 30%;
     height: 30%;
     border-radius: 30% 0% 0% 0%;
-
+    transition: 0.4s;
+    color:transparent;
 }
 
 .red_O_bottom{

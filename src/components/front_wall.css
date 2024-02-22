@@ -17,6 +17,8 @@
     width: 30%;
     height: 30%;
     border-radius: 0% 0% 30% 0%;
+    transition: 0.4s;
+    color:transparent;
 }
 .frontWallContainer__middleUp{
     display: flex;
@@ -25,6 +27,8 @@
     width: 30%;
     height: 30%;
     border-radius: 0% 0% 30% 30%;
+    transition: 0.4s;
+    color:transparent;
 }
 .frontWallContainer__rightUpCorner{
     display: flex;
@@ -33,6 +37,8 @@
     width: 30%;
     height: 30%;
     border-radius: 0% 0% 0% 30%;
+    transition: 0.4s;
+    color:transparent;
 }
 
 
@@ -44,6 +50,8 @@
     width: 30%;
     height: 30%;
     border-radius: 0% 30% 30% 0%;
+    transition: 0.4s;
+    color:transparent;
 }
 .frontWallContainer__middleCenterUp{
     display: flex;
@@ -52,6 +60,8 @@
     width: 30%;
     height: 30%;
     border-radius: 30% 30% 30% 30%;
+    transition: 0.4s;
+    color:transparent;
 }
 .frontWallContainer__rightCenterorner{
     display: flex;
@@ -60,6 +70,8 @@
     width: 30%;
     height: 30%;
     border-radius: 30% 0% 0% 30%;
+    transition: 0.4s;
+    color:transparent;
 }
 
 
@@ -71,6 +83,8 @@
     width: 30%;
     height: 30%;
     border-radius: 0% 30% 0% 0%;
+    transition: 0.4s;
+    color:transparent;
 }
 .frontWallContainer__middleDown{
     display: flex;
@@ -79,6 +93,8 @@
     width: 30%;
     height: 30%;
     border-radius: 30% 30% 0% 0%;
+    transition: 0.4s;
+    color:transparent;
 }
 .frontWallContainer__rightDownCorner{
     display: flex;
@@ -87,6 +103,8 @@
     width: 30%;
     height: 30%;
     border-radius: 30% 0% 0% 0%;
+    transition: 0.4s;
+    color:transparent;
 }
 
 .red_O_front{
