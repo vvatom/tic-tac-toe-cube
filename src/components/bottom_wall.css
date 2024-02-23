@@ -118,8 +118,13 @@
     box-shadow: 0 0 5vh red;
     transition: 0.2s ease-in-out;
 }.redNotHover_bottom{
-    background-color:rgb(30, 30, 30);
+    background-color:rgb(10, 10, 10);
     transition: 1s ease-in-out;
+}
+.red_O_bottom_win{
+    filter: contrast(300%);
+    background-color: color-mix(in srgb, orange, magenta);
+    box-shadow: 0 0 15vh color-mix(in srgb, orange, magenta);
 }
 
 .blue_X_bottom{
@@ -134,8 +139,13 @@
     transition: 0.2s ease-in-out;
 }
 .blueNotHover_bottom{
-    background-color:rgb(30, 30, 30);
+    background-color:rgb(10, 10, 10);
     transition: 1s ease-in-out;
+}
+.blue_X_bottom_win{
+    filter: contrast(300%);
+    background-color: color-mix(in srgb, cyan, purple);
+    box-shadow: 0 0 15vh color-mix(in srgb, cyan, purple);
 }
 
 .clickNone_bottom{

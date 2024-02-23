@@ -49,12 +49,12 @@ const MAIN_ARRAY = [
 ];
 
 const WALLS_GAME_STATE = [
-  { name: "UpperWall", end: false, megaCam: "" },
-  { name: "RightWall", end: false, megaCam: "" },
-  { name: "LeftWall", end: false, megaCam: "" },
-  { name: "FrontWall", end: false, megaCam: "" },
-  { name: "BackWall", end: false, megaCam: "" },
-  { name: "BottomWall", end: false, megaCam: "" },
+  { name: "UpperWall", end: false, winWallX: [], winWallO: [] },
+  { name: "RightWall", end: false, winWallX: [], winWallO: [] },
+  { name: "LeftWall", end: false, winWallX: [], winWallO: [] },
+  { name: "FrontWall", end: false, winWallX: [], winWallO: [] },
+  { name: "BackWall", end: false, winWallX: [], winWallO: [] },
+  { name: "BottomWall", end: false, winWallX: [], winWallO: [] },
 ];
 
 export default function MainCube() {
@@ -285,7 +285,6 @@ export default function MainCube() {
           break;
       }
     }
-    console.log(wallEndGame);
   }, [
     camIteration,
     gameRules.GameMode,
@@ -373,7 +372,6 @@ export default function MainCube() {
         default:
           break;
       }
-      console.log(camIteration);
     }
   }, [
     gameRules.GameMode,
@@ -385,7 +383,7 @@ export default function MainCube() {
 
   //FUNCTION CHECK WINNING COMBINATIONS
   function validateWall(sign, mainTab, combinations) {
-    return combinations.some((item) => {
+    return combinations.find((item) => {
       return item.every((itemIndex) => {
         return mainTab[itemIndex].sign === sign;
       });

@@ -37,6 +37,15 @@ export default function UpperWall(props) {
     if (!wallEndGame[0].end) {
       const winningResultX = validateWall("X", mainTab, winningCombinations);
       if (winningResultX) {
+        setWallEndGame((prev) => {
+          return prev.map((item) => {
+            if (item.name === "UpperWall") {
+              return { ...item, winWallX: winningResultX };
+            }
+            return item;
+          });
+        });
+
         setXCount((prevCount) => prevCount + 1);
         setWallEndGame((prev) => {
           return prev.map((item) => {
@@ -47,8 +56,18 @@ export default function UpperWall(props) {
           });
         });
       }
+
       const winningResultO = validateWall("O", mainTab, winningCombinations);
       if (winningResultO) {
+        setWallEndGame((prev) => {
+          return prev.map((item) => {
+            if (item.name === "UpperWall") {
+              return { ...item, winWallO: winningResultO };
+            }
+            return item;
+          });
+        });
+
         setOCount((prevCount) => prevCount + 1);
         setWallEndGame((prev) => {
           return prev.map((item) => {
@@ -59,6 +78,7 @@ export default function UpperWall(props) {
           });
         });
       }
+      ///
       if (fullWall("O", "X", mainTab, wall)) {
         setWallEndGame((prev) => {
           return prev.map((item) => {
@@ -73,7 +93,6 @@ export default function UpperWall(props) {
   }, [
     wallEndGame,
     mainTab,
-    wallEndGame.UpperWall,
     setOCount,
     setXCount,
     validateWall,
@@ -85,11 +104,18 @@ export default function UpperWall(props) {
     <div className="upperWallContainer">
       <div
         className={classNames("upperWallContainer__leftUpCorner", {
+          blue_X_upper_win: wallEndGame.some((item) =>
+            item.winWallX.some((item) => item === 3)
+          ),
           blueHover_upper:
             userSign === 0 && mainTab[3].sign === "" && mainTab[3].hovered,
           blueNotHover_upper:
             userSign === 0 && mainTab[3].sign === "" && !mainTab[3].hovered,
           blue_X_upper: mainTab[3].sign === "X",
+
+          red_O_upper_win: wallEndGame.some((item) =>
+            item.winWallO.some((item) => item === 3)
+          ),
           redHover_upper:
             userSign === 1 && mainTab[3].sign === "" && mainTab[3].hovered,
           redNotHover_upper:
@@ -107,11 +133,18 @@ export default function UpperWall(props) {
       </div>
       <div
         className={classNames("upperWallContainer__middleUp", {
+          blue_X_upper_win: wallEndGame.some((item) =>
+            item.winWallX.some((item) => item === 10)
+          ),
           blueHover_upper:
             userSign === 0 && mainTab[10].sign === "" && mainTab[10].hovered,
           blueNotHover_upper:
             userSign === 0 && mainTab[10].sign === "" && !mainTab[10].hovered,
           blue_X_upper: mainTab[10].sign === "X",
+
+          red_O_upper_win: wallEndGame.some((item) =>
+            item.winWallO.some((item) => item === 10)
+          ),
           redHover_upper:
             userSign === 1 && mainTab[10].sign === "" && mainTab[10].hovered,
           redNotHover_upper:
@@ -129,11 +162,18 @@ export default function UpperWall(props) {
       </div>
       <div
         className={classNames("upperWallContainer__rightUpCorner", {
+          blue_X_upper_win: wallEndGame.some((item) =>
+            item.winWallX.some((item) => item === 15)
+          ),
           blueHover_upper:
             userSign === 0 && mainTab[15].sign === "" && mainTab[15].hovered,
           blueNotHover_upper:
             userSign === 0 && mainTab[15].sign === "" && !mainTab[15].hovered,
           blue_X_upper: mainTab[15].sign === "X",
+
+          red_O_upper_win: wallEndGame.some((item) =>
+            item.winWallO.some((item) => item === 15)
+          ),
           redHover_upper:
             userSign === 1 && mainTab[15].sign === "" && mainTab[15].hovered,
           redNotHover_upper:
@@ -152,11 +192,18 @@ export default function UpperWall(props) {
 
       <div
         className={classNames("upperWallContainer__leftCenterCorner", {
+          blue_X_upper_win: wallEndGame.some((item) =>
+            item.winWallX.some((item) => item === 4)
+          ),
           blueHover_upper:
             userSign === 0 && mainTab[4].sign === "" && mainTab[4].hovered,
           blueNotHover_upper:
             userSign === 0 && mainTab[4].sign === "" && !mainTab[4].hovered,
           blue_X_upper: mainTab[4].sign === "X",
+
+          red_O_upper_win: wallEndGame.some((item) =>
+            item.winWallO.some((item) => item === 4)
+          ),
           redHover_upper:
             userSign === 1 && mainTab[4].sign === "" && mainTab[4].hovered,
           redNotHover_upper:
@@ -174,11 +221,18 @@ export default function UpperWall(props) {
       </div>
       <div
         className={classNames("upperWallContainer__middleCenterUp", {
+          blue_X_upper_win: wallEndGame.some((item) =>
+            item.winWallX.some((item) => item === 11)
+          ),
           blueHover_upper:
             userSign === 0 && mainTab[11].sign === "" && mainTab[11].hovered,
           blueNotHover_upper:
             userSign === 0 && mainTab[11].sign === "" && !mainTab[11].hovered,
           blue_X_upper: mainTab[11].sign === "X",
+
+          red_O_upper_win: wallEndGame.some((item) =>
+            item.winWallO.some((item) => item === 11)
+          ),
           redHover_upper:
             userSign === 1 && mainTab[11].sign === "" && mainTab[11].hovered,
           redNotHover_upper:
@@ -196,11 +250,18 @@ export default function UpperWall(props) {
       </div>
       <div
         className={classNames("upperWallContainer__rightCenterorner", {
+          blue_X_upper_win: wallEndGame.some((item) =>
+            item.winWallX.some((item) => item === 16)
+          ),
           blueHover_upper:
             userSign === 0 && mainTab[16].sign === "" && mainTab[16].hovered,
           blueNotHover_upper:
             userSign === 0 && mainTab[16].sign === "" && !mainTab[16].hovered,
           blue_X_upper: mainTab[16].sign === "X",
+
+          red_O_upper_win: wallEndGame.some((item) =>
+            item.winWallO.some((item) => item === 16)
+          ),
           redHover_upper:
             userSign === 1 && mainTab[16].sign === "" && mainTab[16].hovered,
           redNotHover_upper:
@@ -219,11 +280,18 @@ export default function UpperWall(props) {
 
       <div
         className={classNames("upperWallContainer__leftDownCorner", {
+          blue_X_upper_win: wallEndGame.some((item) =>
+            item.winWallX.some((item) => item === 5)
+          ),
           blueHover_upper:
             userSign === 0 && mainTab[5].sign === "" && mainTab[5].hovered,
           blueNotHover_upper:
             userSign === 0 && mainTab[5].sign === "" && !mainTab[5].hovered,
           blue_X_upper: mainTab[5].sign === "X",
+
+          red_O_upper_win: wallEndGame.some((item) =>
+            item.winWallO.some((item) => item === 5)
+          ),
           redHover_upper:
             userSign === 1 && mainTab[5].sign === "" && mainTab[5].hovered,
           redNotHover_upper:
@@ -241,11 +309,18 @@ export default function UpperWall(props) {
       </div>
       <div
         className={classNames("upperWallContainer__middleDown", {
+          blue_X_upper_win: wallEndGame.some((item) =>
+            item.winWallX.some((item) => item === 12)
+          ),
           blueHover_upper:
             userSign === 0 && mainTab[12].sign === "" && mainTab[12].hovered,
           blueNotHover_upper:
             userSign === 0 && mainTab[12].sign === "" && !mainTab[12].hovered,
           blue_X_upper: mainTab[12].sign === "X",
+
+          red_O_upper_win: wallEndGame.some((item) =>
+            item.winWallO.some((item) => item === 12)
+          ),
           redHover_upper:
             userSign === 1 && mainTab[12].sign === "" && mainTab[12].hovered,
           redNotHover_upper:
@@ -263,11 +338,18 @@ export default function UpperWall(props) {
       </div>
       <div
         className={classNames("upperWallContainer__rightDownCorner", {
+          blue_X_upper_win: wallEndGame.some((item) =>
+            item.winWallX.some((item) => item === 17)
+          ),
           blueHover_upper:
             userSign === 0 && mainTab[17].sign === "" && mainTab[17].hovered,
           blueNotHover_upper:
             userSign === 0 && mainTab[17].sign === "" && !mainTab[17].hovered,
           blue_X_upper: mainTab[17].sign === "X",
+
+          red_O_upper_win: wallEndGame.some((item) =>
+            item.winWallO.some((item) => item === 17)
+          ),
           redHover_upper:
             userSign === 1 && mainTab[17].sign === "" && mainTab[17].hovered,
           redNotHover_upper:

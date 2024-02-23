@@ -27,7 +27,7 @@ img{
     height: 30%;
     font-size: 2vh;
     color:black;
-    background-color:rgb(40, 40, 40);
+    background-color:rgb(19, 19, 19);
     border-radius: 0% 0% 0% 30%;
 }
 
@@ -41,7 +41,7 @@ img{
     height: 30%;
     font-size: 2vh;
     color:black;
-    background-color:rgb(40, 40, 40);
+    background-color:rgb(19, 19, 19);
     border-radius: 30% 0% 0% 30%;
 }
 
@@ -68,7 +68,7 @@ img{
     height: 30%;
     font-size: 2vh;
     color:white;
-    background-color:rgb(40, 40, 40);
+    background-color:rgb(19, 19, 19);
     border-radius: 0% 0% 30% 30%;
 }
 
@@ -82,7 +82,7 @@ img{
     height: 30%;
     font-size: 3.5vh;
     color:white;
-    background-color:rgb(40, 40, 40);
+    background-color:rgb(19, 19, 19);
     border-radius: 30% 30% 30% 30%;
 }
 
@@ -142,7 +142,7 @@ img{
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.upperMenuContainer__RedNotHover{
-    background-color:rgb(40, 40, 40);
+    background-color:rgb(19, 19, 19);
     color:black;
     transition: 0.4s ease-in-out;
 }.upperMenuContainer__RedGameMode{
@@ -159,7 +159,7 @@ img{
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.upperMenuContainer__BlueNotHover{
-    background-color:rgb(40, 40, 40);
+    background-color:rgb(19, 19, 19);
     color:black;
     transition: 0.4s ease-in-out;
 }.upperMenuContainer__BlueGameMode{
@@ -176,7 +176,7 @@ img{
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.upperMenuContainer__RoyalblueNotHover{
-    background-color:rgb(40, 40, 40);
+    background-color:rgb(19, 19, 19);
     color:black;
     transition: 0.4s ease-in-out;
 }.upperMenuContainer__RoyalblueGameMode{
@@ -198,9 +198,9 @@ img{
     }
 
     90%,100% {
-        background-color:rgb(40, 40, 40);
+        background-color:rgb(19, 19, 19);
         box-shadow: 0px 0px 0px;
-        color:rgb(40, 40, 40);
+        color:rgb(19, 19, 19);
         text-shadow: 0px 0px 0px;
       }
   }

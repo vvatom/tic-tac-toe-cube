@@ -1,10 +1,10 @@
 .counterTimer{
-    background-color: rgb(36, 36, 36);;
+    background-color: rgb(16, 16, 16);
     border-radius: 100px;
   }
   
   .counterX{
-    background-color: rgb(36, 36, 36);;
+    background-color: rgb(16, 16, 16);
     border-radius: 100px;
     transition: 0.3s ease-in-out
   }.counterXselect{
@@ -14,7 +14,7 @@
   }
   
   .counterO{
-    background-color: rgb(36, 36, 36);;
+    background-color: rgb(16, 16, 16);
     border-radius: 100px;
     transition: 0.3s ease-in-out
   }.counterOselect{

@@ -118,8 +118,13 @@
     box-shadow: 0 0 5vh red;
     transition: 0.2s ease-in-out;
 }.redNotHover_front{
-    background-color: rgb(36, 36, 36);
+    background-color: rgb(16, 16, 16);
     transition: 1s ease-in-out;
+}
+.red_O_front_win{
+    filter: contrast(300%);
+    background-color: color-mix(in srgb, orange, magenta);
+    box-shadow: 0 0 15vh color-mix(in srgb, orange, magenta);
 }
 
 .blue_X_front{
@@ -134,8 +139,13 @@
     transition: 0.2s ease-in-out;
 }
 .blueNotHover_front{
-    background-color: rgb(36, 36, 36);
+    background-color: rgb(16, 16, 16);
     transition: 1s ease-in-out;
+}
+.blue_X_front_win{
+    filter: contrast(300%);
+    background-color: color-mix(in srgb, cyan, purple);
+    box-shadow: 0 0 15vh color-mix(in srgb, cyan, purple);
 }
 
 .clickNone_front{

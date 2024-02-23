@@ -59,7 +59,7 @@
     font-size: 2vh;
     color:white;
     border-radius: 0% 30% 30% 0%;
-    background-color:rgb(30, 30, 30);
+    background-color:rgb(10, 10, 10);
 }
 
 .bottomMenuContainer__middleCenter{
@@ -72,7 +72,7 @@
     font-size: 3.5vh;
     color:white;
     border-radius: 30% 30% 30% 30%;
-    background-color:rgb(30, 30, 30);
+    background-color:rgb(10, 10, 10);
 }
 
 .bottomMenuContainer__rightCenter{
@@ -98,7 +98,7 @@
     font-size: 2vh;
     color:white;
     border-radius: 0% 30% 0% 0%;
-    background-color:rgb(30, 30, 30);
+    background-color:rgb(10, 10, 10);
 }
 
 .bottomMenuContainer__centerDownCorner{
@@ -111,7 +111,7 @@
     font-size: 2vh;
     color:white;
     border-radius: 30% 30% 0% 0%;
-    background-color:rgb(30, 30, 30);
+    background-color:rgb(10, 10, 10);
 }
 
 .bottomMenuContainer__rightDownCorner{
@@ -133,7 +133,7 @@
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.bottomMenuContainer__RedNotHover{
-    background-color:rgb(30, 30, 30);
+    background-color:rgb(10, 10, 10);
     color:black;
     transition: 0.4s ease-in-out;
 }.bottomMenuContainer__RedGameMode{
@@ -150,7 +150,7 @@
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.bottomMenuContainer__BlueNotHover{
-    background-color:rgb(30, 30, 30);
+    background-color:rgb(10, 10, 10);
     color:black;
     transition: 0.4s ease-in-out;
 }.bottomMenuContainer__BlueGameMode{
@@ -167,7 +167,7 @@
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.bottomMenuContainer__FirebrickNotHover{
-    background-color:rgb(30, 30, 30);
+    background-color:rgb(10, 10, 10);
     color:black;
     transition: 0.4s ease-in-out;
 }.bottomMenuContainer__FirebrickGameMode{
@@ -184,7 +184,7 @@
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.bottomMenuContainer__OrangeNotHover{
-    background-color:rgb(30, 30, 30);
+    background-color:rgb(10, 10, 10);
     color:black;
     transition: 0.4s ease-in-out;
 }.bottomMenuContainer__OrangeGameMode{
@@ -201,7 +201,7 @@
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.bottomMenuContainer__GreenNotHover{
-    background-color:rgb(30, 30, 30);
+    background-color:rgb(10, 10, 10);
     color:black;
     transition: 0.4s ease-in-out;
 }.bottomMenuContainer__GreenGameMode{
@@ -227,9 +227,9 @@
     }
 
     90%,100% {
-        background-color:rgb(30, 30, 30);
+        background-color:rgb(10, 10, 10);
         box-shadow: 0px 0px 0px;
-        color:rgb(30, 30, 30);
+        color:rgb(10, 10, 10);
         text-shadow: 0px 0px 0px;
       }
   }
