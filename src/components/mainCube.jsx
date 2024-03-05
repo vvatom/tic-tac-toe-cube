@@ -65,6 +65,7 @@ export default function MainCube() {
   const [xCount, setXCount] = useState(0);
   const [oCount, setOCount] = useState(0);
   const [endGame, setEndGame] = useState(false);
+  const [actualWall, setActualWall] = useState("");
 
   const [camIteration, setCamIteration] = useState(0);
   const [wallEndGame, setWallEndGame] = useState(WALLS_GAME_STATE);
@@ -174,6 +175,7 @@ export default function MainCube() {
             setGameRules((prev) => {
               return { ...prev, Camera: `rotateX(-90deg) rotateY(0deg)` };
             });
+            setActualWall("UpperWall");
           } else {
             setCamIteration((prev) => {
               return prev + 1;
@@ -194,6 +196,7 @@ export default function MainCube() {
             setGameRules((prev) => {
               return { ...prev, Camera: `rotateX(-180deg) rotateY(0deg)` };
             });
+            setActualWall("BackWall");
           } else {
             setCamIteration((prev) => {
               return prev + 1;
@@ -214,6 +217,7 @@ export default function MainCube() {
             setGameRules((prev) => {
               return { ...prev, Camera: `rotateX(-270deg) rotateY(0deg)` };
             });
+            setActualWall("BottomWall");
           } else {
             setCamIteration((prev) => {
               return prev + 1;
@@ -234,6 +238,7 @@ export default function MainCube() {
             setGameRules((prev) => {
               return { ...prev, Camera: `rotateX(-360deg) rotateY(0deg)` };
             });
+            setActualWall("FrontWall");
           } else {
             setCamIteration((prev) => {
               return prev + 1;
@@ -254,6 +259,7 @@ export default function MainCube() {
             setGameRules((prev) => {
               return { ...prev, Camera: `rotateX(0deg) rotateY(90deg)` };
             });
+            setActualWall("LeftWall");
           } else {
             setCamIteration((prev) => {
               return prev + 1;
@@ -274,6 +280,7 @@ export default function MainCube() {
             setGameRules((prev) => {
               return { ...prev, Camera: `rotateX(0deg) rotateY(270deg)` };
             });
+            setActualWall("RightWall");
           } else {
             setCamIteration((prev) => {
               return prev + 1;
@@ -302,6 +309,7 @@ export default function MainCube() {
             setGameRules((prev) => {
               return { ...prev, Camera: `rotateX(-65deg) rotateY(-80deg)` };
             });
+            setActualWall("UpperWall");
           } else {
             setCamIteration((prev) => {
               return prev + 1;
@@ -314,6 +322,7 @@ export default function MainCube() {
             setGameRules((prev) => {
               return { ...prev, Camera: `rotateX(-25deg) rotateY(-70deg)` };
             });
+            setActualWall("RightWall");
           } else {
             setCamIteration((prev) => {
               return prev + 1;
@@ -326,6 +335,7 @@ export default function MainCube() {
             setGameRules((prev) => {
               return { ...prev, Camera: `rotateX(-25deg) rotateY(20deg)` };
             });
+            setActualWall("FrontWall");
           } else {
             setCamIteration((prev) => {
               return prev + 1;
@@ -338,6 +348,7 @@ export default function MainCube() {
             setGameRules((prev) => {
               return { ...prev, Camera: `rotateX(15deg) rotateY(110deg)` };
             });
+            setActualWall("LeftWall");
           } else {
             setCamIteration((prev) => {
               return prev + 1;
@@ -350,6 +361,7 @@ export default function MainCube() {
             setGameRules((prev) => {
               return { ...prev, Camera: `rotateX(20deg) rotateY(170deg)` };
             });
+            setActualWall("BackWall");
           } else {
             setCamIteration((prev) => {
               return prev + 1;
@@ -362,6 +374,7 @@ export default function MainCube() {
             setGameRules((prev) => {
               return { ...prev, Camera: `rotateX(90deg) rotateY(180deg)` };
             });
+            setActualWall("BottomWall");
           } else {
             setCamIteration((prev) => {
               return prev + 1;
@@ -399,6 +412,7 @@ export default function MainCube() {
 
   //FUNCTION PLAYER X OR O
   function clickBox(id) {
+    setIsRunning(true);
     if (gameRules.GameMode === "MegaTicTacToe" && gameRules.Play === true) {
       setCamIteration((prev) => {
         return prev + 1;
@@ -431,36 +445,89 @@ export default function MainCube() {
     );
   }
 
+  //COUNTER
+  const [time, setTime] = useState(0);
+
+  // state to check stopwatch running or not
+  const [isRunning, setIsRunning] = useState(false);
+
+  useEffect(() => {
+    let intervalId;
+    if (endGame) setIsRunning(false);
+    if (isRunning) {
+      // setting time from 0 to 1 every 10 milisecond using javascript setInterval method
+      intervalId = setInterval(() => setTime(time + 1), 10);
+    }
+    return () => clearInterval(intervalId);
+  }, [isRunning, time]);
+
+  // Minutes calculation
+  const minutes = Math.floor((time % 360000) / 6000);
+
+  // Seconds calculation
+  const seconds = Math.floor((time % 6000) / 100);
+
+  // Milliseconds calculation
+  const milliseconds = time % 100;
+
   //RETURN MAIN OBJECTS
   return (
     <div className="mainAppContainer">
       <div className="roateContainer"></div>
       {gameRules.Play ? (
-        <div
-          className={classNames("returnButton", {
-            returnButtonOpacity: gameRules.Play,
-          })}
-          onClick={() => {
-            setCamIteration(0);
-            setXCount(0);
-            setOCount(0);
-            setUserSign(0);
-            setGameRules((prev) => {
-              return { ...prev, Camera: `rotateX(15deg) rotateY(-45deg)` };
-            });
-            setGameRules((prev) => {
-              return { ...prev, Play: false };
-            });
-            setMainTab(MAIN_ARRAY);
-            setWallEndGame(WALLS_GAME_STATE);
-          }}
-        >
-          {"<"}
+        <div className="buttonsContainer">
+          <div
+            className={classNames("returnButton", {
+              returnButtonOpacity: gameRules.Play,
+              returnButtonEndGame: endGame,
+            })}
+            onClick={() => {
+              setCamIteration(0);
+              setXCount(0);
+              setOCount(0);
+              setUserSign(0);
+              setTime(0);
+              setIsRunning(false);
+              setGameRules((prev) => {
+                return { ...prev, Camera: `rotateX(15deg) rotateY(-45deg)` };
+              });
+              setGameRules((prev) => {
+                return { ...prev, Play: false };
+              });
+              setMainTab(MAIN_ARRAY);
+              setWallEndGame(WALLS_GAME_STATE);
+            }}
+          >
+            {" < BACK"}
+          </div>
+
+          <div
+            className={classNames("retryButton", {
+              returnButtonOpacity: gameRules.Play,
+              retryButtonEndGame: endGame,
+            })}
+            onClick={() => {
+              setCamIteration(0);
+              setXCount(0);
+              setOCount(0);
+              setUserSign(0);
+              setTime(0);
+              setIsRunning(false);
+              setMainTab(MAIN_ARRAY);
+              setWallEndGame(WALLS_GAME_STATE);
+            }}
+          >
+            {" < RETRY"}
+          </div>
         </div>
       ) : (
         ""
       )}
-      <div className="cubeContainer">
+      <div
+        className={classNames("cubeContainer", {
+          cubeContainerEndGame: endGame,
+        })}
+      >
         {!endGame &&
         (gameRules.Play === false ||
           gameRules.GameMode === "CubeTicTacToe" ||
@@ -491,6 +558,7 @@ export default function MainCube() {
           <div className="cube_front">
             {gameRules.Play ? (
               <FrontWall
+                actualWall={actualWall}
                 fullWall={fullWall}
                 wallEndGame={wallEndGame}
                 setWallEndGame={setWallEndGame}
@@ -503,12 +571,17 @@ export default function MainCube() {
                 setOCount={setOCount}
               />
             ) : (
-              <FrontMenu hoverBox={hoverBox} mainTab={mainTab} />
+              <FrontMenu
+                setActualWall={setActualWall}
+                hoverBox={hoverBox}
+                mainTab={mainTab}
+              />
             )}
           </div>
           <div className="cube_right">
             {gameRules.Play ? (
               <RightWall
+                actualWall={actualWall}
                 fullWall={fullWall}
                 wallEndGame={wallEndGame}
                 setWallEndGame={setWallEndGame}
@@ -527,6 +600,7 @@ export default function MainCube() {
           <div className="cube_back">
             {gameRules.Play ? (
               <BackWall
+                actualWall={actualWall}
                 fullWall={fullWall}
                 wallEndGame={wallEndGame}
                 setWallEndGame={setWallEndGame}
@@ -545,6 +619,7 @@ export default function MainCube() {
           <div className="cube_left">
             {gameRules.Play ? (
               <LeftWall
+                actualWall={actualWall}
                 fullWall={fullWall}
                 wallEndGame={wallEndGame}
                 setWallEndGame={setWallEndGame}
@@ -563,6 +638,7 @@ export default function MainCube() {
           <div className="cube_upper">
             {gameRules.Play ? (
               <UpperWall
+                actualWall={actualWall}
                 fullWall={fullWall}
                 wallEndGame={wallEndGame}
                 setWallEndGame={setWallEndGame}
@@ -581,6 +657,7 @@ export default function MainCube() {
           <div className="cube_bottom">
             {gameRules.Play ? (
               <BottomWall
+                actualWall={actualWall}
                 fullWall={fullWall}
                 wallEndGame={wallEndGame}
                 setWallEndGame={setWallEndGame}
@@ -604,6 +681,9 @@ export default function MainCube() {
           userSign={userSign}
           xCount={xCount}
           oCount={oCount}
+          milliseconds={milliseconds}
+          seconds={seconds}
+          minutes={minutes}
         />
       ) : (
         ""

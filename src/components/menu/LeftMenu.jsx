@@ -8,9 +8,24 @@ export default function LeftMenu(props) {
   const [gameRules, setGameRules] = useContext(Context);
   return (
     <div className="leftMenuContainer">
-      <div className="leftMenuContainer__leftUpCorner"></div>
-      <div className="leftMenuContainer__middleUp"></div>
-      <div className="leftMenuContainer__righttUpCorner"></div>
+      <div
+        className={classNames({
+          leftMenuContainer__leftUpCorner_blue: gameRules.Board === "About",
+          leftMenuContainer__leftUpCorner: gameRules.Board !== "About",
+        })}
+      ></div>
+      <div
+        className={classNames({
+          leftMenuContainer__middleUp_blue: gameRules.Board === "About",
+          leftMenuContainer__middleUp: gameRules.Board !== "About",
+        })}
+      ></div>
+      <div
+        className={classNames({
+          leftMenuContainer__righttUpCorner_blue: gameRules.Board === "About",
+          leftMenuContainer__righttUpCorner: gameRules.Board !== "About",
+        })}
+      ></div>
       <div className="leftMenuContainer__leftCenter"></div>
       <div className="leftMenuContainer__middleCenter"></div>
       <div className="leftMenuContainer__rightCenter"></div>
@@ -61,6 +76,12 @@ export default function LeftMenu(props) {
             return { ...prev, GameMode: "FreeForAll" };
           })
         }
+      ></div>
+      <div
+        className={classNames({
+          leftScoreBoard: gameRules.Board === "ScoreBoard",
+          leftScoreBoard_Off: gameRules.Board !== "ScoreBoard",
+        })}
       ></div>
     </div>
   );

@@ -169,7 +169,7 @@
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.mainMenuContainer__RedNotHover{
-    background-color:rgb(16, 16, 16);
+    background-color:rgb(21, 21, 21);
     color:black;
     transition: 0.4s ease-in-out;
 }.mainMenuContainer__RedGameMode{
@@ -186,7 +186,7 @@
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.mainMenuContainer__BlueNotHover{
-    background-color:rgb(16, 16, 16);
+        background-color:rgb(21, 21, 21);
     color:black;
     transition: 0.4s ease-in-out;
 }.mainMenuContainer__BlueGameMode{
@@ -204,8 +204,7 @@
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.mainMenuContainer__MagentaNotHover{
-    z-index: 10;
-    background-color:rgb(16, 16, 16);
+        background-color:rgb(21, 21, 21);
     color:black;
     transition: 0.4s ease-in-out;
 }.mainMenuContainer__MagentaGameMode{
@@ -223,7 +222,7 @@
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.mainMenuContainer__OrangeNotHover{
-    background-color:rgb(16, 16, 16);
+        background-color:rgb(21, 21, 21);
     color:black;
     transition: 0.4s ease-in-out;
 }.mainMenuContainer__OrangeGameMode{
@@ -240,7 +239,7 @@
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.mainMenuContainer__GreenNotHover{
-    background-color:rgb(16, 16, 16);
+        background-color:rgb(21, 21, 21);
     color:black;
     transition: 0.4s ease-in-out;
 }.mainMenuContainer__GreenGameMode{
@@ -266,7 +265,7 @@
     }
 
     90%,100% {
-        background-color:rgb(16, 16, 16);
+            background-color:rgb(21, 21, 21);
         box-shadow: 0px 0px 0px;
         color:rgb(16, 16, 16);
         text-shadow: 0px 0px 0px;

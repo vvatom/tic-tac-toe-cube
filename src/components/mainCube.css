@@ -1,196 +1,242 @@
-.mainAppContainer{
-  position:relative;
+.mainAppContainer {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction:column;
-  width:100vw;
+  flex-direction: column;
+  width: 100vw;
   height: 100vh;
 }
 
-.roateContainer{
-  position:relative;
+.roateContainer {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction:column;
-  width:100vw;
+  flex-direction: column;
+  width: 100vw;
   height: 100vh;
-  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(5,5,5,1) 50%, rgba(0,0,0,1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(10, 10, 10, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
-.cubeContainer{
-  width:1vw;
+.cubeContainer {
+  width: 1vw;
   height: 1vh;
-    position:absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction:column;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: 1s;
+}
+.cubeContainerEndGame {
+  scale: 0.8;
+  transition: 1s;
 }
 
 @media only screen and (min-aspect-ratio: 1/1) {
-.cube{
-  font-size: 8vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position:relative;
-  width:42vh;
-  height: 42vh;
-  transform-style: preserve-3d;
-  transform:rotate3d(0, 0, 0, 0deg);
-}}
+  .cube {
+    font-size: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 42vh;
+    height: 42vh;
+    transform-style: preserve-3d;
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
 @media only screen and (max-aspect-ratio: 1/1) {
-  .cube{
+  .cube {
     font-size: 8vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    position:relative;
-    width:42vw;
+    position: relative;
+    width: 42vw;
     height: 42vw;
     transform-style: preserve-3d;
-  }}
-  
+  }
+}
 
 @media only screen and (min-aspect-ratio: 1/1) {
-.cube_front{
-  /* purple */
-  transform: translateZ(20vh);
-  position:absolute;
-  width:40.1vh;
-  height: 40.1vh;
-  opacity:1;
-}}
+  .cube_front {
+    /* purple */
+    transform: translateZ(20vh);
+    position: absolute;
+    width: 40.1vh;
+    height: 40.1vh;
+    opacity: 1;
+  }
+}
 @media only screen and (max-aspect-ratio: 1/1) {
-  .cube_front{
+  .cube_front {
     /* purple */
     transform: translateZ(20vw);
-    position:absolute;
-    width:40.1vw;
+    position: absolute;
+    width: 40.1vw;
     height: 40.1vw;
-    opacity:1;
-  }}
+    opacity: 1;
+  }
+}
 
-  @media only screen and (min-aspect-ratio: 1/1) {
-.cube_right{
-  /* yellow */
-  transform-origin: center center;
-  transform: rotateY(90deg) rotateZ(90deg) translateZ(20vh);;
-  position:absolute;
-  width:40.1vh;
-  height: 40.1vh;
-  opacity:1;
-}}
-@media only screen and (max-aspect-ratio: 1/1) {
-  .cube_right{
+@media only screen and (min-aspect-ratio: 1/1) {
+  .cube_right {
     /* yellow */
     transform-origin: center center;
-    transform: rotateY(90deg) rotateZ(90deg) translateZ(20vw);;
-    position:absolute;
-    width:40.1vw;
-    height: 40.1vw;
-    opacity:1;
-  }}
-
-  @media only screen and (min-aspect-ratio: 1/1) {
-.cube_back{
-  /* lime */
-  transform-origin: center center;
-  transform: rotateX(180deg) translateZ(20vh);
-  position:absolute;
-  width:40.1vh;
-  height: 40.1vh;
-  opacity:1;
-}}
+    transform: rotateY(90deg) rotateZ(90deg) translateZ(20vh);
+    position: absolute;
+    width: 40.1vh;
+    height: 40.1vh;
+    opacity: 1;
+  }
+}
 @media only screen and (max-aspect-ratio: 1/1) {
-  .cube_back{
+  .cube_right {
+    /* yellow */
+    transform-origin: center center;
+    transform: rotateY(90deg) rotateZ(90deg) translateZ(20vw);
+    position: absolute;
+    width: 40.1vw;
+    height: 40.1vw;
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-aspect-ratio: 1/1) {
+  .cube_back {
+    /* lime */
+    transform-origin: center center;
+    transform: rotateX(180deg) translateZ(20vh);
+    position: absolute;
+    width: 40.1vh;
+    height: 40.1vh;
+    opacity: 1;
+  }
+}
+@media only screen and (max-aspect-ratio: 1/1) {
+  .cube_back {
     /* lime */
     transform-origin: center center;
     transform: rotateX(180deg) translateZ(20vw);
-    position:absolute;
-    width:40.1vw;
+    position: absolute;
+    width: 40.1vw;
     height: 40.1vw;
-    opacity:1;
-  }}
+    opacity: 1;
+  }
+}
 
-  @media only screen and (min-aspect-ratio: 1/1) {
-.cube_left{
-  /* green */
-  transform-origin: center center;
-  transform: rotateY(-90deg) rotateZ(-90deg) translateZ(20vh);;
-  position:absolute;
-  width:40.1vh;
-  height: 40.1vh;
-  opacity:1;
-}}
-@media only screen and (max-aspect-ratio: 1/1) {
-  .cube_left{
+@media only screen and (min-aspect-ratio: 1/1) {
+  .cube_left {
     /* green */
     transform-origin: center center;
-    transform: rotateY(-90deg) rotateZ(-90deg) translateZ(20vw);;
-    position:absolute;
-    width:40.1vw;
-    height: 40.1vw;
-    opacity:1;
-  }}
-
-  @media only screen and (min-aspect-ratio: 1/1) {
-.cube_upper{
-  /* skyblue */
-  transform-origin: center center;
-  transform: rotateX(90deg) translateZ(20vh);;
-  position:absolute;
-  width:40.1vh;
-  height: 40.1vh;
-  opacity:1;
-}}
+    transform: rotateY(-90deg) rotateZ(-90deg) translateZ(20vh);
+    position: absolute;
+    width: 40.1vh;
+    height: 40.1vh;
+    opacity: 1;
+  }
+}
 @media only screen and (max-aspect-ratio: 1/1) {
-  .cube_upper{
+  .cube_left {
+    /* green */
+    transform-origin: center center;
+    transform: rotateY(-90deg) rotateZ(-90deg) translateZ(20vw);
+    position: absolute;
+    width: 40.1vw;
+    height: 40.1vw;
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-aspect-ratio: 1/1) {
+  .cube_upper {
     /* skyblue */
     transform-origin: center center;
-    transform: rotateX(90deg) translateZ(20vw);;
-    position:absolute;
-    width:40.1vw;
-    height: 40.1vw;
-    opacity:1;
-  }}
-
-  @media only screen and (min-aspect-ratio: 1/1) {
-.cube_bottom{
-  /* pink */
-  transform-origin: center center;
-  transform: rotateX(-90deg) translateZ(20vh);
-  position:absolute;
-  width:40.1vh;
-  height: 40.1vh;
-  opacity:1;
-}}
+    transform: rotateX(90deg) translateZ(20vh);
+    position: absolute;
+    width: 40.1vh;
+    height: 40.1vh;
+    opacity: 1;
+  }
+}
 @media only screen and (max-aspect-ratio: 1/1) {
-  .cube_bottom{
+  .cube_upper {
+    /* skyblue */
+    transform-origin: center center;
+    transform: rotateX(90deg) translateZ(20vw);
+    position: absolute;
+    width: 40.1vw;
+    height: 40.1vw;
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-aspect-ratio: 1/1) {
+  .cube_bottom {
+    /* pink */
+    transform-origin: center center;
+    transform: rotateX(-90deg) translateZ(20vh);
+    position: absolute;
+    width: 40.1vh;
+    height: 40.1vh;
+    opacity: 1;
+  }
+}
+@media only screen and (max-aspect-ratio: 1/1) {
+  .cube_bottom {
     /* pink */
     transform-origin: center center;
     transform: rotateX(-90deg) translateZ(20vw);
-    position:absolute;
-    width:40.1vw;
+    position: absolute;
+    width: 40.1vw;
     height: 40.1vw;
-    opacity:1;
-  }}
+    opacity: 1;
+  }
+}
 
-  .returnButton{
-    position:absolute;
+@media only screen and (min-aspect-ratio: 1/1) {
+  .buttonsContainer {
+    position: absolute;
+    top: 4vh;
+    display: flex;
+    justify-content: center;
+    gap: 3vh;
+    height: 6vh;
+    width: 100%;
+  }
+
+  .returnButton {
+    overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     font-size: 5vh;
-    border-radius: 100%;
-    right:25vw;
-    top:5vh;
+    border-radius: 100px 100px 100px 100px;
+    right: 25vw;
     height: 6vh;
     width: 6vh;
-    background-color: rgb(16, 16, 16);
-  }.returnButton:hover{
+    background-color: rgb(21, 21, 21);
+  }
+  .returnButton:hover {
+    width: 21.5vh;
+    transition: 0.5s;
+    background-color: magenta;
+    box-shadow: 0 0 5vh magenta;
+    color: white;
+    text-shadow: 0 0 1vh white;
+  }
+  .returnButton:not(:hover) {
+    transition: 0.5s;
+  }
+  .returnButtonEndGame {
+    width: 21.5vh;
     transition: 0.5s;
     background-color: magenta;
     box-shadow: 0 0 5vh magenta;
@@ -198,22 +244,122 @@
     text-shadow: 0 0 1vh white;
   }
 
-  .mainCube_pointerEventsNone{
-    pointer-events: none;
+  .retryButton {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 5vh;
+    border-radius: 100px 100px 100px 100px;
+    right: 30vw;
+    height: 6vh;
+    width: 6vh;
+    background-color: rgb(21, 21, 21);
   }
-
-  .returnButtonOpacity{
-    animation-name: returnButtonOpacityAnim;
-    animation-duration: 0.8s;
-    animation-iteration-count: 1;
+  .retryButton:hover {
+    width: 24vh;
+    transition: 0.5s;
+    background-color: magenta;
+    box-shadow: 0 0 5vh magenta;
+    color: white;
+    text-shadow: 0 0 1vh white;
+  }
+  .retryButton:not(:hover) {
+    transition: 0.5s;
+  }
 }
 
-  @keyframes returnButtonOpacityAnim {
-    0% {
-        opacity:0;
-    }
-
-    100% {
-        opacity:1;
-      }
+@media only screen and (max-aspect-ratio: 1/1) {
+  .buttonsContainer {
+    position: absolute;
+    top: 4vw;
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+    height: 6vw;
+    width: 100%;
   }
+
+  .returnButton {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 5vw;
+    border-radius: 100px 100px 100px 100px;
+    height: 6vw;
+    width: 6vw;
+    background-color: rgb(21, 21, 21);
+  }
+  .returnButton:hover {
+    width: 21.5vw;
+    transition: 0.5s;
+    background-color: magenta;
+    box-shadow: 0 0 5vw magenta;
+    color: white;
+    text-shadow: 0 0 1vw white;
+  }
+  .returnButton:not(:hover) {
+    transition: 0.5s;
+  }
+  .returnButtonEndGame {
+    width: 21.5vh;
+    transition: 0.5s;
+    background-color: magenta;
+    box-shadow: 0 0 5vw magenta;
+    color: white;
+    text-shadow: 0 0 1vw white;
+  }
+
+  .retryButton {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 5vw;
+    border-radius: 100px 100px 100px 100px;
+    right: 30vw;
+    height: 6vw;
+    width: 6vw;
+    background-color: rgb(21, 21, 21);
+  }
+  .retryButton:hover {
+    width: 24vw;
+    transition: 0.5s;
+    background-color: magenta;
+    box-shadow: 0 0 5vw magenta;
+    color: white;
+    text-shadow: 0 0 1vw white;
+  }
+  .retryButton:not(:hover) {
+    transition: 0.5s;
+  }
+}
+
+.mainCube_pointerEventsNone {
+  pointer-events: none;
+}
+.retryButtonEndGame {
+  width: 24vh;
+  transition: 0.5s;
+  background-color: magenta;
+  box-shadow: 0 0 5vh magenta;
+  color: white;
+  text-shadow: 0 0 1vh white;
+}
+
+.returnButtonOpacity {
+  animation-name: returnButtonOpacityAnim;
+  animation-duration: 0.8s;
+  animation-iteration-count: 1;
+}
+
+@keyframes returnButtonOpacityAnim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

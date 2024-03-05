@@ -118,7 +118,7 @@
     box-shadow: 0 0 5vh red;
     transition: 0.2s ease-in-out;
 }.redNotHover_bottom{
-    background-color:rgb(10, 10, 10);
+    background-color:rgb(15, 15, 15);
     transition: 1s ease-in-out;
 }
 .red_O_bottom_win{
@@ -139,7 +139,7 @@
     transition: 0.2s ease-in-out;
 }
 .blueNotHover_bottom{
-    background-color:rgb(10, 10, 10);
+    background-color:rgb(15, 15, 15);
     transition: 1s ease-in-out;
 }
 .blue_X_bottom_win{

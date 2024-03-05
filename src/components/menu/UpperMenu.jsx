@@ -21,9 +21,19 @@ export default function UpperMenu(props) {
         onMouseEnter={() => hoverBox(15, true)}
         onMouseLeave={() => hoverBox(15, false)}
         onClick={() => {
-          setGameRules((prev) => {
-            return { ...prev, Board: "ScoreBoard" };
-          });
+          if (gameRules.Board === "ScoreBoard") {
+            setGameRules((prev) => {
+              return {
+                ...prev,
+                Camera: `rotateX(15deg) rotateY(-45deg)`,
+                Board: "",
+              };
+            });
+          } else {
+            setGameRules((prev) => {
+              return { ...prev, Board: "ScoreBoard" };
+            });
+          }
         }}
       ></div>
       <div className="upperMenuContainer__leftCenter"></div>
@@ -85,6 +95,14 @@ export default function UpperMenu(props) {
             return { ...prev, GameMode: "MegaTicTacToe" };
           })
         }
+      ></div>
+      <div
+        className={classNames({
+          upperAbout:
+            gameRules.Board === "About" || gameRules.Board === "ScoreBoard",
+          upperAbout_Off:
+            gameRules.Board === "" || gameRules.Board === "Styles",
+        })}
       ></div>
     </div>
   );

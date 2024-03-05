@@ -118,7 +118,7 @@
     box-shadow: 0 0 5vh red;
     transition: 0.2s ease-in-out;
 }.redNotHover_front{
-    background-color: rgb(16, 16, 16);
+        background-color: rgb(21, 21, 21);
     transition: 1s ease-in-out;
 }
 .red_O_front_win{
@@ -139,7 +139,7 @@
     transition: 0.2s ease-in-out;
 }
 .blueNotHover_front{
-    background-color: rgb(16, 16, 16);
+        background-color: rgb(21, 21, 21);
     transition: 1s ease-in-out;
 }
 .blue_X_front_win{

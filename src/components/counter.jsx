@@ -1,10 +1,11 @@
 import "./counter.css";
 import classNames from "classnames";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Context } from "../App";
 
 export default function Counter(props) {
-  const { userSign, xCount, oCount, minutes, seconds, endGame } = props;
+  const { userSign, xCount, oCount, endGame, milliseconds, minutes, seconds } =
+    props;
   const [gameRules, setGameRules] = useContext(Context);
 
   return (
@@ -20,7 +21,11 @@ export default function Counter(props) {
       >
           X : {xCount}/6  
       </p>
-      <p className="counterTimer">  00:00:00  </p>
+      <p className="counterTimer">{`  ${minutes
+        .toString()
+        .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}:${milliseconds
+        .toString()
+        .padStart(2, "0")}  `}</p>
       <p
         className={classNames("counterO", {
           counterOselect: userSign === 1 && !endGame,

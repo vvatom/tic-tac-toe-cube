@@ -34,21 +34,23 @@ export default function RightMenu(props) {
       </div>
       <div
         className={classNames("secondMenuContainer__middleUp", {
+          secondMenuContainer__BlueGameMode: gameRules.Board === "Styles",
           secondMenuContainer__BlueHover: mainTab[18].hovered,
           secondMenuContainer__BlueNotHover: !mainTab[18].hovered,
           whiteLoad_RightMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(18, true)}
         onMouseLeave={() => hoverBox(18, false)}
-        onClick={() => {}}
+        onClick={() => {
+          setGameRules((prev) => {
+            return { ...prev, Camera: `rotateX(-5deg) rotateY(525deg)` };
+          });
+          setGameRules((prev) => {
+            return { ...prev, Board: "Styles" };
+          });
+        }}
       >
-        <a
-          href="https://vvatom.github.io/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          MY PROJECTS
-        </a>
+          STYLES
       </div>
       <div
         className={classNames("secondMenuContainer__righttUpCorner", {
@@ -61,7 +63,7 @@ export default function RightMenu(props) {
         onMouseLeave={() => hoverBox(21, false)}
         onClick={() => {
           setGameRules((prev) => {
-            return { ...prev, Camera: `rotateX(-5deg) rotateY(-555deg)` };
+            return { ...prev, Camera: `rotateX(5deg) rotateY(-555deg)` };
           });
           setGameRules((prev) => {
             return { ...prev, Board: "About" };

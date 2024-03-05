@@ -118,7 +118,7 @@
     box-shadow: 0 0 5vh red;
     transition: 0.2s ease-in-out;
 }.redNotHover_left{
-    background-color:rgb(13, 13, 13);
+    background-color:rgb(18, 18, 18);
     transition: 1s ease-in-out;
 }
 .red_O_left_win{
@@ -139,7 +139,7 @@
     transition: 0.2s ease-in-out;
 }
 .blueNotHover_left{
-    background-color:rgb(13, 13, 13);
+    background-color:rgb(18, 18, 18);
     transition: 1s ease-in-out;
 }
 .blue_X_left_win{

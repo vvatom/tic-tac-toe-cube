@@ -27,31 +27,49 @@ export default function BackMenu(props) {
                 Board: "",
               };
             });
+          } else {
+            setGameRules((prev) => {
+              return { ...prev, Board: "ScoreBoard" };
+            });
           }
-
-          setGameRules((prev) => {
-            return { ...prev, Board: "ScoreBoard" };
-          });
         }}
       >
         {gameRules.Board === "ScoreBoard" ? "<" : "SCORE BOARD"}
       </div>
+
       <div className="backMenuContainer__middleUp"></div>
       <div className="backMenuContainer__righttUpCorner"></div>
+
       <div
         className={classNames("backMenuContainer__leftCenter", {
+          backMenuContainer__BlueGameMode: gameRules.Board === "Styles",
           backMenuContainer__BlueHover: mainTab[18].hovered,
           backMenuContainer__BlueNotHover: !mainTab[18].hovered,
           whiteLoad_BackMenu: gameRules.Load,
         })}
         onMouseEnter={() => hoverBox(18, true)}
         onMouseLeave={() => hoverBox(18, false)}
-        onClick={() => {}}
+        onClick={() => {
+          if (gameRules.Board === "Styles") {
+            setGameRules((prev) => {
+              return {
+                ...prev,
+                Camera: `rotateX(15deg) rotateY(-45deg)`,
+                Board: "",
+              };
+            });
+          } else {
+            setGameRules((prev) => {
+              return { ...prev, Board: "Styles" };
+            });
+          }
+        }}
       >
-        MY PROJECTS
+        {gameRules.Board === "Styles" ? "<" : "STYLES"}
       </div>
       <div className="backMenuContainer__middleCenter"></div>
       <div className="backMenuContainer__rightCenter"></div>
+
       <div
         className={classNames("backMenuContainer__leftdownCorner", {
           backMenuContainer__BlueGameMode: gameRules.Board === "About",
@@ -70,16 +88,52 @@ export default function BackMenu(props) {
                 Board: "",
               };
             });
+          } else {
+            setGameRules((prev) => {
+              return { ...prev, Board: "About" };
+            });
           }
-          setGameRules((prev) => {
-            return { ...prev, Board: "About" };
-          });
         }}
       >
         {gameRules.Board === "About" ? "<" : "ABOUT"}
       </div>
       <div className="backMenuContainer__centerDownCorner"></div>
       <div className="backMenuContainer__rightDownCorner"></div>
+
+      <div
+        className={classNames({
+          aboutContent_Container: gameRules.Board === "About",
+          aboutContent_Container_Off: gameRules.Board !== "About",
+        })}
+      >
+        <div className="aboutContent_Container_Free">
+          <br />
+          FREE FOR ALL
+          <br />
+          rotate cube and place
+          <br /> signs wherever you want
+        </div>
+        <div className="aboutContent_Container_Cube">
+          <br />
+          CUBE TIC TAC TOE
+          <br />
+          complete one wall <br />
+          at a time
+        </div>
+        <div className="aboutContent_Container_Mega">
+          <br />
+          MEGA TIC TAC TOE
+          <br />
+          place sign on the wall <br />
+          one at a time
+        </div>
+      </div>
+      <div
+        className={classNames({
+          scoreBoardContainer: gameRules.Board === "ScoreBoard",
+          scoreBoardContainer_Off: gameRules.Board !== "ScoreBoard",
+        })}
+      ></div>
     </div>
   );
 }

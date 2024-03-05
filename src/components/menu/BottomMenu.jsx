@@ -85,10 +85,21 @@ export default function BottomMenu(props) {
         onMouseLeave={() => hoverBox(21, false)}
         onClick={() => {
           setGameRules((prev) => {
+            return { ...prev, Camera: `rotateX(5deg) rotateY(-555deg)` };
+          });
+          setGameRules((prev) => {
             return { ...prev, Board: "About" };
           });
         }}
       />
+      <div
+        className={classNames({
+          bottomAbout:
+            gameRules.Board === "About" || gameRules.Board === "ScoreBoard",
+          bottomAbout_Off:
+            gameRules.Board === "" || gameRules.Board === "Styles",
+        })}
+      ></div>
     </div>
   );
 }

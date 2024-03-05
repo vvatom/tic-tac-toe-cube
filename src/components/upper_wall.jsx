@@ -31,6 +31,7 @@ export default function UpperWall(props) {
     setWallEndGame,
     wallEndGame,
     fullWall,
+    actualWall
   } = props;
 
   useEffect(() => {
@@ -121,7 +122,7 @@ export default function UpperWall(props) {
           redNotHover_upper:
             userSign === 1 && mainTab[3].sign === "" && !mainTab[3].hovered,
           red_O_upper: mainTab[3].sign === "O",
-          clickNone_upper: mainTab[3].sign !== "" || wallEndGame[0].end,
+          clickNone_upper: mainTab[3].sign !== "" || wallEndGame[0].end || (actualWall !=='UpperWall' && actualWall !=='Free'),
         })}
         onMouseEnter={() => hoverBox(3, true)}
         onMouseLeave={() => hoverBox(3, false)}
@@ -150,7 +151,7 @@ export default function UpperWall(props) {
           redNotHover_upper:
             userSign === 1 && mainTab[10].sign === "" && !mainTab[10].hovered,
           red_O_upper: mainTab[10].sign === "O",
-          clickNone_upper: mainTab[10].sign !== "" || wallEndGame[0].end,
+          clickNone_upper: mainTab[10].sign !== "" || wallEndGame[0].end || (actualWall !=='UpperWall' && actualWall !=='Free'),
         })}
         onMouseEnter={() => hoverBox(10, true)}
         onMouseLeave={() => hoverBox(10, false)}
@@ -179,7 +180,7 @@ export default function UpperWall(props) {
           redNotHover_upper:
             userSign === 1 && mainTab[15].sign === "" && !mainTab[15].hovered,
           red_O_upper: mainTab[15].sign === "O",
-          clickNone_upper: mainTab[15].sign !== "" || wallEndGame[0].end,
+          clickNone_upper: mainTab[15].sign !== "" || wallEndGame[0].end || (actualWall !=='UpperWall' && actualWall !=='Free'),
         })}
         onMouseEnter={() => hoverBox(15, true)}
         onMouseLeave={() => hoverBox(15, false)}
@@ -209,7 +210,7 @@ export default function UpperWall(props) {
           redNotHover_upper:
             userSign === 1 && mainTab[4].sign === "" && !mainTab[4].hovered,
           red_O_upper: mainTab[4].sign === "O",
-          clickNone_upper: mainTab[4].sign !== "" || wallEndGame[0].end,
+          clickNone_upper: mainTab[4].sign !== "" || wallEndGame[0].end || (actualWall !=='UpperWall' && actualWall !=='Free'),
         })}
         onMouseEnter={() => hoverBox(4, true)}
         onMouseLeave={() => hoverBox(4, false)}
@@ -238,7 +239,7 @@ export default function UpperWall(props) {
           redNotHover_upper:
             userSign === 1 && mainTab[11].sign === "" && !mainTab[11].hovered,
           red_O_upper: mainTab[11].sign === "O",
-          clickNone_upper: mainTab[11].sign !== "" || wallEndGame[0].end,
+          clickNone_upper: mainTab[11].sign !== "" || wallEndGame[0].end || (actualWall !=='UpperWall' && actualWall !=='Free'),
         })}
         onMouseEnter={() => hoverBox(11, true)}
         onMouseLeave={() => hoverBox(11, false)}
@@ -267,7 +268,7 @@ export default function UpperWall(props) {
           redNotHover_upper:
             userSign === 1 && mainTab[16].sign === "" && !mainTab[16].hovered,
           red_O_upper: mainTab[16].sign === "O",
-          clickNone_upper: mainTab[16].sign !== "" || wallEndGame[0].end,
+          clickNone_upper: mainTab[16].sign !== "" || wallEndGame[0].end || (actualWall !=='UpperWall' && actualWall !=='Free'),
         })}
         onMouseEnter={() => hoverBox(16, true)}
         onMouseLeave={() => hoverBox(16, false)}
@@ -297,7 +298,7 @@ export default function UpperWall(props) {
           redNotHover_upper:
             userSign === 1 && mainTab[5].sign === "" && !mainTab[5].hovered,
           red_O_upper: mainTab[5].sign === "O",
-          clickNone_upper: mainTab[5].sign !== "" || wallEndGame[0].end,
+          clickNone_upper: mainTab[5].sign !== "" || wallEndGame[0].end || (actualWall !=='UpperWall' && actualWall !=='Free'),
         })}
         onMouseEnter={() => hoverBox(5, true)}
         onMouseLeave={() => hoverBox(5, false)}
@@ -326,7 +327,7 @@ export default function UpperWall(props) {
           redNotHover_upper:
             userSign === 1 && mainTab[12].sign === "" && !mainTab[12].hovered,
           red_O_upper: mainTab[12].sign === "O",
-          clickNone_upper: mainTab[12].sign !== "" || wallEndGame[0].end,
+          clickNone_upper: mainTab[12].sign !== "" || wallEndGame[0].end || (actualWall !=='UpperWall' && actualWall !=='Free'),
         })}
         onMouseEnter={() => hoverBox(12, true)}
         onMouseLeave={() => hoverBox(12, false)}
@@ -355,7 +356,7 @@ export default function UpperWall(props) {
           redNotHover_upper:
             userSign === 1 && mainTab[17].sign === "" && !mainTab[17].hovered,
           red_O_upper: mainTab[17].sign === "O",
-          clickNone_upper: mainTab[17].sign !== "" || wallEndGame[0].end,
+          clickNone_upper: mainTab[17].sign !== "" || wallEndGame[0].end || (actualWall !=='UpperWall' && actualWall !=='Free'),
         })}
         onMouseEnter={() => hoverBox(17, true)}
         onMouseLeave={() => hoverBox(17, false)}

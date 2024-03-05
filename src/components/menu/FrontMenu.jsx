@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { Context } from "../../App";
 
 export default function FrontMenu(props) {
-  const { hoverBox, mainTab } = props;
+  const { hoverBox, mainTab, setActualWall } = props;
   const [gameRules, setGameRules] = useContext(Context);
 
   return (
@@ -101,18 +101,21 @@ export default function FrontMenu(props) {
             setGameRules((prev) => {
               return { ...prev, Camera: `rotateX(-45deg) rotateY(-1125deg)` };
             });
+            setActualWall('Free')
           }
 
           if (gameRules.GameMode === "CubeTicTacToe") {
             setGameRules((prev) => {
               return { ...prev, Camera: `rotateX(-65deg) rotateY(-1160deg)` };
             });
+            setActualWall('UpperWall')
           }
 
           if (gameRules.GameMode === "MegaTicTacToe") {
             setGameRules((prev) => {
               return { ...prev, Camera: `rotateX(-90deg) rotateY(1080deg)` };
             });
+            setActualWall('UpperWall')
           }
 
           setGameRules((prev) => {

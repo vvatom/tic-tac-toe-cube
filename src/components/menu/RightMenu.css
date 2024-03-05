@@ -147,7 +147,7 @@
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.secondMenuContainer__RedNotHover{
-    background-color:rgb(13, 13, 13);
+        background-color:rgb(18, 18, 18);
     color:black;
     transition: 0.4s ease-in-out;
 }.secondMenuContainer__RedGameMode{
@@ -164,7 +164,7 @@
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.secondMenuContainer__BlueNotHover{
-    background-color:rgb(13, 13, 13);
+        background-color:rgb(18, 18, 18);
     color:black;
     transition: 0.4s ease-in-out;
 }.secondMenuContainer__BlueGameMode{
@@ -181,7 +181,7 @@
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.secondMenuContainer__RoyalblueNotHover{
-    background-color:rgb(13, 13, 13);
+        background-color:rgb(18, 18, 18);
     color:black;
     transition: 0.4s ease-in-out;
 }.secondMenuContainer__RoyalblueGameMode{
@@ -198,7 +198,7 @@
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.secondMenuContainer__MidnightblueNotHover{
-    background-color:rgb(13, 13, 13);
+        background-color:rgb(18, 18, 18);
     color:black;
     transition: 0.4s ease-in-out;
 }.secondMenuContainer__MidnightblueGameMode{
@@ -215,7 +215,7 @@
     text-shadow: 0px 0px 1vh white;
     transition: 0.2s ease-in-out;
 }.secondMenuContainer__FirebrickNotHover{
-    background-color:rgb(13, 13, 13);
+        background-color:rgb(18, 18, 18);
     color:black;
     transition: 0.4s ease-in-out;
 }.secondMenuContainer__FirebrickGameMode{
@@ -242,7 +242,7 @@
 
     90%,100% {
         
-        background-color:rgb(13, 13, 13);
+            background-color:rgb(18, 18, 18);
         box-shadow: 0px 0px 0px;
         color:rgb(13, 13, 13);
         text-shadow: 0px 0px 0px;

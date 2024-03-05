@@ -31,6 +31,7 @@ export default function BottomWall(props) {
     setWallEndGame,
     wallEndGame,
     fullWall,
+    actualWall
   } = props;
 
   useEffect(() => {
@@ -120,7 +121,7 @@ export default function BottomWall(props) {
           redNotHover_bottom:
             userSign === 1 && mainTab[7].sign === "" && !mainTab[7].hovered,
           red_O_bottom: mainTab[7].sign === "O",
-          clickNone_bottom: mainTab[7].sign !== "" || wallEndGame[5].end,
+          clickNone_bottom: mainTab[7].sign !== "" || wallEndGame[5].end || (actualWall !=='BottomWall' && actualWall !=='Free'),
         })}
         onMouseEnter={() => hoverBox(7, true)}
         onMouseLeave={() => hoverBox(7, false)}
@@ -149,7 +150,7 @@ export default function BottomWall(props) {
           redNotHover_bottom:
             userSign === 1 && mainTab[14].sign === "" && !mainTab[14].hovered,
           red_O_bottom: mainTab[14].sign === "O",
-          clickNone_bottom: mainTab[14].sign !== "" || wallEndGame[5].end,
+          clickNone_bottom: mainTab[14].sign !== "" || wallEndGame[5].end || (actualWall !=='BottomWall' && actualWall !=='Free'),
         })}
         onMouseEnter={() => hoverBox(14, true)}
         onMouseLeave={() => hoverBox(14, false)}
@@ -178,7 +179,7 @@ export default function BottomWall(props) {
           redNotHover_bottom:
             userSign === 1 && mainTab[23].sign === "" && !mainTab[23].hovered,
           red_O_bottom: mainTab[23].sign === "O",
-          clickNone_bottom: mainTab[23].sign !== "" || wallEndGame[5].end,
+          clickNone_bottom: mainTab[23].sign !== "" || wallEndGame[5].end || (actualWall !=='BottomWall' && actualWall !=='Free'),
         })}
         onMouseEnter={() => hoverBox(23, true)}
         onMouseLeave={() => hoverBox(23, false)}
@@ -208,7 +209,7 @@ export default function BottomWall(props) {
           redNotHover_bottom:
             userSign === 1 && mainTab[24].sign === "" && !mainTab[24].hovered,
           red_O_bottom: mainTab[24].sign === "O",
-          clickNone_bottom: mainTab[24].sign !== "" || wallEndGame[5].end,
+          clickNone_bottom: mainTab[24].sign !== "" || wallEndGame[5].end || (actualWall !=='BottomWall' && actualWall !=='Free'),
         })}
         onMouseEnter={() => hoverBox(24, true)}
         onMouseLeave={() => hoverBox(24, false)}
@@ -237,7 +238,7 @@ export default function BottomWall(props) {
           redNotHover_bottom:
             userSign === 1 && mainTab[0].sign === "" && !mainTab[0].hovered,
           red_O_bottom: mainTab[0].sign === "O",
-          clickNone_bottom: mainTab[0].sign !== "" || wallEndGame[5].end,
+          clickNone_bottom: mainTab[0].sign !== "" || wallEndGame[5].end || (actualWall !=='BottomWall' && actualWall !=='Free'),
         })}
         onMouseEnter={() => hoverBox(0, true)}
         onMouseLeave={() => hoverBox(0, false)}
@@ -266,7 +267,7 @@ export default function BottomWall(props) {
           redNotHover_bottom:
             userSign === 1 && mainTab[22].sign === "" && !mainTab[22].hovered,
           red_O_bottom: mainTab[22].sign === "O",
-          clickNone_bottom: mainTab[22].sign !== "" || wallEndGame[5].end,
+          clickNone_bottom: mainTab[22].sign !== "" || wallEndGame[5].end || (actualWall !=='BottomWall' && actualWall !=='Free'),
         })}
         onMouseEnter={() => hoverBox(22, true)}
         onMouseLeave={() => hoverBox(22, false)}
@@ -296,7 +297,7 @@ export default function BottomWall(props) {
           redNotHover_bottom:
             userSign === 1 && mainTab[1].sign === "" && !mainTab[1].hovered,
           red_O_bottom: mainTab[1].sign === "O",
-          clickNone_bottom: mainTab[1].sign !== "" || wallEndGame[5].end,
+          clickNone_bottom: mainTab[1].sign !== "" || wallEndGame[5].end || (actualWall !=='BottomWall' && actualWall !=='Free'),
         })}
         onMouseEnter={() => hoverBox(1, true)}
         onMouseLeave={() => hoverBox(1, false)}
@@ -325,7 +326,7 @@ export default function BottomWall(props) {
           redNotHover_bottom:
             userSign === 1 && mainTab[8].sign === "" && !mainTab[8].hovered,
           red_O_bottom: mainTab[8].sign === "O",
-          clickNone_bottom: mainTab[8].sign !== "" || wallEndGame[5].end,
+          clickNone_bottom: mainTab[8].sign !== "" || wallEndGame[5].end || (actualWall !=='BottomWall' && actualWall !=='Free'),
         })}
         onMouseEnter={() => hoverBox(8, true)}
         onMouseLeave={() => hoverBox(8, false)}
@@ -354,7 +355,7 @@ export default function BottomWall(props) {
           redNotHover_bottom:
             userSign === 1 && mainTab[21].sign === "" && !mainTab[21].hovered,
           red_O_bottom: mainTab[21].sign === "O",
-          clickNone_bottom: mainTab[21].sign !== "" || wallEndGame[5].end,
+          clickNone_bottom: mainTab[21].sign !== "" || wallEndGame[5].end || (actualWall !=='BottomWall' && actualWall !=='Free'),
         })}
         onMouseEnter={() => hoverBox(21, true)}
         onMouseLeave={() => hoverBox(21, false)}
