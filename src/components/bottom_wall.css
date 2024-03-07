@@ -1,153 +1,150 @@
-.bottomWallContainer{
-    /* pink */
-    display:flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap:5%;
-    width: 100%;
-    height: 100%;
-    background-color: black
+.bottomWallContainer {
+  /* pink */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
 }
 
-.bottomWallContainer__leftUpCorner{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 30%;
-    border-radius: 0% 0% 30% 0%;
-    transition: 0.4s;
-    color:transparent;
+.bottomWallContainer__leftUpCorner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  border-radius: 0% 0% 30% 0%;
+  transition: 0.4s;
+  color: transparent;
 }
-.bottomWallContainer__middleUp{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 30%;
-    border-radius: 0% 0% 30% 30%;
-    transition: 0.4s;
-    color:transparent;
+.bottomWallContainer__middleUp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  border-radius: 0% 0% 30% 30%;
+  transition: 0.4s;
+  color: transparent;
 }
-.bottomWallContainer__rightUpCorner{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 30%;
-    border-radius: 0% 0% 0% 30%;
-    transition: 0.4s;
-    color:transparent;
-}
-
-
-
-.bottomWallContainer__leftCenterCorner{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 30%;
-    border-radius: 0% 30% 30% 0%;
-    transition: 0.4s;
-    color:transparent;
-}
-.bottomWallContainer__middleCenterUp{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 30%;
-    border-radius: 30% 30% 30% 30%;
-    transition: 0.4s;
-    color:transparent;
-}
-.bottomWallContainer__rightCenterorner{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 30%;
-    border-radius: 30% 0% 0% 30%;
-    transition: 0.4s;
-    color:transparent;
+.bottomWallContainer__rightUpCorner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  border-radius: 0% 0% 0% 30%;
+  transition: 0.4s;
+  color: transparent;
 }
 
-
-
-.bottomWallContainer__leftDownCorner{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 30%;
-    border-radius: 0% 30% 0% 0%;
-    transition: 0.4s;
-    color:transparent;
+.bottomWallContainer__leftCenterCorner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  border-radius: 0% 30% 30% 0%;
+  transition: 0.4s;
+  color: transparent;
 }
-.bottomWallContainer__middleDown{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 30%;
-    border-radius: 30% 30% 0% 0%;
-    transition: 0.4s;
-    color:transparent;
+.bottomWallContainer__middleCenterUp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  border-radius: 30% 30% 30% 30%;
+  transition: 0.4s;
+  color: transparent;
 }
-.bottomWallContainer__rightDownCorner{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 30%;
-    border-radius: 30% 0% 0% 0%;
-    transition: 0.4s;
-    color:transparent;
+.bottomWallContainer__rightCenterorner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  border-radius: 30% 0% 0% 30%;
+  transition: 0.4s;
+  color: transparent;
 }
 
-.red_O_bottom{
-    background-color: red;
-    box-shadow: 0 0 5vh red;
-    color:white;
-    text-shadow: 0 0 1vh white;
+.bottomWallContainer__leftDownCorner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  border-radius: 0% 30% 0% 0%;
+  transition: 0.4s;
+  color: transparent;
 }
-.redHover_bottom{
-    background-color: red;
-    box-shadow: 0 0 5vh red;
-    transition: 0.2s ease-in-out;
-}.redNotHover_bottom{
-    background-color:rgb(15, 15, 15);
-    transition: 1s ease-in-out;
+.bottomWallContainer__middleDown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  border-radius: 30% 30% 0% 0%;
+  transition: 0.4s;
+  color: transparent;
 }
-.red_O_bottom_win{
-    filter: contrast(300%);
-    background-color: color-mix(in srgb, orange, magenta);
-    box-shadow: 0 0 15vh color-mix(in srgb, orange, magenta);
-}
-
-.blue_X_bottom{
-    background-color: blue;
-    box-shadow: 0 0 5vh blue;
-    color:white;
-    text-shadow: 0 0 1vh white;
-}
-.blueHover_bottom{
-    background-color: blue;
-    box-shadow: 0 0 5vh blue;
-    transition: 0.2s ease-in-out;
-}
-.blueNotHover_bottom{
-    background-color:rgb(15, 15, 15);
-    transition: 1s ease-in-out;
-}
-.blue_X_bottom_win{
-    filter: contrast(300%);
-    background-color: color-mix(in srgb, cyan, purple);
-    box-shadow: 0 0 15vh color-mix(in srgb, cyan, purple);
+.bottomWallContainer__rightDownCorner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  border-radius: 30% 0% 0% 0%;
+  transition: 0.4s;
+  color: transparent;
 }
 
-.clickNone_bottom{
-    pointer-events: none;
+.red_O_bottom {
+  background-color: red;
+  box-shadow: 0 0 5vh red;
+  color: white;
+  text-shadow: 0 0 1vh white;
+}
+.redHover_bottom {
+  background-color: red;
+  box-shadow: 0 0 5vh red;
+  transition: 0.2s ease-in-out;
+}
+.redNotHover_bottom {
+  background-color: rgb(15, 15, 15);
+  transition: 1s ease-in-out;
+}
+.red_O_bottom_win {
+  filter: contrast(300%);
+  background-color: color-mix(in srgb, orange, magenta);
+  box-shadow: 0 0 15vh color-mix(in srgb, orange, magenta);
+}
+
+.blue_X_bottom {
+  background-color: blue;
+  box-shadow: 0 0 5vh blue;
+  color: white;
+  text-shadow: 0 0 1vh white;
+}
+.blueHover_bottom {
+  background-color: blue;
+  box-shadow: 0 0 5vh blue;
+  transition: 0.2s ease-in-out;
+}
+.blueNotHover_bottom {
+  background-color: rgb(15, 15, 15);
+  transition: 1s ease-in-out;
+}
+.blue_X_bottom_win {
+  filter: contrast(300%);
+  background-color: color-mix(in srgb, cyan, purple);
+  box-shadow: 0 0 15vh color-mix(in srgb, cyan, purple);
+}
+
+.clickNone_bottom {
+  pointer-events: none;
 }

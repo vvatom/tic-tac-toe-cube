@@ -2,9 +2,10 @@ import classNames from "classnames";
 import { useContext } from "react";
 import { Context } from "../../App";
 import "./BackMenu.css";
+import ScoreBoard from "./ScoreBoard";
 
 export default function BackMenu(props) {
-  const { hoverBox, mainTab } = props;
+  const { hoverBox, mainTab, endGame } = props;
   const [gameRules, setGameRules] = useContext(Context);
 
   return (
@@ -133,7 +134,23 @@ export default function BackMenu(props) {
           scoreBoardContainer: gameRules.Board === "ScoreBoard",
           scoreBoardContainer_Off: gameRules.Board !== "ScoreBoard",
         })}
-      ></div>
+      >
+        <ScoreBoard endGame={endGame} />
+      </div>
+
+      <div
+        className={classNames({
+          styleContent_Container: gameRules.Board === "Styles",
+          // styleContent_Container_Off: gameRules.Board !== "Styles",
+        })}
+      >
+        <div className="leftUp_Theme"></div>
+        <div className="rightUp_Theme"></div>
+        <div className="leftMiddle_Theme"></div>
+        <div className="rightMiddle_Theme"></div>
+        <div className="leftDown_Theme"></div>
+        <div className="rightDown_Theme"></div>
+      </div>
     </div>
   );
 }

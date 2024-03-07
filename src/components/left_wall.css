@@ -1,154 +1,150 @@
-.leftWallContainer{
-    /* green */
-    display:flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap:5%;
-    width: 100%;
-    height: 100%;
-    background-color: black;
+.leftWallContainer {
+  /* green */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
 }
 
-.leftWallContainer__leftUpCorner{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 30%;
-    border-radius: 0% 0% 30% 0%;
-    transition: 0.4s;
-    color:transparent;
+.leftWallContainer__leftUpCorner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  border-radius: 0% 0% 30% 0%;
+  transition: 0.4s;
+  color: transparent;
 }
-.leftWallContainer__middleUp{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 30%;
-    border-radius: 0% 0% 30% 30%;
-    transition: 0.4s;
-    color:transparent;
+.leftWallContainer__middleUp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  border-radius: 0% 0% 30% 30%;
+  transition: 0.4s;
+  color: transparent;
 }
-.leftWallContainer__rightUpCorner{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 30%;
-    border-radius: 0% 0% 0% 30%;
-    transition: 0.4s;
-    color:transparent;
-}
-
-
-
-.leftWallContainer__leftCenterCorner{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 30%;
-    border-radius: 0% 30% 30% 0%;
-    transition: 0.4s;
-    color:transparent;
-}
-.leftWallContainer__middleCenterUp{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 30%;
-    border-radius: 30% 30% 30% 30%;
-    transition: 0.4s;
-    color:transparent;
-}
-.leftWallContainer__rightCenterorner{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 30%;
-    border-radius: 30% 0% 0% 30%;
-    transition: 0.4s;
-    color:transparent;
+.leftWallContainer__rightUpCorner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  border-radius: 0% 0% 0% 30%;
+  transition: 0.4s;
+  color: transparent;
 }
 
-
-
-.leftWallContainer__leftDownCorner{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 30%;
-    border-radius: 0% 30% 0% 0%;
-    transition: 0.4s;
-    color:transparent;
+.leftWallContainer__leftCenterCorner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  border-radius: 0% 30% 30% 0%;
+  transition: 0.4s;
+  color: transparent;
 }
-.leftWallContainer__middleDown{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 30%;
-    border-radius: 30% 30% 0% 0%;
-    transition: 0.4s;
-    color:transparent;
+.leftWallContainer__middleCenterUp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  border-radius: 30% 30% 30% 30%;
+  transition: 0.4s;
+  color: transparent;
 }
-.leftWallContainer__rightDownCorner{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 30%;
-    border-radius: 30% 0% 0% 0%;
-    transition: 0.4s;
-    color:transparent;
+.leftWallContainer__rightCenterorner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  border-radius: 30% 0% 0% 30%;
+  transition: 0.4s;
+  color: transparent;
 }
 
-.red_O_left{
-    background-color: red;
-    box-shadow: 0 0 5vh red;
-    color:white;
-    text-shadow: 0 0 1vh white;
+.leftWallContainer__leftDownCorner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  border-radius: 0% 30% 0% 0%;
+  transition: 0.4s;
+  color: transparent;
 }
-.redHover_left{
-    background-color: red;
-    box-shadow: 0 0 5vh red;
-    transition: 0.2s ease-in-out;
-}.redNotHover_left{
-    background-color:rgb(18, 18, 18);
-    transition: 1s ease-in-out;
+.leftWallContainer__middleDown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  border-radius: 30% 30% 0% 0%;
+  transition: 0.4s;
+  color: transparent;
 }
-.red_O_left_win{
-    filter: contrast(300%);
-    background-color: color-mix(in srgb, orange, magenta);
-    box-shadow: 0 0 15vh color-mix(in srgb, orange, magenta);
-}
-
-.blue_X_left{
-    background-color: blue;
-    box-shadow: 0 0 5vh blue;
-    color:white;
-    text-shadow: 0 0 1vh white;
-}
-.blueHover_left{
-    background-color: blue;
-    box-shadow: 0 0 5vh blue;
-    transition: 0.2s ease-in-out;
-}
-.blueNotHover_left{
-    background-color:rgb(18, 18, 18);
-    transition: 1s ease-in-out;
-}
-.blue_X_left_win{
-    filter: contrast(300%);
-    background-color: color-mix(in srgb, cyan, purple);
-    box-shadow: 0 0 15vh color-mix(in srgb, cyan, purple);
+.leftWallContainer__rightDownCorner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  border-radius: 30% 0% 0% 0%;
+  transition: 0.4s;
+  color: transparent;
 }
 
-.clickNone_left{
-    pointer-events: none;
+.red_O_left {
+  background-color: red;
+  box-shadow: 0 0 5vh red;
+  color: white;
+  text-shadow: 0 0 1vh white;
+}
+.redHover_left {
+  background-color: red;
+  box-shadow: 0 0 5vh red;
+  transition: 0.2s ease-in-out;
+}
+.redNotHover_left {
+  background-color: rgb(18, 18, 18);
+  transition: 1s ease-in-out;
+}
+.red_O_left_win {
+  filter: contrast(300%);
+  background-color: color-mix(in srgb, orange, magenta);
+  box-shadow: 0 0 15vh color-mix(in srgb, orange, magenta);
 }
 
+.blue_X_left {
+  background-color: blue;
+  box-shadow: 0 0 5vh blue;
+  color: white;
+  text-shadow: 0 0 1vh white;
+}
+.blueHover_left {
+  background-color: blue;
+  box-shadow: 0 0 5vh blue;
+  transition: 0.2s ease-in-out;
+}
+.blueNotHover_left {
+  background-color: rgb(18, 18, 18);
+  transition: 1s ease-in-out;
+}
+.blue_X_left_win {
+  filter: contrast(300%);
+  background-color: color-mix(in srgb, cyan, purple);
+  box-shadow: 0 0 15vh color-mix(in srgb, cyan, purple);
+}
+
+.clickNone_left {
+  pointer-events: none;
+}

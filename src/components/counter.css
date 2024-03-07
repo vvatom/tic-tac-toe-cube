@@ -1,62 +1,73 @@
-.counterTimer{
-        background-color: rgb(21, 21, 21);
-    border-radius: 100px;
-  }
-  
-  .counterX{
-        background-color: rgb(21, 21, 21);
-    border-radius: 100px;
-    transition: 0.3s ease-in-out
-  }.counterXselect{
-    background-color: blue;
-    box-shadow: 0 0 2vh blue;
-    text-shadow: 0 0 1vh white;
-  }
-  
-  .counterO{
-        background-color: rgb(21, 21, 21);
-    border-radius: 100px;
-    transition: 0.3s ease-in-out
-  }.counterOselect{
-    background-color: red;
-    box-shadow: 0 0 2vh red;
-    text-shadow: 0 0 1vh white;
-  }
-  
-  @media only screen and (min-aspect-ratio: 1/1) {
-  .counterContainer{
-    position:absolute;
-    bottom:0vh;
-    color:white;
-    font-size: 5vh;
-      display:flex;
-      flex-direction:row;
-      gap:5vh;
-  }}
-  
-  @media only screen and (max-aspect-ratio: 1/1) {
-    .counterContainer{
-      position:absolute;
-      bottom:0vw;
-      color:white;
-      font-size: 5vw;
-        display:flex;
-        flex-direction:row;
-        gap:5vw;
-    }}
+.counterTimer {
+  background-color: rgb(21, 21, 21);
+  border-radius: 100px;
+}
 
-    .counterOpacity{
-      animation-name: counterOpacityAnim;
-      animation-duration: 0.8s;
-      animation-iteration-count: 1;
+.counterX {
+  background-color: rgb(21, 21, 21);
+  border-radius: 100px;
+  transition: 0.3s ease-in-out;
+}
+.counterXselect {
+  background-color: blue;
+  box-shadow: 0 0 2vh blue;
+  text-shadow: 0 0 1vh white;
+}
+
+.counterO {
+  background-color: rgb(21, 21, 21);
+  border-radius: 100px;
+  transition: 0.3s ease-in-out;
+}
+.counterOselect {
+  background-color: red;
+  box-shadow: 0 0 2vh red;
+  text-shadow: 0 0 1vh white;
+}
+.counterEndGame {
+  transition: 0.5s;
+  background-color: magenta;
+  box-shadow: 0 0 5vw magenta;
+  color: white;
+  text-shadow: 0 0 1vw white;
+}
+
+@media only screen and (min-aspect-ratio: 1/1) {
+  .counterContainer {
+    position: absolute;
+    bottom: 0vh;
+    color: white;
+    font-size: 5vh;
+    display: flex;
+    flex-direction: row;
+    gap: 5vh;
   }
-  
-    @keyframes counterOpacityAnim {
-      0% {
-          opacity:0;
-      }
-  
-      100% {
-          opacity:1;
-        }
-    }
+}
+
+@media only screen and (max-aspect-ratio: 1/1) {
+  .counterContainer {
+    position: absolute;
+    bottom: 0vw;
+    color: white;
+    font-size: 5vw;
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+  }
+}
+
+.counterOpacity {
+  animation-name: counterOpacityAnim;
+  animation-duration: 0.8s;
+  animation-iteration-count: 1;
+}
+
+@keyframes counterOpacityAnim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

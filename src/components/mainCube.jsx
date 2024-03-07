@@ -66,6 +66,8 @@ export default function MainCube() {
   const [oCount, setOCount] = useState(0);
   const [endGame, setEndGame] = useState(false);
   const [actualWall, setActualWall] = useState("");
+  const [time, setTime] = useState(0);
+  const [scoreBoardId, setScoreBoardId] = useState(1);
 
   const [camIteration, setCamIteration] = useState(0);
   const [wallEndGame, setWallEndGame] = useState(WALLS_GAME_STATE);
@@ -394,6 +396,61 @@ export default function MainCube() {
     camIteration,
   ]);
 
+  //END GAME LOCALSTORAGE
+  useEffect(() => {
+    // Minutes calculation
+    const minutesEndGame = Math.floor((time % 360000) / 6000);
+
+    // Seconds calculation
+    const secondsEndGame = Math.floor((time % 6000) / 100);
+
+    // Milliseconds calculation
+    const millisecondsEndGame = time % 100;
+
+    function setIdCounter() {
+      setScoreBoardId((prev) => prev + 1);
+      return scoreBoardId;
+    }
+
+    // localStorage.clear();
+
+    let endGameArray = localStorage.getItem("scoreBoardArray");
+    let endGameArray_id = localStorage.getItem("scoreBoardArray_id");
+
+    if (endGameArray) {
+      if (endGame) {
+        let endGameArrayParse = JSON.parse(endGameArray);
+        let endGameArrayParse_id = JSON.parse(endGameArray_id);
+        endGameArrayParse_id++;
+        localStorage.setItem("scoreBoardArray_id", endGameArrayParse_id);
+        let endGameArrayParse_id_ready =
+          localStorage.getItem("scoreBoardArray_id");
+        localStorage.setItem(
+          "scoreBoardArray",
+          JSON.stringify([
+            ...endGameArrayParse,
+            {
+              id: endGameArrayParse_id_ready,
+              time: `${minutesEndGame
+                .toString()
+                .padStart(2, "0")}:${secondsEndGame
+                .toString()
+                .padStart(2, "0")}:${millisecondsEndGame
+                .toString()
+                .padStart(2, "0")}`,
+              X: xCount,
+              O: oCount,
+              gamemode: gameRules.GameMode,
+            },
+          ])
+        );
+      }
+    } else {
+      localStorage.setItem("scoreBoardArray", "[]");
+      localStorage.setItem("scoreBoardArray_id", "0");
+    }
+  }, [endGame]);
+
   //FUNCTION CHECK WINNING COMBINATIONS
   function validateWall(sign, mainTab, combinations) {
     return combinations.find((item) => {
@@ -446,7 +503,6 @@ export default function MainCube() {
   }
 
   //COUNTER
-  const [time, setTime] = useState(0);
 
   // state to check stopwatch running or not
   const [isRunning, setIsRunning] = useState(false);
@@ -459,7 +515,7 @@ export default function MainCube() {
       intervalId = setInterval(() => setTime(time + 1), 10);
     }
     return () => clearInterval(intervalId);
-  }, [isRunning, time]);
+  }, [isRunning, time, endGame]);
 
   // Minutes calculation
   const minutes = Math.floor((time % 360000) / 6000);
@@ -613,7 +669,11 @@ export default function MainCube() {
                 setOCount={setOCount}
               />
             ) : (
-              <BackMenu hoverBox={hoverBox} mainTab={mainTab} />
+              <BackMenu
+                hoverBox={hoverBox}
+                mainTab={mainTab}
+                endGame={endGame}
+              />
             )}
           </div>
           <div className="cube_left">

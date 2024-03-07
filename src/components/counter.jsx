@@ -16,18 +16,20 @@ export default function Counter(props) {
     >
       <p
         className={classNames("counterX", {
+          counterEndGame: endGame,
           counterXselect: userSign === 0 && !endGame,
         })}
       >
           X : {xCount}/6  
       </p>
-      <p className="counterTimer">{`  ${minutes
+      <p
+        className={classNames("counterTimer", { counterEndGame: endGame })}
+      >{`  ${minutes.toString().padStart(2, "0")}:${seconds
         .toString()
-        .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}:${milliseconds
-        .toString()
-        .padStart(2, "0")}  `}</p>
+        .padStart(2, "0")}:${milliseconds.toString().padStart(2, "0")}  `}</p>
       <p
         className={classNames("counterO", {
+          counterEndGame: endGame,
           counterOselect: userSign === 1 && !endGame,
         })}
       >
