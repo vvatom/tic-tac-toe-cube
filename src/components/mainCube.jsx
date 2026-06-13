@@ -131,7 +131,7 @@ export default function MainCube() {
         (gameRules.GameMode === "CubeTicTacToe" && gameRules.Play === true) ||
         (gameRules.GameMode === "MegaTicTacToe" && gameRules.Play === true)
       ) {
-        if (!drag) {
+        if (!globalDrag) {
           clearTimeout(idSetTimeout);
           const id = setTimeout(() => {
             setPosition(gameRules.Camera);
@@ -149,7 +149,7 @@ export default function MainCube() {
 
     document.addEventListener("mouseup", rel, false);
     document.addEventListener("touchend", rel, false);
-  }, [position, gameRules.Camera, setGlobalDrag, endGame]);
+  }, [position, globalDrag, gameRules.Camera, setGlobalDrag, endGame]);
 
   //CHECK END GAME
   useEffect(() => {
