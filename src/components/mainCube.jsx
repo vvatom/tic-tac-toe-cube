@@ -18,6 +18,7 @@ import LeftMenu from "./menu/LeftMenu";
 import BackMenu from "./menu/BackMenu";
 import UpperMenu from "./menu/UpperMenu";
 import classNames from "classnames";
+import { WALL_DEFS, getAiMove } from "./aiPlayer";
 
 const MAIN_ARRAY = [
   { id: 0, sign: "", hovered: false },
@@ -396,6 +397,49 @@ export default function MainCube() {
     camIteration,
   ]);
 
+  //AI PLAYER
+  useEffect(() => {
+    if (
+      gameRules.Player !== "PlayerVsPC" ||
+      !gameRules.Play ||
+      userSign !== 1 ||
+      endGame
+    ) return;
+
+    let wallName = actualWall;
+
+    if (gameRules.GameMode === "FreeForAll") {
+      const FREE_WALL_ORDER = [
+        "UpperWall", "FrontWall", "RightWall", "LeftWall", "BackWall", "BottomWall",
+      ];
+      wallName = FREE_WALL_ORDER.find((w) => {
+        const ended = wallEndGame.find((we) => we.name === w);
+        return !ended.end && WALL_DEFS[w].cells.some((id) => !mainTab[id].sign);
+      }) || null;
+    }
+
+    if (!wallName) return;
+
+    const def = WALL_DEFS[wallName];
+    if (!def) return;
+
+    const aiId = getAiMove(wallName, mainTab, gameRules.Level);
+    if (aiId === null) return;
+
+    const t = setTimeout(() => clickBox(aiId, true), 450);
+    return () => clearTimeout(t);
+  }, [
+    userSign,
+    actualWall,
+    endGame,
+    wallEndGame,
+    gameRules.Player,
+    gameRules.Play,
+    gameRules.GameMode,
+    gameRules.Level,
+    mainTab,
+  ]);
+
   //END GAME LOCALSTORAGE
   useEffect(() => {
     // Minutes calculation
@@ -468,7 +512,8 @@ export default function MainCube() {
   }
 
   //FUNCTION PLAYER X OR O
-  function clickBox(id) {
+  function clickBox(id, isAI = false) {
+    if (gameRules.Player === "PlayerVsPC" && userSign === 1 && !isAI) return;
     setIsRunning(true);
     if (gameRules.GameMode === "MegaTicTacToe" && gameRules.Play === true) {
       setCamIteration((prev) => {
